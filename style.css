@@ -1,3 +1,11 @@
+/*About Me Section "About Me" Font*/
+@font-face {
+    font-family: 'Yangjin';
+    src: url('https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -41,9 +49,61 @@ html, body {
   background-size: 90% auto;
 }
 
+/* About Me Section */
 .about {
   background-color: #D9CFC7;
   color: #111;
+}
+
+.about-wrapper {
+  width: 70%;
+  max-width: 1200px;
+}
+
+.about-title {
+  text-align: center;
+  font-size: 48px;
+  font-family: 'Yangjin', sans-serif;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.title-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 60px;
+}
+
+.about-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.about-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.about-item strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.about-item p {
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .skills {
