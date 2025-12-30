@@ -211,36 +211,146 @@ function initCodeRain() {
     const codeRain = document.querySelector('.code-rain');
     if (!codeRain) return;
     
-    const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノ';
-    const columns = Math.floor(window.innerWidth / 20);
+    const codeSnippets = [
+        'Hello World',
+        'console.log()',
+        'function()',
+        'const app',
+        'let data',
+        'return true',
+        'if (true) {}',
+        'for (i=0)',
+        'while (run)',
+        '<div></div>',
+        '<html>',
+        '{ }',
+        '=> {}',
+        'npm install',
+        'git commit',
+        'git push',
+        'async await',
+        'try catch',
+        'export default',
+        'import React',
+        'useState()',
+        'useEffect()',
+        'fetch(url)',
+        'axios.get()',
+        'res.json()',
+        'req.body',
+        'SELECT *',
+        'INSERT INTO',
+        'CREATE TABLE',
+        'docker run',
+        'kubectl apply',
+        'aws s3 sync',
+        'npm run dev',
+        'yarn build',
+        'python app.py',
+        'node server.js',
+        'java -jar',
+        'mvn clean',
+        'gradle build',
+        './deploy.sh',
+        'chmod +x',
+        'sudo apt',
+        'brew install',
+        'ping localhost',
+        'curl -X POST',
+        'ssh user@host',
+        'cd /home',
+        'mkdir project',
+        'touch index.js',
+        'cat .env',
+        'grep -r',
+        'ls -la',
+        'echo $PATH',
+        'PORT=3000',
+        '.map()',
+        '.filter()',
+        '.reduce()',
+        '.forEach()',
+        'Promise.all()',
+        'new Date()',
+        'JSON.parse()',
+        'Object.keys()',
+        'Array.from()',
+        'Math.random()',
+        'parseInt()',
+        'toString()',
+        'addEventListener',
+        'querySelector',
+        'getElementById',
+        'createElement',
+        'appendChild',
+        'innerHTML',
+        'className',
+        'onClick',
+        'onChange',
+        'onSubmit',
+        'setState()',
+        'props.data',
+        'this.state',
+        'render()',
+        'useCallback',
+        'useMemo',
+        'useRef',
+        'useContext',
+        'dispatch()',
+        'reducer()',
+        'middleware',
+        'bcrypt.hash',
+        'jwt.sign()',
+        'express.Router',
+        'app.listen()',
+        'res.status(200)',
+        'next()',
+        'cors()',
+        'dotenv.config',
+        '200 OK',
+        '404 Not Found',
+        '500 Error',
+        'POST /api',
+        'GET /users',
+        'PUT /update',
+        'DELETE /id',
+        'Bearer token',
+        'Content-Type',
+        'Authorization'
+    ];
+    
+    const columns = Math.floor(window.innerWidth / 35);
     
     for (let i = 0; i < columns; i++) {
-        createRainDrop(codeRain, characters, i);
+        createCodeDrop(codeRain, codeSnippets, i);
     }
 }
 
-function createRainDrop(container, characters, index) {
+function createCodeDrop(container, snippets, index) {
     const drop = document.createElement('div');
     drop.style.cssText = `
         position: absolute;
-        left: ${index * 20}px;
+        left: ${index * 35 + Math.random() * 15}px;
         top: ${Math.random() * -100}%;
-        font-family: monospace;
-        font-size: 14px;
-        color: rgba(99, 102, 241, 0.15);
+        font-family: 'Fira Code', 'Source Code Pro', 'Consolas', 'Monaco', monospace;
+        font-size: 11px;
+        color: rgba(99, 102, 241, 0.18);
         writing-mode: vertical-rl;
-        text-orientation: upright;
-        animation: codeRainFall ${5 + Math.random() * 10}s linear infinite;
-        animation-delay: ${Math.random() * 5}s;
+        text-orientation: mixed;
+        white-space: nowrap;
+        animation: codeRainFall ${10 + Math.random() * 15}s linear infinite;
+        animation-delay: ${Math.random() * 8}s;
         pointer-events: none;
+        text-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+        letter-spacing: 2px;
     `;
     
+    const numSnippets = 2 + Math.floor(Math.random() * 4);
     let text = '';
-    const length = 10 + Math.floor(Math.random() * 20);
-    for (let i = 0; i < length; i++) {
-        text += characters[Math.floor(Math.random() * characters.length)];
+    for (let i = 0; i < numSnippets; i++) {
+        text += snippets[Math.floor(Math.random() * snippets.length)] + ' ';
     }
-    drop.textContent = text;
+    drop.textContent = text.trim();
     
     container.appendChild(drop);
 }
