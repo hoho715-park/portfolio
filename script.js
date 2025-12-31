@@ -23,7 +23,6 @@ function initNavbar() {
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
             if (scrollY >= sectionTop - 200) {
                 current = section.getAttribute('id');
             }
@@ -163,23 +162,77 @@ function initTimelineModal() {
     const timelineModalImage = document.getElementById('timeline-modal-image');
     const timelineModalClose = timelineModal.querySelector('.modal-close');
     
+    // Timeline 이미지 매핑 (실제 이미지 경로로 교체 필요)
     const timelineImages = {
-        'csf4-modal': '/images/csf4.png'
+        'csf4-modal': '/images/csf4.png',
+        'council-modal': '/images/council.png',
+        'design-modal': '/images/design.png',
+        'homepage-modal': '/images/homepage.png',
+        'tutor-modal': '/images/tutor.png',
+        'news-modal': '/images/news.png',
+        'music-modal': '/images/music.png',
+        'teamsite-modal': '/images/teamsite.png',
+        'teamaward-modal': '/images/teamaward.png',
+        'opencv-modal': '/images/opencv.png',
+        'sqld-modal': '/images/sqld.png'
     };
     
+    // 클릭 가능한 Timeline 항목 처리
     const clickableItems = document.querySelectorAll('.timeline-entry.clickable');
     clickableItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function(e) {
+            // 링크나 버튼 클릭 시 모달 열지 않음
+            if (e.target.closest('.entry-link') || e.target.closest('.entry-btn') || e.target.closest('.social-link')) {
+                return;
+            }
+            
             const modalId = this.getAttribute('data-modal');
-            if (timelineImages[modalId]) {
+            if (modalId && timelineImages[modalId]) {
                 timelineModalImage.src = timelineImages[modalId];
-                timelineModalImage.alt = 'CSF4 관련 사진';
+                timelineModalImage.alt = modalId.replace('-modal', '') + ' 이미지';
                 timelineModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
         });
     });
     
+    // 클릭 가능한 서브 아이템 처리
+    const clickableSubitems = document.querySelectorAll('.clickable-subitem');
+    clickableSubitems.forEach(subitem => {
+        subitem.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // 소셜 링크 클릭 시 무시
+            if (e.target.closest('.social-link')) {
+                return;
+            }
+            
+            const modalId = this.getAttribute('data-modal');
+            if (modalId && timelineImages[modalId]) {
+                timelineModalImage.src = timelineImages[modalId];
+                timelineModalImage.alt = modalId.replace('-modal', '') + ' 이미지';
+                timelineModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    // 상장 보기 버튼 처리
+    const awardButtons = document.querySelectorAll('.entry-btn[data-modal]');
+    awardButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const modalId = this.getAttribute('data-modal');
+            if (modalId && timelineImages[modalId]) {
+                timelineModalImage.src = timelineImages[modalId];
+                timelineModalImage.alt = '상장 이미지';
+                timelineModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    // 모달 닫기
     timelineModalClose.addEventListener('click', function() {
         closeModal(timelineModal, timelineModalImage);
     });
@@ -256,111 +309,29 @@ function initCodeRain() {
     if (!codeRain) return;
     
     const codeSnippets = [
-        'Hello World',
-        'console.log()',
-        'function()',
-        'const app',
-        'let data',
-        'return true',
-        'if (true) {}',
-        'for (i=0)',
-        'while (run)',
-        '<div></div>',
-        '<html>',
-        '{ }',
-        '=> {}',
-        'npm install',
-        'git commit',
-        'git push',
-        'async await',
-        'try catch',
-        'export default',
-        'import React',
-        'useState()',
-        'useEffect()',
-        'fetch(url)',
-        'axios.get()',
-        'res.json()',
-        'req.body',
-        'SELECT *',
-        'INSERT INTO',
-        'CREATE TABLE',
-        'docker run',
-        'kubectl apply',
-        'aws s3 sync',
-        'npm run dev',
-        'yarn build',
-        'python app.py',
-        'node server.js',
-        'java -jar',
-        'mvn clean',
-        'gradle build',
-        './deploy.sh',
-        'chmod +x',
-        'sudo apt',
-        'brew install',
-        'ping localhost',
-        'curl -X POST',
-        'ssh user@host',
-        'cd /home',
-        'mkdir project',
-        'touch index.js',
-        'cat .env',
-        'grep -r',
-        'ls -la',
-        'echo $PATH',
-        'PORT=3000',
-        '.map()',
-        '.filter()',
-        '.reduce()',
-        '.forEach()',
-        'Promise.all()',
-        'new Date()',
-        'JSON.parse()',
-        'Object.keys()',
-        'Array.from()',
-        'Math.random()',
-        'parseInt()',
-        'toString()',
-        'addEventListener',
-        'querySelector',
-        'getElementById',
-        'createElement',
-        'appendChild',
-        'innerHTML',
-        'className',
-        'onClick',
-        'onChange',
-        'onSubmit',
-        'setState()',
-        'props.data',
-        'this.state',
-        'render()',
-        'useCallback',
-        'useMemo',
-        'useRef',
-        'useContext',
-        'dispatch()',
-        'reducer()',
-        'middleware',
-        'bcrypt.hash',
-        'jwt.sign()',
-        'express.Router',
-        'app.listen()',
-        'res.status(200)',
-        'next()',
-        'cors()',
-        'dotenv.config',
-        '200 OK',
-        '404 Not Found',
-        '500 Error',
-        'POST /api',
-        'GET /users',
-        'PUT /update',
-        'DELETE /id',
-        'Bearer token',
-        'Content-Type',
-        'Authorization'
+        'Hello World', 'console.log()', 'function()', 'const app', 'let data',
+        'return true', 'if (true) {}', 'for (i=0)', 'while (run)', '<div></div>',
+        '<html>', '{ }', '=> {}', 'npm install', 'git commit', 'git push',
+        'async await', 'try catch', 'export default', 'import React',
+        'useState()', 'useEffect()', 'fetch(url)', 'axios.get()', 'res.json()',
+        'req.body', 'SELECT *', 'INSERT INTO', 'CREATE TABLE', 'docker run',
+        'kubectl apply', 'aws s3 sync', 'npm run dev', 'yarn build',
+        'python app.py', 'node server.js', 'java -jar', 'mvn clean',
+        'gradle build', './deploy.sh', 'chmod +x', 'sudo apt', 'brew install',
+        'ping localhost', 'curl -X POST', 'ssh user@host', 'cd /home',
+        'mkdir project', 'touch index.js', 'cat .env', 'grep -r', 'ls -la',
+        'echo $PATH', 'PORT=3000', '.map()', '.filter()', '.reduce()',
+        '.forEach()', 'Promise.all()', 'new Date()', 'JSON.parse()',
+        'Object.keys()', 'Array.from()', 'Math.random()', 'parseInt()',
+        'toString()', 'addEventListener', 'querySelector', 'getElementById',
+        'createElement', 'appendChild', 'innerHTML', 'className', 'onClick',
+        'onChange', 'onSubmit', 'setState()', 'props.data', 'this.state',
+        'render()', 'useCallback', 'useMemo', 'useRef', 'useContext',
+        'dispatch()', 'reducer()', 'middleware', 'bcrypt.hash', 'jwt.sign()',
+        'express.Router', 'app.listen()', 'res.status(200)', 'next()', 'cors()',
+        'dotenv.config', '200 OK', '404 Not Found', '500 Error', 'POST /api',
+        'GET /users', 'PUT /update', 'DELETE /id', 'Bearer token',
+        'Content-Type', 'Authorization'
     ];
     
     const columns = Math.floor(window.innerWidth / 35);
@@ -399,53 +370,44 @@ function createCodeDrop(container, snippets, index) {
     container.appendChild(drop);
 }
 
+// 스타일 추가
 const styleSheet = document.createElement('style');
 styleSheet.textContent = `
     @keyframes codeRainFall {
-        0% {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(100vh);
-            opacity: 0;
-        }
+        0% { transform: translateY(-100%); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(100vh); opacity: 0; }
+    }
+    @keyframes ripple {
+        to { transform: scale(4); opacity: 0; }
     }
 `;
 document.head.appendChild(styleSheet);
 
+// 스킬 아이템 호버 효과
 document.querySelectorAll('.skill-item').forEach(item => {
     item.addEventListener('mouseenter', function() {
         this.style.transform = 'translateX(8px) scale(1.02)';
     });
-    
     item.addEventListener('mouseleave', function() {
         this.style.transform = '';
     });
 });
 
+// 아카이브 카드 호버 효과
 document.querySelectorAll('.archive-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
         const icon = this.querySelector('.thumbnail-bg i');
-        if (icon) {
-            icon.style.transform = 'scale(1.2) rotate(10deg)';
-        }
+        if (icon) icon.style.transform = 'scale(1.2) rotate(10deg)';
     });
-    
     card.addEventListener('mouseleave', function() {
         const icon = this.querySelector('.thumbnail-bg i');
-        if (icon) {
-            icon.style.transform = '';
-        }
+        if (icon) icon.style.transform = '';
     });
 });
 
+// 버튼 리플 효과
 document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('mouseenter', function(e) {
         const rect = this.getBoundingClientRect();
@@ -476,17 +438,7 @@ document.querySelectorAll('.btn').forEach(btn => {
     });
 });
 
-const rippleStyle = document.createElement('style');
-rippleStyle.textContent = `
-    @keyframes ripple {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(rippleStyle);
-
+// 패럴랙스 효과
 let ticking = false;
 window.addEventListener('scroll', function() {
     if (!ticking) {
@@ -508,6 +460,7 @@ function updateParallax() {
     });
 }
 
+// 프로젝트 카드 3D 효과
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mousemove', function(e) {
         const rect = this.getBoundingClientRect();
@@ -528,6 +481,7 @@ document.querySelectorAll('.project-card').forEach(card => {
     });
 });
 
+// 페이지 로드 효과
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
     
@@ -537,22 +491,7 @@ window.addEventListener('load', function() {
     });
 });
 
-const lazyImages = document.querySelectorAll('img[data-src]');
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-    
-    lazyImages.forEach(img => imageObserver.observe(img));
-}
-
+// 스택 아이템 호버 효과
 document.querySelectorAll('.stack-item').forEach((item, index) => {
     item.addEventListener('mouseenter', function() {
         document.querySelectorAll('.stack-item').forEach((other, otherIndex) => {
@@ -571,6 +510,7 @@ document.querySelectorAll('.stack-item').forEach((item, index) => {
     });
 });
 
+// 콘솔 메시지
 console.log('%c👋 안녕하세요!', 'font-size: 24px; font-weight: bold; color: #6366f1;');
 console.log('%c이 포트폴리오는 박성호가 제작했습니다.', 'font-size: 14px; color: #64748b;');
 console.log('%c연락처: andytjdgh@gmail.com', 'font-size: 12px; color: #94a3b8;');
