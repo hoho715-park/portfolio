@@ -167,7 +167,6 @@ function initTypingEffect() {
     const typingText = document.querySelector('.typing-text');
     if (!typingText) return;
     
-    const originalText = typingText.textContent;
     const texts = [
         '서비스 전체를 설계하는 개발자',
         'UI부터 인프라까지 구현하는 개발자',
@@ -175,33 +174,36 @@ function initTypingEffect() {
     ];
     
     let textIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 100;
+    let charIndex = texts[0].length;
+    let isDeleting = true;
+    
+    typingText.textContent = texts[0];
     
     function type() {
         const currentText = texts[textIndex];
         
         if (isDeleting) {
-            typingText.textContent = currentText.substring(0, charIndex - 1);
             charIndex--;
-            typingSpeed = 50;
+            typingText.textContent = currentText.substring(0, charIndex);
+            
+            if (charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(type, 500);
+                return;
+            }
+            setTimeout(type, 50);
         } else {
-            typingText.textContent = currentText.substring(0, charIndex + 1);
             charIndex++;
-            typingSpeed = 100;
+            typingText.textContent = texts[textIndex].substring(0, charIndex);
+            
+            if (charIndex === texts[textIndex].length) {
+                isDeleting = true;
+                setTimeout(type, 2000);
+                return;
+            }
+            setTimeout(type, 100);
         }
-        
-        if (!isDeleting && charIndex === currentText.length) {
-            isDeleting = true;
-            typingSpeed = 2000;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            textIndex = (textIndex + 1) % texts.length;
-            typingSpeed = 500;
-        }
-        
-        setTimeout(type, typingSpeed);
     }
     
     setTimeout(type, 2000);
