@@ -24,6 +24,7 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#archiving" class="nav-link">Archiving</a></li>
+                <li><a href="#timeline" class="nav-link">Timeline</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
             </ul>
         </div>
@@ -433,6 +434,135 @@
         </div>
     </section>
 
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Timeline</span>
+                <h2 class="section-title">개발자로서의<br><span class="highlight">성장 과정</span></h2>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-grade">1학년</div>
+                        <ul class="timeline-list">
+                            <li>
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>홍익대학교 소프트웨어융합학과 입학</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-user-tie"></i>
+                                <span>1학년 과대표</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-users"></i>
+                                <span>소프트웨어융합학과 24대 학생회 학술부 부원</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-grade">2학년</div>
+                        <ul class="timeline-list">
+                            <li>
+                                <i class="fas fa-user-tie"></i>
+                                <span>2학년 과대표</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-users"></i>
+                                <span>소프트웨어융합학과 25대 학생회 총무부 차장</span>
+                            </li>
+                            <li class="clickable" data-modal="csf4-modal">
+                                <i class="fas fa-code"></i>
+                                <span>
+                                    <strong>CSF4</strong>
+                                    <small>동기 4명이 모여 제작한 백준 모의고사 풀이 자기주도학습동아리</small>
+                                    <em class="click-hint"><i class="fas fa-image"></i> 클릭하여 증명서 보기</em>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-dot military"></div>
+                    <div class="timeline-card military-card">
+                        <div class="timeline-year">2023–2024</div>
+                        <div class="timeline-grade"><i class="fas fa-shield-alt"></i> 군 복무</div>
+                        <ul class="timeline-list">
+                            <li>
+                                <i class="fas fa-flag"></i>
+                                <span>15사단 신병교육대 입대</span>
+                            </li>
+                            <li class="project-highlight">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>
+                                    <strong>"핸닥" 국방창업경진대회 참가</strong>
+                                    <small>비대면 진료 웹어플리케이션 프로젝트</small>
+                                </span>
+                            </li>
+                            <li>
+                                <i class="fas fa-medal"></i>
+                                <span>제2포병여단 899대대 FDC 병장 만기전역</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-grade">3학년</div>
+                        <ul class="timeline-list">
+                            <li class="in-progress">
+                                <i class="fas fa-book"></i>
+                                <span>전공 심화 학습 진행 중</span>
+                            </li>
+                            <li class="in-progress">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>팀 프로젝트 및 개인 프로젝트 준비</span>
+                            </li>
+                            <li class="in-progress">
+                                <i class="fas fa-chart-line"></i>
+                                <span>기술 역량 고도화 예정</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-dot future"></div>
+                    <div class="timeline-card future-card">
+                        <div class="timeline-year">2026</div>
+                        <div class="timeline-grade">4학년</div>
+                        <ul class="timeline-list">
+                            <li class="planned">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>졸업 프로젝트 준비</span>
+                            </li>
+                            <li class="planned">
+                                <i class="fas fa-server"></i>
+                                <span>대규모 서비스 개발 경험 목표</span>
+                            </li>
+                            <li class="planned">
+                                <i class="fas fa-briefcase"></i>
+                                <span>취업 및 커리어 준비</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="projects" class="projects-section">
         <div class="container">
             <div class="section-header">
@@ -635,6 +765,13 @@
         <div class="modal-content">
             <button class="modal-close">&times;</button>
             <img id="modal-image" src="" alt="Modal Image">
+        </div>
+    </div>
+
+    <div id="timeline-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <img id="timeline-modal-image" src="" alt="Timeline Modal Image">
         </div>
     </div>
 

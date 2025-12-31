@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initScrollAnimations();
     initModal();
+    initTimelineModal();
     initTypingEffect();
     initCodeRain();
 });
@@ -89,7 +90,7 @@ function initScrollAnimations() {
         });
     }, observerOptions);
     
-    const animatedElements = document.querySelectorAll('.intro-card, .info-card, .skill-category, .archive-card, .project-card');
+    const animatedElements = document.querySelectorAll('.intro-card, .info-card, .skill-category, .archive-card, .project-card, .timeline-card');
     animatedElements.forEach((el, index) => {
         el.classList.add('fade-in');
         el.style.transitionDelay = `${index * 0.1}s`;
@@ -106,7 +107,7 @@ function initScrollAnimations() {
 function initModal() {
     const modal = document.getElementById('modal');
     const modalImage = document.getElementById('modal-image');
-    const modalClose = document.querySelector('.modal-close');
+    const modalClose = modal.querySelector('.modal-close');
     
     const projectImages = document.querySelectorAll('.project-image');
     projectImages.forEach(image => {
@@ -140,27 +141,68 @@ function initModal() {
         });
     });
     
-    modalClose.addEventListener('click', closeModal);
+    modalClose.addEventListener('click', function() {
+        closeModal(modal, modalImage);
+    });
     
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
-            closeModal();
+            closeModal(modal, modalImage);
         }
     });
     
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
+            closeModal(modal, modalImage);
+        }
+    });
+}
+
+function initTimelineModal() {
+    const timelineModal = document.getElementById('timeline-modal');
+    const timelineModalImage = document.getElementById('timeline-modal-image');
+    const timelineModalClose = timelineModal.querySelector('.modal-close');
+    
+    const timelineImages = {
+        'csf4-modal': '/images/csf4.png'
+    };
+    
+    const clickableItems = document.querySelectorAll('.timeline-list li.clickable');
+    clickableItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-modal');
+            if (timelineImages[modalId]) {
+                timelineModalImage.src = timelineImages[modalId];
+                timelineModalImage.alt = 'CSF4 증명서';
+                timelineModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    timelineModalClose.addEventListener('click', function() {
+        closeModal(timelineModal, timelineModalImage);
+    });
+    
+    timelineModal.addEventListener('click', function(e) {
+        if (e.target === timelineModal) {
+            closeModal(timelineModal, timelineModalImage);
         }
     });
     
-    function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-        setTimeout(() => {
-            modalImage.src = '';
-        }, 300);
-    }
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && timelineModal.classList.contains('active')) {
+            closeModal(timelineModal, timelineModalImage);
+        }
+    });
+}
+
+function closeModal(modal, modalImage) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+        modalImage.src = '';
+    }, 300);
 }
 
 function initTypingEffect() {
