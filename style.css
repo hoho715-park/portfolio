@@ -19,7 +19,6 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --header-height: 72px;
     --scroll-indicator-height: 100px;
-    --hero-content-offset: 25px;
 }
 
 * {
@@ -217,7 +216,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translateY(var(--hero-content-offset));
+    transform: translateY(30px);
 }
 
 .hero-badge {
@@ -274,7 +273,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     overflow: hidden;
     animation: fadeInUp 0.8s ease backwards;
     animation-delay: 0.8s;
@@ -355,36 +354,40 @@ body {
     transform: translateY(-2px);
 }
 
+.stack-item .fa-leaf {
+    color: #6db33f;
+}
+
 .scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     animation: fadeInUp 0.8s ease backwards;
     animation-delay: 1.4s;
     z-index: 10;
 }
 
 .mouse {
-    width: 24px;
-    height: 40px;
+    width: 22px;
+    height: 36px;
     border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
+    border-radius: 11px;
     position: relative;
     background: rgba(15, 23, 42, 0.5);
 }
 
 .wheel {
-    width: 4px;
-    height: 8px;
+    width: 3px;
+    height: 7px;
     background: var(--primary-light);
     border-radius: 2px;
     position: absolute;
-    top: 8px;
+    top: 7px;
     left: 50%;
     transform: translateX(-50%);
     animation: scroll 2s infinite;
@@ -397,12 +400,12 @@ body {
     }
     100% {
         opacity: 0;
-        transform: translateX(-50%) translateY(16px);
+        transform: translateX(-50%) translateY(14px);
     }
 }
 
 .scroll-indicator span {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--gray);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -1221,7 +1224,6 @@ body {
     :root {
         --header-height: 64px;
         --scroll-indicator-height: 90px;
-        --hero-content-offset: 20px;
     }
     
     .nav-menu {
@@ -1258,6 +1260,10 @@ body {
         transform: rotate(-45deg) translate(5px, -5px);
     }
     
+    .hero-content {
+        transform: translateY(25px);
+    }
+    
     .hero-subtitle-wrapper {
         height: 100px;
         min-height: 100px;
@@ -1276,7 +1282,7 @@ body {
     }
     
     .scroll-indicator {
-        bottom: 25px;
+        bottom: 12px;
     }
     
     .about-content {
@@ -1326,8 +1332,7 @@ body {
 @media (max-width: 480px) {
     :root {
         --header-height: 60px;
-        --scroll-indicator-height: 85px;
-        --hero-content-offset: 15px;
+        --scroll-indicator-height: 80px;
     }
     
     .container {
@@ -1339,11 +1344,15 @@ body {
         padding-right: 16px;
     }
     
+    .hero-content {
+        transform: translateY(20px);
+    }
+    
     .hero-subtitle-wrapper {
         height: 90px;
         min-height: 90px;
         max-height: 90px;
-        margin-bottom: 14px;
+        margin-bottom: 16px;
     }
     
     .hero-subtitle {
@@ -1366,7 +1375,7 @@ body {
     }
     
     .scroll-indicator {
-        bottom: 20px;
+        bottom: 10px;
     }
     
     .section-header {
