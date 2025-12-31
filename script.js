@@ -167,13 +167,13 @@ function initTimelineModal() {
         'csf4-modal': '/images/csf4.png'
     };
     
-    const clickableItems = document.querySelectorAll('.timeline-list li.clickable');
+    const clickableItems = document.querySelectorAll('.timeline-entry.clickable');
     clickableItems.forEach(item => {
         item.addEventListener('click', function() {
             const modalId = this.getAttribute('data-modal');
             if (timelineImages[modalId]) {
                 timelineModalImage.src = timelineImages[modalId];
-                timelineModalImage.alt = 'CSF4 증명서';
+                timelineModalImage.alt = 'CSF4 관련 사진';
                 timelineModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }

@@ -1043,73 +1043,88 @@ body {
     text-align: left;
 }
 
-.timeline-list li {
+/* Timeline Entry - New Structure */
+.timeline-entry {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    padding: 12px 0;
+    padding: 14px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     transition: var(--transition);
 }
 
-.timeline-list li:last-child {
+.timeline-entry:last-child {
     border-bottom: none;
 }
 
-.timeline-list li i {
+.timeline-entry > i {
     color: var(--primary-light);
     font-size: 0.9rem;
     margin-top: 4px;
     flex-shrink: 0;
+    width: 18px;
+    text-align: center;
 }
 
-.timeline-list li span {
-    color: var(--gray-light);
-    font-size: 0.9rem;
-    line-height: 1.5;
+.entry-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.entry-title {
+    display: block;
+    color: var(--white);
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.2px;
+}
+
+.entry-description {
+    margin-top: 8px;
+    color: var(--gray);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    white-space: normal;
+}
+
+/* Entry with description */
+.timeline-entry.has-description .entry-title {
+    margin-bottom: 0;
 }
 
 /* Clickable Items */
-.timeline-list li.clickable {
+.timeline-entry.clickable {
     cursor: pointer;
-    padding: 14px;
-    margin: 8px -14px;
+    padding: 16px;
+    margin: 8px -16px;
     border-radius: var(--radius);
     border-bottom: none;
     background: rgba(99, 102, 241, 0.08);
     border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
-.timeline-list li.clickable:hover {
+.timeline-entry.clickable:hover {
     background: rgba(99, 102, 241, 0.15);
     border-color: var(--primary);
     transform: scale(1.02);
 }
 
-.timeline-list li.clickable span {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.timeline-list li.clickable strong {
+.timeline-entry.clickable .entry-title {
     color: var(--white);
-    font-size: 1rem;
 }
 
-.timeline-list li.clickable small {
-    color: var(--gray);
-    font-size: 0.8rem;
-}
-
-.timeline-list li.clickable .click-hint {
+.timeline-entry.clickable .click-hint {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     color: var(--primary-light);
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-style: normal;
-    margin-top: 8px;
+    margin-top: 10px;
     padding: 4px 10px;
     background: rgba(99, 102, 241, 0.15);
     border-radius: 20px;
@@ -1117,58 +1132,46 @@ body {
 }
 
 /* Project Highlight (non-clickable but emphasized) */
-.timeline-list li.project-highlight {
-    padding: 14px;
-    margin: 8px -14px;
+.timeline-entry.project-highlight {
+    padding: 16px;
+    margin: 8px -16px;
     border-radius: var(--radius);
     border-bottom: none;
     background: rgba(16, 185, 129, 0.08);
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
-.timeline-list li.project-highlight i {
+.timeline-entry.project-highlight > i {
     color: var(--secondary);
 }
 
-.timeline-list li.project-highlight span {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.timeline-list li.project-highlight strong {
-    color: var(--white);
-    font-size: 1rem;
-}
-
-.timeline-list li.project-highlight small {
-    color: var(--gray);
-    font-size: 0.8rem;
+.timeline-entry.project-highlight .entry-description {
+    color: var(--gray-light);
 }
 
 /* In Progress Items */
-.timeline-list li.in-progress {
+.timeline-entry.in-progress {
     opacity: 0.9;
 }
 
-.timeline-list li.in-progress i {
+.timeline-entry.in-progress > i {
     color: var(--primary-light);
 }
 
-.timeline-list li.in-progress span {
+.timeline-entry.in-progress .entry-title {
     color: var(--gray-light);
 }
 
 /* Planned Items (Future) */
-.timeline-list li.planned {
+.timeline-entry.planned {
     opacity: 0.7;
 }
 
-.timeline-list li.planned i {
+.timeline-entry.planned > i {
     color: var(--accent);
 }
 
-.timeline-list li.planned span {
+.timeline-entry.planned .entry-title {
     color: var(--gray);
     font-style: italic;
 }
@@ -1207,6 +1210,11 @@ body {
     
     .timeline-year {
         font-size: 2rem;
+    }
+    
+    .entry-title {
+        font-size: 0.85rem;
+        white-space: normal;
     }
 }
 
@@ -1748,5 +1756,13 @@ body {
     
     .timeline-year {
         font-size: 1.75rem;
+    }
+    
+    .entry-title {
+        font-size: 0.82rem;
+    }
+    
+    .entry-description {
+        font-size: 0.78rem;
     }
 }
