@@ -1,0 +1,122 @@
+/* ===================================
+   Skills CSS - Skills 섹션 스타일
+   =================================== */
+
+.skills-section {
+    padding: 120px 0;
+    background: var(--dark);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* Skill Category */
+.skill-category {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    transition: var(--transition);
+}
+
+.skill-category:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Category Icons */
+.skill-category[data-category="frontend"] .category-icon {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
+.skill-category[data-category="backend"] .category-icon {
+    background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+}
+
+.skill-category[data-category="devops"] .category-icon {
+    background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+}
+
+.skill-category[data-category="etc"] .category-icon {
+    background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+}
+
+/* Category Header */
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.category-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.category-info h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.category-info p {
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+/* Skill Items */
+.skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.skill-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateX(8px);
+}
+
+.skill-icon {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--primary-light);
+    flex-shrink: 0;
+}
+
+.skill-info h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.skill-info p {
+    font-size: 0.8rem;
+    color: var(--gray);
+}

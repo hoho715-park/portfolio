@@ -1,0 +1,47 @@
+/* ===================================
+   CSS Variables - 전역 변수 정의
+   =================================== */
+
+:root {
+    /* Primary Colors */
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --primary-light: #818cf8;
+    
+    /* Secondary Colors */
+    --secondary: #10b981;
+    --accent: #f59e0b;
+    
+    /* Dark Theme Colors */
+    --dark: #0f172a;
+    --dark-light: #1e293b;
+    
+    /* Gray Scale */
+    --gray: #64748b;
+    --gray-light: #94a3b8;
+    --light: #f1f5f9;
+    --white: #ffffff;
+    
+    /* Special Colors */
+    --military: #4a5568;
+    --military-light: #718096;
+    
+    /* Gradients */
+    --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    
+    /* Shadows */
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Border Radius */
+    --radius: 12px;
+    --radius-lg: 20px;
+    
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Layout */
+    --header-height: 72px;
+    --scroll-indicator-height: 100px;
+}

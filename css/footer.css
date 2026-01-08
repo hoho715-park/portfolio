@@ -1,0 +1,98 @@
+/* ===================================
+   Footer CSS - Footer 스타일
+   =================================== */
+
+.footer {
+    background: var(--dark-light);
+    padding: 80px 0 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+}
+
+/* Footer Logo */
+.footer-logo span {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.footer-logo p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+/* Footer Sections */
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.footer-links a,
+.footer-contact a {
+    display: block;
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 6px 0;
+    transition: var(--transition);
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: var(--primary-light);
+    transform: translateX(4px);
+}
+
+.footer-contact a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    font-size: 1.25rem;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background: var(--gradient);
+    color: var(--white);
+    transform: translateY(-4px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-bottom p {
+    color: var(--gray);
+    font-size: 0.85rem;
+}

@@ -1,0 +1,258 @@
+/* ===================================
+   Responsive CSS - 반응형 스타일
+   =================================== */
+
+/* Large Tablets & Small Desktops */
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .archive-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    :root {
+        --header-height: 64px;
+        --scroll-indicator-height: 90px;
+    }
+    
+    /* Mobile Navigation */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--dark-light);
+        flex-direction: column;
+        padding: 80px 24px 24px;
+        gap: 8px;
+        transition: var(--transition);
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+    
+    /* Hero */
+    .hero-content {
+        transform: translateY(25px);
+    }
+    
+    .hero-subtitle-wrapper {
+        height: 100px;
+        min-height: 100px;
+        max-height: 100px;
+        margin-bottom: 16px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .typing-wrapper {
+        height: 28px;
+        min-height: 28px;
+        max-height: 28px;
+    }
+    
+    .scroll-indicator {
+        bottom: 12px;
+    }
+    
+    /* About */
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-info {
+        position: static;
+    }
+    
+    /* Archive */
+    .archive-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-links a:hover,
+    .footer-contact a:hover {
+        transform: none;
+    }
+    
+    .footer-contact a {
+        justify-content: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    /* Buttons */
+    .hero-cta {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Timeline */
+    .timeline-line {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px !important;
+        padding-right: 20px !important;
+        text-align: left !important;
+    }
+    
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+    }
+    
+    .timeline-dot {
+        left: 10px !important;
+        right: auto !important;
+    }
+    
+    .timeline-card::before {
+        left: -11px !important;
+        right: auto !important;
+        border-right: none !important;
+        border-top: none !important;
+        border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+    
+    .timeline-year {
+        font-size: 2rem;
+    }
+    
+    .entry-title {
+        font-size: 0.85rem;
+        white-space: normal;
+    }
+    
+    .entry-title-wrap .title-line:first-child {
+        font-size: 0.95rem;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    :root {
+        --header-height: 60px;
+        --scroll-indicator-height: 80px;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    .hero-inner {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    .hero-content {
+        transform: translateY(20px);
+    }
+    
+    .hero-subtitle-wrapper {
+        height: 90px;
+        min-height: 90px;
+        max-height: 90px;
+        margin-bottom: 16px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .typing-wrapper {
+        height: 26px;
+        min-height: 26px;
+        max-height: 26px;
+    }
+    
+    .hero-stack {
+        gap: 8px;
+    }
+    
+    .stack-item {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+    
+    .scroll-indicator {
+        bottom: 10px;
+    }
+    
+    .section-header {
+        margin-bottom: 40px;
+    }
+    
+    .about-section,
+    .skills-section,
+    .archiving-section,
+    .timeline-section,
+    .projects-section {
+        padding: 80px 0;
+    }
+    
+    .skill-category {
+        padding: 20px;
+    }
+    
+    .project-image {
+        height: 180px;
+    }
+    
+    .timeline-card {
+        padding: 20px;
+    }
+    
+    .timeline-year {
+        font-size: 1.75rem;
+    }
+    
+    .entry-title {
+        font-size: 0.82rem;
+    }
+    
+    .entry-description {
+        font-size: 0.78rem;
+    }
+}
