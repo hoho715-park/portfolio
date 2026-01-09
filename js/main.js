@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initTypingEffect();
     initCodeRain();
     
+    // 스킬 필터 초기화
+    initSkillsFilter();
+    
     // 콘솔 메시지
     printConsoleMessage();
 });
