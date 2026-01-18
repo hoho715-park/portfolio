@@ -199,7 +199,7 @@ class FullpageScroll {
     }
 
     updateNavigation() {
-        const navLinks = document.querySelectorAll('.nav-link');
+        const navLinks = document.querySelectorAll('.nav-link, .footer-nav-link');
         const currentSection = this.sections[this.currentIndex];
         const currentId = currentSection.getAttribute('id');
 
@@ -213,7 +213,7 @@ class FullpageScroll {
     }
 
     overrideNavigation() {
-        const navLinks = document.querySelectorAll('.nav-link');
+        const navLinks = document.querySelectorAll('.nav-link, .footer-nav-link');
 
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {

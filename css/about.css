@@ -3,13 +3,18 @@
    =================================== */
 
 .about-section {
-    padding: 85px 0 45px;
+    padding: 0;
     background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 100%);
     min-height: 100vh;
     max-height: 100vh;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+}
+
+.about-section .container {
+    padding: 0 20px;
 }
 
 .about-content {

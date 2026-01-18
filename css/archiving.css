@@ -3,14 +3,19 @@
    =================================== */
 
 .archiving-section {
-    padding: 100px 0 70px;
+    padding: 0;
     background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 100%);
     min-height: 100vh;
     max-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
+}
+
+.archiving-section .container {
+    padding: 0 20px;
 }
 
 .archive-grid {

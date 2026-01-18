@@ -3,14 +3,19 @@
    =================================== */
 
 .skills-section {
-    padding: 100px 0 70px;
+    padding: 0;
     background: var(--dark);
     min-height: 100vh;
     max-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
+}
+
+.skills-section .container {
+    padding: 0 20px;
 }
 
 /* ===================================

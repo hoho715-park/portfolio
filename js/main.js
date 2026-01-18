@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // 스킬 필터 초기화
     initSkillsFilter();
 
+    // 프로젝트 페이지네이션 초기화
+    initProjects();
+
     // Contact Form 초기화
     initContactForm();
 
