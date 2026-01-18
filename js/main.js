@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // 스킬 필터 초기화
     initSkillsFilter();
 
+    // Contact Form 초기화
+    initContactForm();
+
     // 콘솔 메시지
     printConsoleMessage();
 });
