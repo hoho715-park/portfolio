@@ -7,10 +7,8 @@
  */
 function initNavbar() {
     const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section');
-    
-    // 스크롤 이벤트 핸들러
+
+    // 스크롤 이벤트 핸들러 (풀페이지 스크롤이 활성화된 경우 내비게이션 업데이트는 fullpage-scroll.js에서 처리)
     window.addEventListener('scroll', function() {
         // 스크롤 시 네비게이션 스타일 변경
         if (window.scrollY > 50) {
@@ -18,54 +16,9 @@ function initNavbar() {
         } else {
             navbar.classList.remove('scrolled');
         }
-        
-        // 현재 섹션 감지 및 활성 링크 업데이트
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (scrollY >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('active');
-            }
-        });
     });
-    
-    // 네비게이션 링크 클릭 이벤트
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
 
-            if (targetSection) {
-                // 모바일 메뉴 닫기
-                const navMenu = document.querySelector('.nav-menu');
-                const navToggle = document.querySelector('.nav-toggle');
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-
-                // 섹션 ID에 따라 다른 offset 적용
-                let scrollOffset = 0;
-                if (targetId === '#main') {
-                    scrollOffset = 0; // HOME 섹션은 맨 위로
-                } else {
-                    scrollOffset = 0; // 다른 섹션들도 정확히 섹션 시작 위치로
-                }
-
-                // 부드러운 스크롤
-                window.scrollTo({
-                    top: targetSection.offsetTop + scrollOffset,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+    // 네비게이션 링크 클릭 이벤트는 fullpage-scroll.js에서 처리
 }
 
 /**

@@ -6,23 +6,26 @@
  * DOM 로드 완료 시 모든 모듈 초기화
  */
 document.addEventListener('DOMContentLoaded', function() {
+    // 풀페이지 스크롤 초기화 (가장 먼저)
+    initFullpageScroll();
+
     // 네비게이션 초기화
     initNavbar();
     initMobileMenu();
-    
+
     // 애니메이션 초기화
     initAllAnimations();
-    
+
     // 모달 초기화
     initModal();
-    
+
     // 히어로 섹션 효과
     initTypingEffect();
     initCodeRain();
-    
+
     // 스킬 필터 초기화
     initSkillsFilter();
-    
+
     // 콘솔 메시지
     printConsoleMessage();
 });
