@@ -42,17 +42,25 @@ function initNavbar() {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
                 // 모바일 메뉴 닫기
                 const navMenu = document.querySelector('.nav-menu');
                 const navToggle = document.querySelector('.nav-toggle');
                 navMenu.classList.remove('active');
                 navToggle.classList.remove('active');
-                
+
+                // 섹션 ID에 따라 다른 offset 적용
+                let scrollOffset = 0;
+                if (targetId === '#main') {
+                    scrollOffset = 0; // HOME 섹션은 맨 위로
+                } else {
+                    scrollOffset = 0; // 다른 섹션들도 정확히 섹션 시작 위치로
+                }
+
                 // 부드러운 스크롤
                 window.scrollTo({
-                    top: targetSection.offsetTop - 80,
+                    top: targetSection.offsetTop + scrollOffset,
                     behavior: 'smooth'
                 });
             }
