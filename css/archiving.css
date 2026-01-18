@@ -3,7 +3,7 @@
    =================================== */
 
 .archiving-section {
-    padding: 70px 0;
+    padding: 100px 0 70px;
     background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 100%);
     min-height: 100vh;
     max-height: 100vh;
