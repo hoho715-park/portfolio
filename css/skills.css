@@ -3,8 +3,14 @@
    =================================== */
 
 .skills-section {
-    padding: 120px 0;
+    padding: 70px 0;
     background: var(--dark);
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
 }
 
 /* ===================================
@@ -15,17 +21,17 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 60px;
+    gap: 8px;
+    margin-bottom: 28px;
 }
 
 .filter-btn {
-    padding: 12px 28px;
+    padding: 9px 22px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50px;
     color: var(--gray-light);
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
@@ -50,9 +56,9 @@
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 24px;
-    max-width: 900px;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 16px;
+    max-width: 1050px;
     margin: 0 auto;
 }
 
@@ -64,8 +70,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding: 28px 20px;
+    gap: 8px;
+    padding: 18px 12px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
@@ -79,26 +85,27 @@
 }
 
 .skill-item .skill-icon {
-    width: 64px;
-    height: 64px;
-    background: rgba(99, 102, 241, 0.15);
-    border-radius: 16px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.75rem;
-    color: var(--primary-light);
     transition: var(--transition);
 }
 
-.skill-item:hover .skill-icon {
-    background: var(--gradient);
-    color: var(--white);
+.skill-item .skill-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.skill-item:hover .skill-icon img {
     transform: scale(1.1);
 }
 
 .skill-item .skill-name {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--white);
     text-align: center;
@@ -122,8 +129,9 @@
     pointer-events: none;
 }
 
-.skill-item.inactive .skill-icon {
+.skill-item.inactive .skill-icon img {
     filter: grayscale(100%);
+    opacity: 0.5;
 }
 
 .skill-item.inactive .skill-name {

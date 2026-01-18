@@ -58,6 +58,19 @@
     margin-bottom: 10px;
 }
 
+.skills-section .section-header {
+    margin-bottom: 28px;
+}
+
+.skills-section .section-title {
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.3;
+}
+
+.skills-section .section-tag {
+    margin-bottom: 10px;
+}
+
 /* Buttons */
 .btn {
     display: inline-flex;
