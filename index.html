@@ -1,436 +1,655 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>박성호 | Full Stack Developer Portfolio</title>
-    
+
     <!-- External Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- CSS Files -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/fullpage-scroll.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/about.css">
-    <link rel="stylesheet" href="css/skills.css">
-    <link rel="stylesheet" href="css/archiving.css">
-    <link rel="stylesheet" href="css/projects.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/responsive.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fullpage-scroll.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/skills.css" />
+    <link rel="stylesheet" href="css/archiving.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
     <!-- NAVIGATION -->
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="#main" class="nav-logo">PSH<span class="accent">.</span>DEV</a>
-            <button class="nav-toggle" aria-label="메뉴 토글">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="#main" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#archiving" class="nav-link">Archiving</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
+      <div class="nav-container">
+        <a href="#main" class="nav-logo">PSH<span class="accent">.</span>DEV</a>
+        <button class="nav-toggle" aria-label="메뉴 토글">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="#main" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#archiving" class="nav-link">Archiving</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <!-- HERO SECTION -->
     <section id="main" class="hero-section">
-        <div class="hero-bg-animation">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-shape shape-3"></div>
-            <div class="code-rain"></div>
+      <div class="hero-bg-animation">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="code-rain"></div>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-code"></i>
+            <span>Full Stack Developer</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="line">안녕하세요,</span>
+            <span class="line highlight">박성호</span>
+            <span class="line">입니다.</span>
+          </h1>
+          <div class="hero-subtitle-wrapper">
+            <p class="hero-subtitle">
+              <span class="static-text">Frontend부터 Backend, DevOps까지</span>
+              <span class="typing-wrapper">
+                <span class="typing-text">서비스 전체를 설계하는 개발자</span>
+              </span>
+            </p>
+          </div>
+          <div class="hero-stack">
+            <span class="stack-item"><i class="fab fa-react"></i> React</span>
+            <span class="stack-item"
+              ><i class="fas fa-leaf"></i> Spring Boot</span
+            >
+            <span class="stack-item"><i class="fab fa-aws"></i> AWS</span>
+          </div>
         </div>
-        <div class="hero-inner">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-code"></i>
-                    <span>Full Stack Developer</span>
-                </div>
-                <h1 class="hero-title">
-                    <span class="line">안녕하세요,</span>
-                    <span class="line highlight">박성호</span>
-                    <span class="line">입니다.</span>
-                </h1>
-                <div class="hero-subtitle-wrapper">
-                    <p class="hero-subtitle">
-                        <span class="static-text">Frontend부터 Backend, DevOps까지</span>
-                        <span class="typing-wrapper">
-                            <span class="typing-text">서비스 전체를 설계하는 개발자</span>
-                        </span>
-                    </p>
-                </div>
-                <div class="hero-stack">
-                    <span class="stack-item"><i class="fab fa-react"></i> React</span>
-                    <span class="stack-item"><i class="fas fa-leaf"></i> Spring Boot</span>
-                    <span class="stack-item"><i class="fab fa-aws"></i> AWS</span>
-                </div>
-            </div>
-            <div class="scroll-indicator">
-                <div class="mouse">
-                    <div class="wheel"></div>
-                </div>
-                <span>Scroll Down</span>
-            </div>
+        <div class="scroll-indicator">
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+          <span>Scroll Down</span>
         </div>
+      </div>
     </section>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">About Me</span>
-                <h2 class="section-title">협업과 소통을 중시하는<br><span class="highlight">풀스택 개발자</span></h2>
-            </div>
-            <div class="about-content">
-                <div class="about-intro">
-                    <div class="intro-card">
-                        <div class="intro-icon"><i class="fas fa-layer-group"></i></div>
-                        <h3>End-to-End 개발</h3>
-                        <p>사용자 인터페이스부터 서버 로직, 데이터베이스 설계까지 서비스 전체 흐름을 이해하고 구현합니다.</p>
-                    </div>
-                    <div class="intro-card">
-                        <div class="intro-icon"><i class="fas fa-users"></i></div>
-                        <h3>협업 중심</h3>
-                        <p>ENFJ 성격의 강점을 살려 팀원들과의 원활한 소통과 협업을 통해 프로젝트를 성공으로 이끕니다.</p>
-                    </div>
-                    <div class="intro-card">
-                        <div class="intro-icon"><i class="fas fa-rocket"></i></div>
-                        <h3>문제 해결</h3>
-                        <p>복잡한 문제를 분석하고 최적의 기술 스택을 선택하여 효율적인 솔루션을 제시합니다.</p>
-                    </div>
-                </div>
-                <div class="about-info">
-                    <div class="info-card">
-                        <div class="info-header">
-                            <div class="profile-avatar"><i class="fas fa-user-astronaut"></i></div>
-                            <div class="profile-title">
-                                <h3>박성호</h3>
-                                <span>Full Stack Developer</span>
-                            </div>
-                        </div>
-                        <ul class="info-list">
-                            <li>
-                                <div class="info-icon"><i class="fas fa-birthday-cake"></i></div>
-                                <div class="info-content"><span class="label">생년월일</span><span class="value">2001.07.15</span></div>
-                            </li>
-                            <li>
-                                <div class="info-icon"><i class="fas fa-phone"></i></div>
-                                <div class="info-content"><span class="label">연락처</span><span class="value">010.2922.6844</span></div>
-                            </li>
-                            <li>
-                                <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                                <div class="info-content"><span class="label">이메일</span><span class="value">andytjdgh@gmail.com</span></div>
-                            </li>
-                            <li>
-                                <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
-                                <div class="info-content"><span class="label">학력</span><span class="value">홍익대학교 소프트웨어융합학과</span></div>
-                            </li>
-                            <li>
-                                <div class="info-icon"><i class="fas fa-brain"></i></div>
-                                <div class="info-content"><span class="label">MBTI</span><span class="value">ENFJ</span></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">
+            협업과 소통을 중시하는<br /><span class="highlight"
+              >풀스택 개발자</span
+            >
+          </h2>
         </div>
+        <div class="about-content">
+          <div class="about-intro">
+            <div class="intro-card">
+              <div class="intro-icon"><i class="fas fa-layer-group"></i></div>
+              <h3>End-to-End 개발</h3>
+              <p>
+                사용자 인터페이스부터 서버 로직, 데이터베이스 설계까지 서비스
+                전체 흐름을 이해하고 구현합니다.
+              </p>
+            </div>
+            <div class="intro-card">
+              <div class="intro-icon"><i class="fas fa-users"></i></div>
+              <h3>협업 중심</h3>
+              <p>
+                ENFJ 성격의 강점을 살려 팀원들과의 원활한 소통과 협업을 통해
+                프로젝트를 성공으로 이끕니다.
+              </p>
+            </div>
+            <div class="intro-card">
+              <div class="intro-icon"><i class="fas fa-rocket"></i></div>
+              <h3>문제 해결</h3>
+              <p>
+                복잡한 문제를 분석하고 최적의 기술 스택을 선택하여 효율적인
+                솔루션을 제시합니다.
+              </p>
+            </div>
+          </div>
+          <div class="about-info">
+            <div class="info-card">
+              <div class="info-header">
+                <div class="profile-avatar">
+                  <i class="fas fa-user-astronaut"></i>
+                </div>
+                <div class="profile-title">
+                  <h3>박성호</h3>
+                  <span>Full Stack Developer</span>
+                </div>
+              </div>
+              <ul class="info-list">
+                <li>
+                  <div class="info-icon">
+                    <i class="fas fa-birthday-cake"></i>
+                  </div>
+                  <div class="info-content">
+                    <span class="label">생년월일</span
+                    ><span class="value">2001.07.15</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="info-icon"><i class="fas fa-phone"></i></div>
+                  <div class="info-content">
+                    <span class="label">연락처</span
+                    ><span class="value">010.2922.6844</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                  <div class="info-content">
+                    <span class="label">이메일</span
+                    ><span class="value">andytjdgh@gmail.com</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="info-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                  </div>
+                  <div class="info-content">
+                    <span class="label">학력</span
+                    ><span class="value">홍익대학교 소프트웨어융합학과</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="info-icon"><i class="fas fa-brain"></i></div>
+                  <div class="info-content">
+                    <span class="label">MBTI</span
+                    ><span class="value">ENFJ</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SKILLS SECTION -->
     <section id="skills" class="skills-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Tech Stack</span>
-                <h2 class="section-title">풀스택 개발을 위한<br><span class="highlight">기술 스택</span></h2>
-            </div>
-            
-            <!-- Category Filter Menu -->
-            <div class="skills-filter">
-                <button class="filter-btn active" data-filter="all">전체</button>
-                <button class="filter-btn" data-filter="frontend">Frontend</button>
-                <button class="filter-btn" data-filter="backend">Backend</button>
-                <button class="filter-btn" data-filter="cms">CMS</button>
-                <button class="filter-btn" data-filter="etc">ETC</button>
-            </div>
-            
-            <!-- Skills Grid -->
-            <div class="skills-grid">
-                <!-- Frontend -->
-                <div class="skill-item" data-category="frontend">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg" alt="HTML"></div>
-                    <span class="skill-name">HTML</span>
-                </div>
-                <div class="skill-item" data-category="frontend">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain-wordmark.svg" alt="CSS"></div>
-                    <span class="skill-name">CSS</span>
-                </div>
-                <div class="skill-item" data-category="frontend">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"></div>
-                    <span class="skill-name">JavaScript</span>
-                </div>
-                <div class="skill-item" data-category="frontend">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React"></div>
-                    <span class="skill-name">React</span>
-                </div>
-                <div class="skill-item" data-category="frontend">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" alt="Vite"></div>
-                    <span class="skill-name">Vite</span>
-                </div>
-
-                <!-- Backend -->
-                <div class="skill-item" data-category="backend">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring"></div>
-                    <span class="skill-name">Spring Boot</span>
-                </div>
-                <div class="skill-item" data-category="backend">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP"></div>
-                    <span class="skill-name">PHP</span>
-                </div>
-                <div class="skill-item" data-category="backend">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"></div>
-                    <span class="skill-name">Java</span>
-                </div>
-                <div class="skill-item" data-category="backend">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></div>
-                    <span class="skill-name">Python</span>
-                </div>
-
-                <!-- CMS -->
-                <div class="skill-item" data-category="cms">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="WordPress"></div>
-                    <span class="skill-name">WordPress</span>
-                </div>
-
-                <!-- ETC -->
-                <div class="skill-item" data-category="etc">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/notion/notion-original.svg" alt="Notion"></div>
-                    <span class="skill-name">Notion</span>
-                </div>
-                <div class="skill-item" data-category="etc">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub"></div>
-                    <span class="skill-name">GitHub</span>
-                </div>
-                <div class="skill-item" data-category="etc">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma"></div>
-                    <span class="skill-name">Figma</span>
-                </div>
-                <div class="skill-item" data-category="etc">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Photoshop"></div>
-                    <span class="skill-name">Photoshop</span>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Tech Stack</span>
+          <h2 class="section-title">
+            풀스택 개발을 위한<br /><span class="highlight">기술 스택</span>
+          </h2>
         </div>
+
+        <!-- Category Filter Menu -->
+        <div class="skills-filter">
+          <button class="filter-btn active" data-filter="all">전체</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+          <button class="filter-btn" data-filter="cms">CMS</button>
+          <button class="filter-btn" data-filter="etc">ETC</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid">
+          <!-- Frontend -->
+          <div class="skill-item" data-category="frontend">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg"
+                alt="HTML"
+              />
+            </div>
+            <span class="skill-name">HTML</span>
+          </div>
+          <div class="skill-item" data-category="frontend">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain-wordmark.svg"
+                alt="CSS"
+              />
+            </div>
+            <span class="skill-name">CSS</span>
+          </div>
+          <div class="skill-item" data-category="frontend">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                alt="JavaScript"
+              />
+            </div>
+            <span class="skill-name">JavaScript</span>
+          </div>
+          <div class="skill-item" data-category="frontend">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                alt="React"
+              />
+            </div>
+            <span class="skill-name">React</span>
+          </div>
+          <div class="skill-item" data-category="frontend">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
+                alt="Vite"
+              />
+            </div>
+            <span class="skill-name">Vite</span>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-item" data-category="backend">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
+                alt="Spring"
+              />
+            </div>
+            <span class="skill-name">Spring Boot</span>
+          </div>
+          <div class="skill-item" data-category="backend">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+                alt="PHP"
+              />
+            </div>
+            <span class="skill-name">PHP</span>
+          </div>
+          <div class="skill-item" data-category="backend">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                alt="Java"
+              />
+            </div>
+            <span class="skill-name">Java</span>
+          </div>
+          <div class="skill-item" data-category="backend">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                alt="Python"
+              />
+            </div>
+            <span class="skill-name">Python</span>
+          </div>
+
+          <!-- CMS -->
+          <div class="skill-item" data-category="cms">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg"
+                alt="WordPress"
+              />
+            </div>
+            <span class="skill-name">WordPress</span>
+          </div>
+
+          <!-- ETC -->
+          <div class="skill-item" data-category="etc">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/notion/notion-original.svg"
+                alt="Notion"
+              />
+            </div>
+            <span class="skill-name">Notion</span>
+          </div>
+          <div class="skill-item" data-category="etc">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                alt="GitHub"
+              />
+            </div>
+            <span class="skill-name">GitHub</span>
+          </div>
+          <div class="skill-item" data-category="etc">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+                alt="Figma"
+              />
+            </div>
+            <span class="skill-name">Figma</span>
+          </div>
+          <div class="skill-item" data-category="etc">
+            <div class="skill-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg"
+                alt="Photoshop"
+              />
+            </div>
+            <span class="skill-name">Photoshop</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ARCHIVING SECTION -->
     <section id="archiving" class="archiving-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Archiving</span>
-                <h2 class="section-title">개발 기록을<br><span class="highlight">아카이빙합니다</span></h2>
-            </div>
-            <div class="archive-grid">
-                <a href="https://github.com/hoho715-park" target="_blank" class="archive-card">
-                    <div class="archive-thumbnail"><div class="thumbnail-bg github-bg"><i class="fab fa-github"></i></div></div>
-                    <div class="archive-content">
-                        <h3><i class="fab fa-github"></i> GitHub</h3>
-                        <p>소스 코드 저장소입니다. 프로젝트 코드와 커밋 히스토리를 확인할 수 있습니다.</p>
-                        <ul class="archive-features"><li>프로젝트 소스 코드</li><li>커밋 히스토리</li><li>오픈소스 기여</li></ul>
-                        <span class="archive-link"><span>바로가기</span><i class="fas fa-external-link-alt"></i></span>
-                    </div>
-                </a>
-                <a href="https://hoho715.tistory.com/" target="_blank" class="archive-card">
-                    <div class="archive-thumbnail"><div class="thumbnail-bg portfolio-bg"><i class="fas fa-user"></i></div></div>
-                    <div class="archive-content">
-                        <h3><i class="fas fa-globe"></i> 개인 개발 블로그</h3>
-                        <p>개인 프로젝트와 경험을 정리한 포트폴리오 사이트입니다.</p>
-                        <ul class="archive-features"><li>개인 프로젝트 상세</li><li>기술 스택 소개</li><li>경험 및 성장 기록</li></ul>
-                        <span class="archive-link"><span>바로가기</span><i class="fas fa-external-link-alt"></i></span>
-                    </div>
-                </a>
-                <a href="http://nodefolio.co.kr/" target="_blank" class="archive-card">
-                    <div class="archive-thumbnail"><div class="thumbnail-bg team-bg"><i class="fas fa-users"></i></div></div>
-                    <div class="archive-content">
-                        <h3><i class="fas fa-users"></i> 팀 포트폴리오</h3>
-                        <p>팀 프로젝트 협업 경험을 정리한 포트폴리오 사이트입니다.</p>
-                        <ul class="archive-features"><li>팀 프로젝트 소개</li><li>협업 경험 기록</li><li>역할 및 기여도</li></ul>
-                        <span class="archive-link"><span>바로가기</span><i class="fas fa-external-link-alt"></i></span>
-                    </div>
-                </a>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Archiving</span>
+          <h2 class="section-title">
+            개발 기록을<br /><span class="highlight">아카이빙합니다</span>
+          </h2>
         </div>
+        <div class="archive-grid">
+          <a
+            href="https://github.com/hoho715-park"
+            target="_blank"
+            class="archive-card"
+          >
+            <div class="archive-thumbnail">
+              <div class="thumbnail-bg github-bg">
+                <i class="fab fa-github"></i>
+              </div>
+            </div>
+            <div class="archive-content">
+              <h3><i class="fab fa-github"></i> GitHub</h3>
+              <p>
+                소스 코드 저장소입니다. 프로젝트 코드와 커밋 히스토리를 확인할
+                수 있습니다.
+              </p>
+              <ul class="archive-features">
+                <li>프로젝트 소스 코드</li>
+                <li>커밋 히스토리</li>
+                <li>오픈소스 기여</li>
+              </ul>
+              <span class="archive-link"
+                ><span>바로가기</span><i class="fas fa-external-link-alt"></i
+              ></span>
+            </div>
+          </a>
+          <a
+            href="https://hoho715.tistory.com/"
+            target="_blank"
+            class="archive-card"
+          >
+            <div class="archive-thumbnail">
+              <div class="thumbnail-bg portfolio-bg">
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+            <div class="archive-content">
+              <h3><i class="fas fa-globe"></i> 개인 개발 블로그</h3>
+              <p>개인 프로젝트와 경험을 정리한 포트폴리오 사이트입니다.</p>
+              <ul class="archive-features">
+                <li>개인 프로젝트 상세</li>
+                <li>기술 스택 소개</li>
+                <li>경험 및 성장 기록</li>
+              </ul>
+              <span class="archive-link"
+                ><span>바로가기</span><i class="fas fa-external-link-alt"></i
+              ></span>
+            </div>
+          </a>
+          <a
+            href="http://nodefolio.co.kr/"
+            target="_blank"
+            class="archive-card"
+          >
+            <div class="archive-thumbnail">
+              <div class="thumbnail-bg team-bg">
+                <i class="fas fa-users"></i>
+              </div>
+            </div>
+            <div class="archive-content">
+              <h3><i class="fas fa-users"></i> 팀 포트폴리오</h3>
+              <p>팀 프로젝트 협업 경험을 정리한 포트폴리오 사이트입니다.</p>
+              <ul class="archive-features">
+                <li>팀 프로젝트 소개</li>
+                <li>협업 경험 기록</li>
+                <li>역할 및 기여도</li>
+              </ul>
+              <span class="archive-link"
+                ><span>바로가기</span><i class="fas fa-external-link-alt"></i
+              ></span>
+            </div>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- PROJECTS SECTION -->
     <section id="projects" class="projects-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Projects</span>
-                <h2 class="section-title">서비스를 설계하고<br><span class="highlight">구현한 프로젝트</span></h2>
-            </div>
-
-            <!-- Projects Slider -->
-            <div class="projects-wrapper">
-                <div class="projects-slider-container">
-                    <button class="slider-nav prev disabled" aria-label="Previous">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-
-                    <div class="projects-grid">
-                        <!-- Project cards will be dynamically inserted here -->
-                    </div>
-
-                    <button class="slider-nav next" aria-label="Next">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Progress Indicator -->
-            <div class="slider-progress">
-                <!-- Progress dots will be dynamically inserted here -->
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Projects</span>
+          <h2 class="section-title">
+            서비스를 설계하고<br />
+            <span class="highlight">구현한 프로젝트</span>
+          </h2>
         </div>
+
+        <div class="projects-wrapper">
+          <button class="slider-btn prev" aria-label="prev">&#10094;</button>
+
+          <div class="projects-viewport">
+            <div class="projects-track">
+              <!-- JS로 카드 삽입 -->
+            </div>
+          </div>
+
+          <button class="slider-btn next" aria-label="next">&#10095;</button>
+        </div>
+
+        <div class="projects-pagination">
+          <span class="current">1</span> / <span class="total">3</span>
+        </div>
+      </div>
     </section>
+
+    <!-- PROJECT MODAL -->
+    <div class="project-modal" id="projectModal">
+      <div class="modal-overlay"></div>
+      <div class="modal-box">
+        <button class="modal-close">&times;</button>
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+      </div>
+    </div>
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="contact-wrapper">
-                <!-- Left Content -->
-                <div class="contact-info">
-                    <span class="section-tag">Contact</span>
-                    <h2 class="contact-title">함께 이야기해<br><span class="highlight">볼까요?</span></h2>
-                    <p class="contact-description">새로운 프로젝트 제안, 협업 및 외주 문의, 기술 관련 질문이나 제안 등 언제든지 편하게 연락주세요. 함께 멋진 결과물을 만들어가고 싶습니다.</p>
+      <div class="container">
+        <div class="contact-wrapper">
+          <!-- Left Content -->
+          <div class="contact-info">
+            <span class="section-tag">Contact</span>
+            <h2 class="contact-title">
+              함께 이야기해<br /><span class="highlight">볼까요?</span>
+            </h2>
+            <p class="contact-description">
+              새로운 프로젝트 제안, 협업 및 외주 문의, 기술 관련 질문이나 제안
+              등 언제든지 편하게 연락주세요. 함께 멋진 결과물을 만들어가고
+              싶습니다.
+            </p>
 
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-label">Email</span>
-                                <a href="mailto:andytjdgh@gmail.com" class="contact-value">andytjdgh@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-label">Phone</span>
-                                <a href="tel:010-2922-6844" class="contact-value">010.2922.6844</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-label">GitHub</span>
-                                <a href="https://github.com/hoho715-park" target="_blank" class="contact-value">github.com/hoho715-park</a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
                 </div>
-
-                <!-- Right Content - Contact Form -->
-                <div class="contact-form-wrapper">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">문의 유형을 선택해주세요</option>
-                                <option value="project">프로젝트 제안</option>
-                                <option value="collaboration">협업 문의</option>
-                                <option value="job">채용 문의</option>
-                                <option value="question">기술 질문</option>
-                                <option value="other">기타</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="메시지를 입력해주세요" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-submit">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
+                <div class="contact-text">
+                  <span class="contact-label">Email</span>
+                  <a href="mailto:andytjdgh@gmail.com" class="contact-value"
+                    >andytjdgh@gmail.com</a
+                  >
                 </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-text">
+                  <span class="contact-label">Phone</span>
+                  <a href="tel:010-2922-6844" class="contact-value"
+                    >010.2922.6844</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fab fa-github"></i>
+                </div>
+                <div class="contact-text">
+                  <span class="contact-label">GitHub</span>
+                  <a
+                    href="https://github.com/hoho715-park"
+                    target="_blank"
+                    class="contact-value"
+                    >github.com/hoho715-park</a
+                  >
+                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- Right Content - Contact Form -->
+          <div class="contact-form-wrapper">
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="이름을 입력해주세요"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="이메일을 입력해주세요"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                  <option value="">문의 유형을 선택해주세요</option>
+                  <option value="project">프로젝트 제안</option>
+                  <option value="collaboration">협업 문의</option>
+                  <option value="job">채용 문의</option>
+                  <option value="question">기술 질문</option>
+                  <option value="other">기타</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="메시지를 입력해주세요"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="contact-footer">
+        <!-- Footer Navigation -->
+        <nav class="footer-nav">
+          <a href="#main" class="footer-nav-link">Home</a>
+          <a href="#about" class="footer-nav-link">About</a>
+          <a href="#skills" class="footer-nav-link">Skills</a>
+          <a href="#archiving" class="footer-nav-link">Archiving</a>
+          <a href="#projects" class="footer-nav-link">Projects</a>
+          <a href="#contact" class="footer-nav-link">Contact</a>
+        </nav>
+
+        <!-- Social Icons -->
+        <div class="footer-social">
+          <a
+            href="https://www.instagram.com/hongik_sw_official/"
+            target="_blank"
+            rel="noopener"
+            class="social-icon"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://github.com/hoho715-park"
+            target="_blank"
+            rel="noopener"
+            class="social-icon"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
         </div>
 
-        <!-- Footer -->
-        <div class="contact-footer">
-            <!-- Footer Navigation -->
-            <nav class="footer-nav">
-                <a href="#main" class="footer-nav-link">Home</a>
-                <a href="#about" class="footer-nav-link">About</a>
-                <a href="#skills" class="footer-nav-link">Skills</a>
-                <a href="#archiving" class="footer-nav-link">Archiving</a>
-                <a href="#projects" class="footer-nav-link">Projects</a>
-                <a href="#contact" class="footer-nav-link">Contact</a>
-            </nav>
-
-            <!-- Social Icons -->
-            <div class="footer-social">
-                <a href="https://www.instagram.com/hongik_sw_official/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://github.com/hoho715-park" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-
-            <!-- Footer Info -->
-            <div class="footer-info">
-                <div class="footer-links">
-                    <a href="mailto:andytjdgh@gmail.com">
-                        <i class="fas fa-envelope"></i>
-                        <span>andytjdgh@gmail.com</span>
-                    </a>
-                    <span class="separator">|</span>
-                    <a href="https://github.com/hoho715-park" target="_blank" rel="noopener">
-                        <i class="fab fa-github"></i>
-                        <span>github.com/hoho715-park</span>
-                    </a>
-                </div>
-                <p class="footer-copyright">&copy; 2026 Park SungHo. All rights reserved.</p>
-            </div>
+        <!-- Footer Info -->
+        <div class="footer-info">
+          <div class="footer-links">
+            <a href="mailto:andytjdgh@gmail.com">
+              <i class="fas fa-envelope"></i>
+              <span>andytjdgh@gmail.com</span>
+            </a>
+            <span class="separator">|</span>
+            <a
+              href="https://github.com/hoho715-park"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fab fa-github"></i>
+              <span>github.com/hoho715-park</span>
+            </a>
+          </div>
+          <p class="footer-copyright">
+            &copy; 2026 Park SungHo. All rights reserved.
+          </p>
         </div>
+      </div>
     </section>
 
     <!-- MODAL -->
     <div id="modal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <img id="modal-image" src="" alt="Modal Image">
-        </div>
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <img id="modal-image" src="" alt="Modal Image" />
+      </div>
     </div>
 
     <!-- JAVASCRIPT FILES -->
@@ -444,5 +663,5 @@
     <script src="js/projects.js"></script>
     <script src="js/contact.js"></script>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
