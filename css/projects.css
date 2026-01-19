@@ -41,6 +41,7 @@
   overflow: hidden;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 .project-card:hover {
@@ -48,10 +49,44 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
 
-.project-card img {
+/* Image Wrapper */
+.project-image-wrapper {
+  position: relative;
   width: 100%;
   height: 200px;
+  overflow: hidden;
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+}
+
+/* Status Badge */
+.project-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transform: rotate(-2deg);
+  z-index: 2;
+}
+
+.status-progress {
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.status-outsource {
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .project-body {
@@ -74,6 +109,7 @@
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
+  margin-bottom: 14px;
 }
 
 .project-tags span {
@@ -82,6 +118,75 @@
   border-radius: 6px;
   background: rgba(255,255,255,0.08);
   color: #cbd5f5;
+}
+
+/* Action Buttons */
+.project-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.btn-action {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1.5px solid;
+}
+
+.btn-action svg {
+  flex-shrink: 0;
+}
+
+.btn-action span {
+  white-space: nowrap;
+}
+
+/* Award Button - Yellow */
+.btn-award {
+  background: rgba(250, 204, 21, 0.15);
+  color: #fbbf24;
+  border-color: rgba(250, 204, 21, 0.3);
+}
+
+.btn-award:hover {
+  background: rgba(250, 204, 21, 0.25);
+  border-color: #fbbf24;
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.3);
+}
+
+/* Paper Button - Sky Blue */
+.btn-paper {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.btn-paper:hover {
+  background: rgba(56, 189, 248, 0.25);
+  border-color: #38bdf8;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+/* Certificate Button - Red */
+.btn-certificate {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.btn-certificate:hover {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: #ef4444;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
 }
 
 /* ===================================
