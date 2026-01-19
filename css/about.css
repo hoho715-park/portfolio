@@ -30,18 +30,26 @@
   margin-bottom: 28px;
 }
 
-/* About Content */
+/* ===================================
+   About Content Layout (FIXED HEIGHT)
+   =================================== */
+
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  align-items: stretch;
 }
 
-/* Intro Cards */
+/* ===================================
+   Intro Cards (LEFT)
+   =================================== */
+
 .about-intro {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  height: 100%;
 }
 
 .intro-card {
@@ -50,6 +58,7 @@
   border-radius: var(--radius);
   padding: 15px;
   transition: var(--transition);
+  flex: 1;
 }
 
 .intro-card:hover {
@@ -82,10 +91,14 @@
   line-height: 1.4;
 }
 
-/* Info Card */
+/* ===================================
+   Info Card (RIGHT)
+   =================================== */
+
 .about-info {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .info-card {
@@ -96,18 +109,22 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
+/* TOP GRADIENT LINE - FIXED WIDTH */
 .info-card::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 16px;
+  right: 16px;
   height: 4px;
+  border-radius: 0 0 4px 4px;
   background: var(--gradient);
 }
 
+/* Header */
 .info-header {
   display: flex;
   align-items: center;
@@ -146,6 +163,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex: 1;
+  justify-content: center;
 }
 
 .info-list li {
