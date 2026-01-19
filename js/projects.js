@@ -97,7 +97,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
-    status: "외주",
+    status: ["외주", "진행중"],
     detail:
       "MusikOnsemiro는 성악 동호회를 위한 홍보 웹사이트입니다.",
   },
@@ -111,7 +111,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
-    status: "외주",
+    status: ["외주", "진행중"],
     detail:
       "서울대학교 이차전지연구소를 위한 맞춤형 플러그인 개발 프로젝트입니다.",
   },
@@ -125,7 +125,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
-    status: "외주",
+    status: ["외주", "진행중"],
     detail:
       "(주)D-1을 위한 회원관리 및 자료실 플러그인 개발 프로젝트입니다.",
   },
@@ -151,15 +151,22 @@ function renderProjects() {
     projectsData
       .slice(i * cardsPerPage, (i + 1) * cardsPerPage)
       .forEach((project) => {
-        const statusBadge = project.status
-          ? `<div class="project-status ${project.status === '외주' ? 'status-outsource' : 'status-progress'}">${project.status}</div>`
-          : '';
+        let statusBadges = '';
+        if (project.status) {
+          if (Array.isArray(project.status)) {
+            statusBadges = project.status.map((status, index) =>
+              `<div class="project-status ${status === '외주' ? 'status-outsource' : 'status-progress'}" style="top: ${12 + (index * 36)}px;">${status}</div>`
+            ).join('');
+          } else {
+            statusBadges = `<div class="project-status ${project.status === '외주' ? 'status-outsource' : 'status-progress'}">${project.status}</div>`;
+          }
+        }
 
         page.innerHTML += `
           <div class="project-card" data-id="${project.id}">
             <div class="project-image-wrapper">
               <img src="${project.image}" alt="${project.title}">
-              ${statusBadge}
+              ${statusBadges}
             </div>
             <div class="project-body">
               <h3>${project.title}</h3>
