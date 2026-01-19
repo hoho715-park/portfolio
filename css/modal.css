@@ -1,75 +1,29 @@
-/* ===================================
-   Modal CSS - 모달 스타일
-   =================================== */
-
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    padding: 24px;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
 }
 
 .modal.active {
-    opacity: 1;
-    visibility: visible;
+  display: flex;
 }
 
-/* Modal Content */
 .modal-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-    animation: modalIn 0.3s ease;
+  background: #0f172a;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  color: #fff;
 }
 
-@keyframes modalIn {
-    from {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.modal-content img {
-    max-width: 100%;
-    max-height: 85vh;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-xl);
-}
-
-/* Modal Close Button */
 .modal-close {
-    position: absolute;
-    top: -48px;
-    right: 0;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    border-radius: 50%;
-    color: var(--white);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-close:hover {
-    background: var(--primary);
-    transform: rotate(90deg);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
 }
