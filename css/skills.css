@@ -3,56 +3,74 @@
    =================================== */
 
 .skills-section {
-    padding: 0;
-    background: var(--dark);
-    min-height: 100vh;
-    max-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  padding: 0;
+  background: var(--dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .skills-section .container {
-    padding: 0 20px;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ===================================
-   Filter Buttons
+   Section Header
+   =================================== */
+
+.skills-section .section-header {
+  width: 100%;
+  text-align: center;
+}
+
+/* ===================================
+   Filter Buttons (FIXED - HARD RESET)
    =================================== */
 
 .skills-filter {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 28px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
 }
 
 .filter-btn {
-    padding: 9px 22px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50px;
-    color: var(--gray-light);
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 9px 22px;
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: var(--gray-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: var(--transition);
 }
 
 .filter-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--white);
-    border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .filter-btn.active {
-    background: var(--gradient);
-    color: var(--white);
-    border-color: transparent;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  background: var(--gradient);
+  color: var(--white);
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
 }
 
 /* ===================================
@@ -60,11 +78,12 @@
    =================================== */
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 16px;
-    max-width: 1050px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 /* ===================================
@@ -72,75 +91,60 @@
    =================================== */
 
 .skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 18px 12px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius-lg);
-    transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
 }
 
 .skill-item:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: var(--primary);
-    transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--primary);
+  transform: translateY(-5px);
 }
 
 .skill-item .skill-icon {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .skill-item .skill-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: var(--transition);
-}
-
-.skill-item:hover .skill-icon img {
-    transform: scale(1.1);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .skill-item .skill-name {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--white);
-    text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
 }
 
 /* ===================================
-   Filter States - Active & Inactive
+   Filter States
    =================================== */
 
-.skill-item.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.skill-item.active:hover {
-    transform: translateY(-5px);
-}
-
 .skill-item.inactive {
-    opacity: 0.2;
-    pointer-events: none;
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 .skill-item.inactive .skill-icon img {
-    filter: grayscale(100%);
-    opacity: 0.5;
+  filter: grayscale(100%);
+  opacity: 0.5;
 }
 
 .skill-item.inactive .skill-name {
-    color: var(--gray);
+  color: var(--gray);
 }
 
 /* ===================================
@@ -148,70 +152,24 @@
    =================================== */
 
 @media (max-width: 1024px) {
-    .skills-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-    }
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
 }
 
 @media (max-width: 768px) {
-    .skills-filter {
-        gap: 8px;
-        margin-bottom: 40px;
-    }
-    
-    .filter-btn {
-        padding: 10px 20px;
-        font-size: 0.85rem;
-    }
-    
-    .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-    }
-    
-    .skill-item {
-        padding: 20px 16px;
-    }
-    
-    .skill-item .skill-icon {
-        width: 52px;
-        height: 52px;
-        font-size: 1.5rem;
-    }
-    
-    .skill-item .skill-name {
-        font-size: 0.8rem;
-    }
+  .skills-filter {
+    margin-bottom: 40px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
-    .skills-filter {
-        gap: 6px;
-    }
-    
-    .filter-btn {
-        padding: 8px 16px;
-        font-size: 0.8rem;
-    }
-    
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-    
-    .skill-item {
-        padding: 18px 12px;
-    }
-    
-    .skill-item .skill-icon {
-        width: 48px;
-        height: 48px;
-        font-size: 1.25rem;
-        border-radius: 12px;
-    }
-    
-    .skill-item .skill-name {
-        font-size: 0.75rem;
-    }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
