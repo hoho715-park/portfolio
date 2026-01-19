@@ -39,6 +39,78 @@ const projectsData = [
     detail:
       "careEYE는 실시간 행동 감지를 통해 낙상 위험을 감지하고 보호자에게 알림을 제공하는 실버 케어 서비스입니다.",
   },
+  {
+    id: 4,
+    title: "`무색무광`",
+    description:
+      "신분증과 화이트보드의 빛 반사를 제거해 문자·이미지 인식률을 향상시키는 영상 처리 기반 프로젝트",
+    tech: ["React", "NEXT.JS", "Python"],
+    image: "images/opencv.png",
+    hasPaper: false,
+    hasAward: true,
+    detail:
+      "careEYE는 실시간 행동 감지를 통해 낙상 위험을 감지하고 보호자에게 알림을 제공하는 실버 케어 서비스입니다.",
+  },
+  {
+    id: 5,
+    title: "`홍천 가뭄 멈춰!!`",
+    description:
+      "데이터사이언스 수업에서 홍천 기상 데이터를 기반으로 한 달 뒤 홍천 지역의 가뭄 가능성을 예측해 제공하는 웹 서비스",
+    tech: ["R"],
+    image: "images/datascience.png",
+    hasPaper: false,
+    hasAward: false,
+    detail:
+      "careEYE는 실시간 행동 감지를 통해 낙상 위험을 감지하고 보호자에게 알림을 제공하는 실버 케어 서비스입니다.",
+  },
+  {
+    id: 6,
+    title: "Code Visualization (진행중)",
+    description:
+      "코드를 다양한 다이어그램으로 시각화해 구조를 분석하고, 이를 바탕으로 코드 품질을 정량적으로 계산해주는 웹 애플리케이션",
+    tech: ["React", "JS"],
+    image: "images/codevisual.png",
+    hasPaper: false,
+    hasAward: false,
+    detail:
+      "careEYE는 실시간 행동 감지를 통해 낙상 위험을 감지하고 보호자에게 알림을 제공하는 실버 케어 서비스입니다.",
+  },
+  {
+    id: 7,
+    title: "MusikOnsemiro (외주)(진행중)",
+    description:
+      "성악을 사랑하는 사람들이 모여 동호회를 소개하고 활동을 홍보하기 위해 제작한 성악 동호회 홍보 웹사이트 제작",
+    tech: ["HTML", "CSS", "JS", "PHP", "WordPress"],
+    image: "images/musikonsemiro.png",
+    hasPaper: false,
+    hasAward: false,
+    detail:
+      "careEYE는 실시간 행동 감지를 통해 낙상 위험을 감지하고 보호자에게 알림을 제공하는 실버 케어 서비스입니다.",
+  },
+  {
+    id: 8,
+    title: "서울대학교 이차전지연구소 플러그인 개발 (외주)(진행중)",
+    description:
+      "성악을 사랑하는 사람들이 모여 동호회를 소개하고 활동을 홍보하기 위해 제작한 성악 동호회 홍보 웹사이트 제작",
+    tech: ["JS", "PHP", "WordPress"],
+    image: "images/seoul.png",
+    hasPaper: false,
+    hasAward: false,
+    detail:
+      "careEYE는 실시간 행동 감지를 통해 낙상 위험을 감지하고 보호자에게 알림을 제공하는 실버 케어 서비스입니다.",
+  },
+  {
+    id: 9,
+    title: "(주)D-1 플러그인 개발 (외주)(진행중)",
+    description:
+      "d-1 회사의 회원관리 DB를 구축·보완하고, 자료 공유와 관리를 위한 자료실 기능을 함께 구현한 웹 서비스",
+    tech: ["JS", "PHP", "WordPress"],
+    image: "images/d1.png",
+    hasPaper: false,
+    hasAward: false,
+    detail:
+      "careEYE는 실시간 행동 감지를 통해 낙상 위험을 감지하고 보호자에게 알림을 제공하는 실버 케어 서비스입니다.",
+  },
 ];
 
 const track = document.querySelector(".projects-track");
