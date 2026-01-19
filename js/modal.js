@@ -1,15 +1,17 @@
-const modal = document.querySelector(".modal");
-const modalContent = modal.querySelector(".modal-content");
+const modal = document.getElementById("project-modal");
+const titleEl = document.getElementById("modal-title");
+const descEl = document.getElementById("modal-description");
 
-function openModal(project) {
-  modal.classList.add("active");
-  modalContent.innerHTML = `
-    <h2>${project.title}</h2>
-    <p style="margin-top:15px">${project.detail}</p>
-    <button class="modal-close" onclick="closeModal()">닫기</button>
-  `;
+function openProjectModal(project) {
+  titleEl.textContent = project.title;
+  descEl.textContent = project.detail;
+  modal.classList.add("show");
 }
 
-function closeModal() {
-  modal.classList.remove("active");
-}
+document.querySelector(".modal-close").onclick = () => {
+  modal.classList.remove("show");
+};
+
+modal.onclick = (e) => {
+  if (e.target === modal) modal.classList.remove("show");
+};
