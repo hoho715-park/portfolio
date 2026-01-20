@@ -98,8 +98,7 @@ const projectsData = [
     hasAward: false,
     hasCertificate: false,
     status: ["외주", "진행중"],
-    detail:
-      "MusikOnsemiro는 성악 동호회를 위한 홍보 웹사이트입니다.",
+    detail: "MusikOnsemiro는 성악 동호회를 위한 홍보 웹사이트입니다.",
   },
   {
     id: 8,
@@ -126,8 +125,7 @@ const projectsData = [
     hasAward: false,
     hasCertificate: false,
     status: ["외주", "진행중"],
-    detail:
-      "(주)D-1을 위한 회원관리 및 자료실 플러그인 개발 프로젝트입니다.",
+    detail: "(주)D-1을 위한 회원관리 및 자료실 플러그인 개발 프로젝트입니다.",
   },
 ];
 
@@ -151,14 +149,17 @@ function renderProjects() {
     projectsData
       .slice(i * cardsPerPage, (i + 1) * cardsPerPage)
       .forEach((project) => {
-        let statusBadges = '';
+        let statusBadges = "";
         if (project.status) {
           if (Array.isArray(project.status)) {
-            statusBadges = project.status.map((status, index) =>
-              `<div class="project-status ${status === '외주' ? 'status-outsource' : 'status-progress'}" style="top: ${12 + (index * 36)}px;">${status}</div>`
-            ).join('');
+            statusBadges = project.status
+              .map(
+                (status, index) =>
+                  `<div class="project-status ${status === "외주" ? "status-outsource" : "status-progress"}" style="top: ${12 + index * 36}px;">${status}</div>`,
+              )
+              .join("");
           } else {
-            statusBadges = `<div class="project-status ${project.status === '외주' ? 'status-outsource' : 'status-progress'}">${project.status}</div>`;
+            statusBadges = `<div class="project-status ${project.status === "외주" ? "status-outsource" : "status-progress"}">${project.status}</div>`;
           }
         }
 
@@ -175,17 +176,23 @@ function renderProjects() {
                 ${project.tech.map((t) => `<span>${t}</span>`).join("")}
               </div>
               <div class="project-actions">
-                ${project.hasAward ? `
-                  <button class="btn-action btn-award">
+                ${
+                  project.hasAward
+                    ? `
+                  <button class="btn-action btn-award" data-project-id="${project.id}" data-action="award">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <circle cx="12" cy="8" r="6"/>
                       <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
                     </svg>
                     <span>상장보기</span>
                   </button>
-                ` : ""}
-                ${project.hasPaper ? `
-                  <button class="btn-action btn-paper">
+                `
+                    : ""
+                }
+                ${
+                  project.hasPaper
+                    ? `
+                  <button class="btn-action btn-paper" data-project-id="${project.id}" data-action="paper">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                       <polyline points="14 2 14 8 20 8"/>
@@ -195,16 +202,22 @@ function renderProjects() {
                     </svg>
                     <span>논문보기</span>
                   </button>
-                ` : ""}
-                ${project.hasCertificate ? `
-                  <button class="btn-action btn-certificate">
+                `
+                    : ""
+                }
+                ${
+                  project.hasCertificate
+                    ? `
+                  <button class="btn-action btn-certificate" data-project-id="${project.id}" data-action="certificate">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
                       <path d="M6 12v5c3 3 9 3 12 0v-5"/>
                     </svg>
                     <span>수료증보기</span>
                   </button>
-                ` : ""}
+                `
+                    : ""
+                }
               </div>
             </div>
           </div>
@@ -241,14 +254,73 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
-/* 카드 클릭 → 모달 */
-document.addEventListener("click", (e) => {
-  const card = e.target.closest(".project-card");
-  if (!card) return;
+/* 이미지 모달 준비 대기 */
+function waitForImageModal(callback, maxAttempts = 50) {
+  let attempts = 0;
+  const checkInterval = setInterval(() => {
+    attempts++;
+    if (typeof window.openImageModal === 'function') {
+      console.log("✅ window.openImageModal is ready!");
+      clearInterval(checkInterval);
+      callback();
+    } else if (attempts >= maxAttempts) {
+      console.error("❌ Timeout: window.openImageModal not found after", maxAttempts, "attempts");
+      clearInterval(checkInterval);
+    }
+  }, 100);
+}
 
-  const project = projectsData.find((p) => p.id == card.dataset.id);
-  openProjectModal(project);
-});
+/* 버튼 클릭 이벤트 핸들러 */
+function setupButtonHandlers() {
+  document.addEventListener("click", (e) => {
+    const button = e.target.closest(".btn-action");
+
+    // 버튼 클릭인 경우
+    if (button) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const projectId = parseInt(button.dataset.projectId);
+      const action = button.dataset.action;
+
+      console.log("🎯 Button clicked - Project ID:", projectId, "Action:", action);
+
+      // IEUM 프로젝트(id: 1)만 처리
+      if (projectId === 1) {
+        if (action === "award") {
+          console.log("📸 Opening award images...");
+          window.openImageModal([
+            "images/ieum_award_1.png",
+            "images/ieum_award_2.png",
+            "images/ieum_award_3.png",
+          ]);
+        } else if (action === "certificate") {
+          console.log("🎓 Opening certificate images...");
+          window.openImageModal([
+            "images/ieum_listen_1.png",
+            "images/ieum_listen_2.png",
+          ]);
+        } else if (action === "paper") {
+          console.log("📄 논문은 준비 중입니다.");
+        }
+      }
+
+      return;
+    }
+
+    // 카드 클릭인 경우
+    const card = e.target.closest(".project-card");
+    if (card) {
+      const project = projectsData.find((p) => p.id == card.dataset.id);
+      if (project) {
+        openProjectModal(project);
+      }
+    }
+  });
+}
 
 /* 초기화 */
 renderProjects();
+
+// 이미지 모달이 준비될 때까지 기다린 후 이벤트 핸들러 설정
+waitForImageModal(setupButtonHandlers);
