@@ -113,3 +113,113 @@ function initImageModal() {
 
   console.log("✅ 이미지 모달 시스템 초기화 완료");
 }
+
+/* ===================================
+   PDF Modal - DOM 로드 후 초기화
+   =================================== */
+
+// DOM이 준비된 후 PDF 모달 생성
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initPDFModal);
+} else {
+  initPDFModal();
+}
+
+function initPDFModal() {
+  console.log("🚀 PDF 모달 초기화 시작...");
+
+  // 모달 DOM 생성
+  const pdfModal = document.createElement("div");
+  pdfModal.id = "pdf-modal";
+  pdfModal.className = "pdf-modal";
+  pdfModal.innerHTML = `
+    <div class="pdf-modal-content">
+      <button class="modal-close" aria-label="닫기">&times;</button>
+      <h2 class="pdf-modal-title">논문 목록</h2>
+      <div class="pdf-list"></div>
+    </div>
+  `;
+  document.body.appendChild(pdfModal);
+
+  const pdfList = pdfModal.querySelector(".pdf-list");
+  const pdfCloseBtn = pdfModal.querySelector(".modal-close");
+
+  // 모달 열기 함수
+  window.openPDFModal = function (papers) {
+    console.log("✅ openPDFModal 호출됨:", papers);
+
+    // 초기화
+    pdfList.innerHTML = "";
+
+    // PDF 아이템 추가
+    papers.forEach((paper) => {
+      const pdfItem = document.createElement("div");
+      pdfItem.className = "pdf-item";
+      pdfItem.innerHTML = `
+        <div class="pdf-item-title">${paper.title}</div>
+        <div class="pdf-item-actions">
+          <button class="pdf-action-btn pdf-view-btn" data-pdf="${paper.file}" title="조회">
+            <i class="fas fa-eye"></i>
+          </button>
+          <button class="pdf-action-btn pdf-download-btn" data-pdf="${paper.file}" title="다운로드">
+            <i class="fas fa-download"></i>
+          </button>
+        </div>
+      `;
+      pdfList.appendChild(pdfItem);
+    });
+
+    // 조회 버튼 이벤트
+    pdfList.querySelectorAll(".pdf-view-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const pdfFile = btn.dataset.pdf;
+        window.open(pdfFile, "_blank");
+      });
+    });
+
+    // 다운로드 버튼 이벤트
+    pdfList.querySelectorAll(".pdf-download-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const pdfFile = btn.dataset.pdf;
+        const link = document.createElement("a");
+        link.href = pdfFile;
+        link.download = pdfFile.split("/").pop();
+        link.click();
+      });
+    });
+
+    // 모달 표시
+    pdfModal.classList.add("show");
+    console.log("✅ PDF 모달 표시됨");
+  };
+
+  // 모달 닫기 함수
+  window.closePDFModal = function () {
+    pdfModal.classList.remove("show");
+    console.log("✅ PDF 모달 닫힘");
+  };
+
+  // 닫기 버튼
+  pdfCloseBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    window.closePDFModal();
+  });
+
+  // 배경 클릭
+  pdfModal.addEventListener("click", (e) => {
+    if (e.target === pdfModal) {
+      window.closePDFModal();
+    }
+  });
+
+  // ESC 키
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && pdfModal.classList.contains("show")) {
+      window.closePDFModal();
+    }
+  });
+
+  console.log("✅ PDF 모달 시스템 초기화 완료");
+}

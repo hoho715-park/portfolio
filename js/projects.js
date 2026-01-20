@@ -303,7 +303,17 @@ function setupButtonHandlers() {
             "images/ieum_listen_3.png",
           ]);
         } else if (action === "paper") {
-          console.log("📄 논문은 준비 중입니다.");
+          console.log("📄 Opening paper PDFs...");
+          window.openPDFModal([
+            {
+              title: "디지털 시대의 사용자 경험(UX) 개선을 위한 스큐어모피즘 기반 QSCC-II 웹 애플리케이션 연구",
+              file: "pdfs/ieum_paper_1.pdf"
+            },
+            {
+              title: "스트레스 기반 생체 전류 리듬 균형화 메커니즘",
+              file: "pdfs/ieum_paper_2.pdf"
+            }
+          ]);
         }
       }
 
