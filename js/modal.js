@@ -1,4 +1,15 @@
 /* ===================================
+   Modal 초기화 함수
+   =================================== */
+function initModal() {
+  console.log("✅ Modal 초기화 완료");
+  // 이미지 모달과 PDF 모달은 자동으로 초기화됨
+}
+
+// 전역으로 내보내기
+window.initModal = initModal;
+
+/* ===================================
    Project Detail Modal
    =================================== */
 const modal = document.getElementById("project-modal");

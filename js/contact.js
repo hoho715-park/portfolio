@@ -6,20 +6,37 @@
  * Contact Form 초기화 및 EmailJS를 통한 이메일 전송
  */
 function initContactForm() {
-  // EmailJS 초기화 (Public Key 입력 필요)
-  emailjs.init("service_h4kdb7j");
-
   const form = document.querySelector(".contact-form");
+  if (!form) {
+    console.error("Contact form not found");
+    return;
+  }
+
   const submitBtn = form.querySelector(".btn-submit");
+
+  // EmailJS 로드 확인 및 초기화
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init("lf7pNP8XPtfDvY5hC");
+    console.log("✅ EmailJS 초기화 완료");
+  } else {
+    console.error("❌ EmailJS가 로드되지 않았습니다");
+  }
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    console.log("📧 폼 제출 이벤트 발생");
 
     // 폼 데이터 수집
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const subject = document.getElementById("subject").value;
     const message = document.getElementById("message").value.trim();
+
+    // EmailJS 로드 확인
+    if (typeof emailjs === 'undefined') {
+      showMessage("이메일 서비스를 로드하는 중입니다. 잠시 후 다시 시도해주세요.", "error");
+      return;
+    }
 
     // 유효성 검사
     if (!name || !email || !subject || !message) {
@@ -52,9 +69,9 @@ function initContactForm() {
     // EmailJS로 이메일 전송
     emailjs
       .send(
-        "lf7pNP8XPtfDvY5hC", // EmailJS Service ID
+        "service_h4kdb7j", // EmailJS Service ID
         "template_ewxmqsj", // EmailJS Template ID
-        templateParams,
+        templateParams
       )
       .then(function (response) {
         console.log("SUCCESS!", response.status, response.text);
