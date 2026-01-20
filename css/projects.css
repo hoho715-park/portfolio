@@ -33,6 +33,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  grid-auto-rows: 1fr;
 }
 
 .project-card {
@@ -40,13 +41,17 @@
   border-radius: 18px;
   overflow: hidden;
   text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.2s ease, border-color 0.2s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(99, 102, 241, 0.4);
 }
 
 /* Image Wrapper */
@@ -91,6 +96,9 @@
 
 .project-body {
   padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .project-body h3 {
@@ -102,10 +110,12 @@
 .project-body p {
   color: var(--gray-light);
   font-size: 0.85rem;
+  flex-grow: 1;
+  margin-bottom: 12px;
 }
 
 .project-tags {
-  margin-top: 12px;
+  margin-top: auto;
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
