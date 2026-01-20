@@ -285,7 +285,7 @@ function setupButtonHandlers() {
 
       console.log("🎯 Button clicked - Project ID:", projectId, "Action:", action);
 
-      // IEUM 프로젝트(id: 1)만 처리
+      // IEUM 프로젝트(id: 1)
       if (projectId === 1) {
         if (action === "award") {
           console.log("📸 Opening award images...");
@@ -293,15 +293,32 @@ function setupButtonHandlers() {
             "images/ieum_award_1.png",
             "images/ieum_award_2.png",
             "images/ieum_award_3.png",
+            "images/ieum_award_4.png",
           ]);
         } else if (action === "certificate") {
           console.log("🎓 Opening certificate images...");
           window.openImageModal([
             "images/ieum_listen_1.png",
             "images/ieum_listen_2.png",
+            "images/ieum_listen_3.png",
           ]);
         } else if (action === "paper") {
           console.log("📄 논문은 준비 중입니다.");
+        }
+      }
+
+      // 무색무광 프로젝트(id: 4)
+      if (projectId === 4) {
+        if (action === "award") {
+          console.log("📸 Opening award images...");
+          window.openImageModal([
+            "images/opencv_award_1.png",
+          ]);
+        } else if (action === "certificate") {
+          console.log("🎓 Opening certificate images...");
+          window.openImageModal([
+            "images/opencv_listen_1.png",
+          ]);
         }
       }
 
