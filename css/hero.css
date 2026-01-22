@@ -236,6 +236,43 @@
     color: #6db33f;
 }
 
+/* Resume Download Button */
+.btn-resume-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    padding: 14px 32px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease backwards;
+    animation-delay: 1.2s;
+}
+
+.btn-resume-download:hover {
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.btn-resume-download i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-resume-download:hover i {
+    transform: translateY(2px);
+}
+
 /* Scroll Indicator */
 .scroll-indicator {
     display: none;
