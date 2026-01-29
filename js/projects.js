@@ -138,6 +138,13 @@ let currentPage = 0;
 const cardsPerPage = 3;
 const totalPages = Math.ceil(projectsData.length / cardsPerPage);
 
+/* 모바일 슬라이더 상태 */
+let isMobileMode = false;
+let mobileCurrentIndex = 0;
+let mobileContainer = null;
+let mobileIndicator = null;
+const MOBILE_BREAKPOINT = 768;
+
 /* 카드 렌더링 */
 function renderProjects() {
   track.innerHTML = "";
@@ -230,8 +237,13 @@ function renderProjects() {
   updateUI();
 }
 
-/* UI 업데이트 */
+/* UI 업데이트 (데스크톱) */
 function updateUI() {
+  if (isMobileMode) {
+    updateMobileUI();
+    return;
+  }
+
   track.style.transform = `translateX(-${currentPage * 100}%)`;
   indicator.textContent = `${currentPage + 1} / ${totalPages}`;
 
@@ -239,19 +251,203 @@ function updateUI() {
   nextBtn.classList.toggle("hidden", currentPage === totalPages - 1);
 }
 
+/* 모바일 UI 업데이트 */
+function updateMobileUI() {
+  if (!mobileContainer) return;
+
+  mobileContainer.style.transform = `translateX(-${mobileCurrentIndex * 100}%)`;
+
+  if (mobileIndicator) {
+    mobileIndicator.innerHTML = `<span class="current">${mobileCurrentIndex + 1}</span> / ${projectsData.length}`;
+  }
+
+  prevBtn.classList.toggle("hidden", mobileCurrentIndex === 0);
+  nextBtn.classList.toggle("hidden", mobileCurrentIndex === projectsData.length - 1);
+}
+
+/* 모바일 모드 렌더링 */
+function renderMobileProjects() {
+  track.innerHTML = "";
+  track.classList.add("mobile-mode");
+
+  mobileContainer = document.createElement("div");
+  mobileContainer.className = "mobile-cards-container";
+
+  projectsData.forEach((project) => {
+    let statusBadges = "";
+    if (project.status) {
+      if (Array.isArray(project.status)) {
+        statusBadges = project.status
+          .map(
+            (status, index) =>
+              `<div class="project-status ${status === "외주" ? "status-outsource" : "status-progress"}" style="top: ${12 + index * 36}px;">${status}</div>`,
+          )
+          .join("");
+      } else {
+        statusBadges = `<div class="project-status ${project.status === "외주" ? "status-outsource" : "status-progress"}">${project.status}</div>`;
+      }
+    }
+
+    const cardHTML = `
+      <div class="project-card" data-id="${project.id}">
+        <div class="project-image-wrapper">
+          <img src="${project.image}" alt="${project.title}">
+          ${statusBadges}
+        </div>
+        <div class="project-body">
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+          <div class="project-tags">
+            ${project.tech.map((t) => `<span>${t}</span>`).join("")}
+          </div>
+          <div class="project-actions">
+            ${
+              project.hasAward
+                ? `
+              <button class="btn-action btn-award" data-project-id="${project.id}" data-action="award">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="6"/>
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                </svg>
+                <span>상장보기</span>
+              </button>
+            `
+                : ""
+            }
+            ${
+              project.hasPaper
+                ? `
+              <button class="btn-action btn-paper" data-project-id="${project.id}" data-action="paper">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+                <span>논문보기</span>
+              </button>
+            `
+                : ""
+            }
+            ${
+              project.hasCertificate
+                ? `
+              <button class="btn-action btn-certificate" data-project-id="${project.id}" data-action="certificate">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                <span>수료증보기</span>
+              </button>
+            `
+                : ""
+            }
+          </div>
+        </div>
+      </div>
+    `;
+
+    mobileContainer.innerHTML += cardHTML;
+  });
+
+  track.appendChild(mobileContainer);
+
+  // 모바일 인디케이터 생성
+  createMobileIndicator();
+
+  updateMobileUI();
+}
+
+/* 모바일 인디케이터 생성 */
+function createMobileIndicator() {
+  // 기존 인디케이터 숨기기
+  if (indicator) {
+    indicator.style.display = "none";
+  }
+
+  // 모바일 인디케이터가 없으면 생성
+  mobileIndicator = document.querySelector(".mobile-indicator");
+  if (!mobileIndicator) {
+    mobileIndicator = document.createElement("div");
+    mobileIndicator.className = "mobile-indicator";
+    const projectsSection = document.querySelector(".projects-section");
+    const projectsWrapper = document.querySelector(".projects-wrapper");
+    if (projectsSection && projectsWrapper) {
+      projectsWrapper.insertAdjacentElement("afterend", mobileIndicator);
+    }
+  }
+  mobileIndicator.style.display = "block";
+}
+
+/* 데스크톱 모드로 복원 */
+function restoreDesktopMode() {
+  track.classList.remove("mobile-mode");
+
+  // 모바일 인디케이터 숨기기
+  if (mobileIndicator) {
+    mobileIndicator.style.display = "none";
+  }
+
+  // 데스크톱 인디케이터 표시
+  if (indicator) {
+    indicator.style.display = "block";
+  }
+
+  mobileContainer = null;
+  renderProjects();
+}
+
+/* 모드 체크 및 전환 */
+function checkAndSwitchMode() {
+  const wasMobile = isMobileMode;
+  isMobileMode = window.innerWidth <= MOBILE_BREAKPOINT;
+
+  if (isMobileMode !== wasMobile) {
+    if (isMobileMode) {
+      mobileCurrentIndex = 0;
+      renderMobileProjects();
+    } else {
+      currentPage = 0;
+      restoreDesktopMode();
+    }
+  }
+}
+
 /* 이벤트 */
 prevBtn.addEventListener("click", () => {
-  if (currentPage > 0) {
-    currentPage--;
-    updateUI();
+  if (isMobileMode) {
+    if (mobileCurrentIndex > 0) {
+      mobileCurrentIndex--;
+      updateMobileUI();
+    }
+  } else {
+    if (currentPage > 0) {
+      currentPage--;
+      updateUI();
+    }
   }
 });
 
 nextBtn.addEventListener("click", () => {
-  if (currentPage < totalPages - 1) {
-    currentPage++;
-    updateUI();
+  if (isMobileMode) {
+    if (mobileCurrentIndex < projectsData.length - 1) {
+      mobileCurrentIndex++;
+      updateMobileUI();
+    }
+  } else {
+    if (currentPage < totalPages - 1) {
+      currentPage++;
+      updateUI();
+    }
   }
+});
+
+/* 리사이즈 이벤트 */
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(checkAndSwitchMode, 150);
 });
 
 /* 이미지 모달 준비 대기 */
@@ -347,7 +543,17 @@ function setupButtonHandlers() {
 }
 
 /* 초기화 */
-renderProjects();
+function init() {
+  isMobileMode = window.innerWidth <= MOBILE_BREAKPOINT;
+
+  if (isMobileMode) {
+    renderMobileProjects();
+  } else {
+    renderProjects();
+  }
+}
+
+init();
 
 // 이미지 모달이 준비될 때까지 기다린 후 이벤트 핸들러 설정
 waitForImageModal(setupButtonHandlers);

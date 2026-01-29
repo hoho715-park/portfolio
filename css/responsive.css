@@ -7,15 +7,20 @@
     .skills-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .archive-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
+    /* Projects Section - 태블릿 */
+    .project-page {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -94,6 +99,85 @@
     /* Projects */
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Projects Section - 모바일 슬라이더 */
+    .projects-wrapper {
+        flex-direction: row;
+        gap: 12px;
+        padding: 0 16px;
+        max-width: 100%;
+    }
+
+    .projects-nav {
+        display: flex;
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+        position: relative;
+        margin: 0;
+    }
+
+    .projects-nav.prev {
+        margin-left: 0;
+    }
+
+    .projects-nav.next {
+        margin-right: 0;
+    }
+
+    .projects-viewport {
+        overflow: hidden;
+        flex: 1;
+    }
+
+    .projects-track {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* 모바일에서는 카드 단위로 슬라이드 */
+    .projects-track.mobile-mode {
+        gap: 0;
+    }
+
+    .project-page {
+        display: none;
+    }
+
+    /* 모바일 전용 카드 컨테이너 */
+    .mobile-cards-container {
+        display: flex;
+        transition: transform 0.4s ease;
+    }
+
+    .mobile-cards-container .project-card {
+        min-width: 100%;
+        width: 100%;
+        flex-shrink: 0;
+        border-radius: 18px;
+        overflow: hidden;
+    }
+
+    .mobile-cards-container .project-image-wrapper {
+        border-radius: 18px 18px 0 0;
+    }
+
+    /* 데스크톱용 인디케이터 숨김, 모바일용 표시 */
+    .projects-indicator {
+        display: none;
+    }
+
+    .mobile-indicator {
+        display: block;
+        margin-top: 24px;
+        font-weight: 600;
+        color: #fff;
+        font-size: 0.9rem;
+    }
+
+    .mobile-indicator .current {
+        color: var(--primary);
     }
     
     /* Footer */
@@ -237,7 +321,42 @@
     }
     
     .project-image {
-        height: 180px;
+        height: auto;
+    }
+
+    /* Projects Card 내부 요소 최적화 */
+    .project-image-wrapper {
+        max-height: 180px;
+    }
+
+    .project-image-wrapper img {
+        max-height: 180px;
+    }
+
+    .project-body {
+        padding: 16px;
+    }
+
+    .project-body h3 {
+        font-size: 1rem;
+    }
+
+    .project-body p {
+        font-size: 0.82rem;
+    }
+
+    .project-tags span {
+        font-size: 0.62rem;
+        padding: 3px 7px;
+    }
+
+    .project-actions {
+        margin-top: 12px;
+    }
+
+    .btn-action {
+        padding: 6px 12px;
+        font-size: 0.7rem;
     }
     
     .timeline-card {
