@@ -195,6 +195,29 @@
             </div>
           </div>
         </div>
+
+        <!-- GPA Section -->
+        <div class="gpa-section">
+          <div class="gpa-header">
+            <i class="fas fa-chart-line"></i>
+            <h3>학점 변화</h3>
+          </div>
+          <div class="gpa-content">
+            <div class="gpa-summary">
+              <div class="gpa-card">
+                <span class="gpa-label">총 평균</span>
+                <div class="gpa-value">
+                  <span class="gpa-number">3.43</span>
+                  <span class="gpa-max">/ 4.5</span>
+                </div>
+                <div class="gpa-badge">GPA</div>
+              </div>
+            </div>
+            <div class="gpa-chart-wrapper">
+              <canvas id="gpaChart"></canvas>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -684,6 +707,9 @@
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script src="js/fullpage-scroll.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/animation.js"></script>
@@ -693,6 +719,7 @@
     <script src="js/skills.js"></script>
     <script src="js/projects.js"></script>
     <script src="js/contact.js"></script>
+    <script src="js/gpa-chart.js"></script>
     <script src="js/main.js"></script>
 
     <div id="project-modal" class="project-modal">

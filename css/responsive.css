@@ -86,11 +86,33 @@
     .about-content {
         grid-template-columns: 1fr;
     }
-    
+
     .about-info {
         position: static;
     }
-    
+
+    /* GPA Section - 태블릿 */
+    .gpa-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gpa-summary {
+        order: -1;
+    }
+
+    .gpa-card {
+        padding: 20px 28px;
+    }
+
+    .gpa-number {
+        font-size: 2.2rem;
+    }
+
+    .gpa-chart-wrapper {
+        height: 180px;
+    }
+
     /* Archive */
     .archive-grid {
         grid-template-columns: 1fr;
@@ -307,7 +329,48 @@
     .section-header {
         margin-bottom: 40px;
     }
-    
+
+    /* About Section - 모바일 하단 여백 */
+    .about-section {
+        padding-bottom: 60px;
+    }
+
+    /* GPA Section - 모바일 */
+    .gpa-section {
+        padding: 18px;
+        margin-top: 14px;
+    }
+
+    .gpa-header {
+        margin-bottom: 16px;
+    }
+
+    .gpa-header i {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    .gpa-header h3 {
+        font-size: 1rem;
+    }
+
+    .gpa-card {
+        padding: 18px 24px;
+    }
+
+    .gpa-number {
+        font-size: 1.9rem;
+    }
+
+    .gpa-max {
+        font-size: 1rem;
+    }
+
+    .gpa-chart-wrapper {
+        height: 160px;
+    }
+
     .about-section,
     .skills-section,
     .archiving-section,
