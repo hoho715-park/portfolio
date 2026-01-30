@@ -310,6 +310,14 @@
 /* GPA Chart */
 .gpa-chart-wrapper {
   position: relative;
-  height: 200px;
   width: 100%;
+  min-height: 180px;
+  max-height: 220px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gpa-chart-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
 }
