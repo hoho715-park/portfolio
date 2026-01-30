@@ -91,6 +91,19 @@
         position: static;
     }
 
+    /* Info Card Body - 태블릿 */
+    .info-card-body {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .education-section {
+        padding-left: 0;
+        padding-top: 16px;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
     /* GPA Section - 태블릿 */
     .gpa-content {
         grid-template-columns: 1fr;
@@ -331,6 +344,46 @@
     
     .section-header {
         margin-bottom: 40px;
+    }
+
+    /* Education Section - 모바일 */
+    .education-section {
+        padding-top: 14px;
+    }
+
+    .education-header {
+        margin-bottom: 12px;
+    }
+
+    .education-header h4 {
+        font-size: 0.8rem;
+    }
+
+    .education-timeline {
+        gap: 12px;
+    }
+
+    .education-year {
+        font-size: 0.65rem;
+        min-width: 60px;
+    }
+
+    .education-logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .education-logo img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .school-name {
+        font-size: 0.85rem;
+    }
+
+    .school-major {
+        font-size: 0.7rem;
     }
 
     /* About Section - 모바일 하단 여백 */

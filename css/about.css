@@ -206,6 +206,113 @@
 }
 
 /* ===================================
+   Info Card Body - 2컬럼 레이아웃
+   =================================== */
+
+.info-card-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  flex: 1;
+}
+
+.info-card-body .info-list {
+  flex: none;
+}
+
+/* ===================================
+   Education Section
+   =================================== */
+
+.education-section {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.education-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.education-header i {
+  color: var(--primary-light);
+  font-size: 1rem;
+}
+
+.education-header h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.education-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.education-year {
+  font-size: 0.7rem;
+  color: var(--gray);
+  min-width: 70px;
+  padding-top: 4px;
+  font-weight: 500;
+}
+
+.education-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.education-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.education-logo img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.education-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.school-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.school-major {
+  font-size: 0.75rem;
+  color: var(--gray-light);
+}
+
+/* ===================================
    GPA Section - 학점 변화
    =================================== */
 
