@@ -41,7 +41,7 @@
   border-radius: 18px;
   overflow: hidden;
   text-align: left;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: background 0.05s ease, border-color 0.05s ease;
   position: relative;
   display: flex;
   flex-direction: column;

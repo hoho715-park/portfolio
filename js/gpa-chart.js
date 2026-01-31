@@ -171,15 +171,18 @@
             label: function(context) {
               const idx = context.dataIndex;
               const value = context.parsed.y.toFixed(2);
-              let label = '학점: ' + value + ' / 4.5';
+              let lines = ['학점: ' + value + ' / 4.5'];
 
-              if (idx === maxIndex) {
-                label += '\n최고 학점 달성!';
-              } else if (isRisingSegment(idx)) {
-                const diff = (gpaData.values[idx] - gpaData.values[idx - 1]).toFixed(2);
-                label += '\n+' + diff + ' 대폭 상승!';
+              // 3학년 1학기 (index 4)
+              if (idx === 4) {
+                lines.push('창조장학금 (전액 60%)');
               }
-              return label;
+              // 3학년 2학기 (index 5)
+              else if (idx === 5) {
+                lines.push('자주장학금 (전액 80%)');
+              }
+
+              return lines;
             }
           }
         }
