@@ -100,28 +100,12 @@ function initArchiveCardEffects() {
 }
 
 /**
- * 프로젝트 카드 3D 효과
+ * 프로젝트 카드 호버 효과 (단순 테두리 강조)
+ * - 3D 효과 제거, 정적인 테두리/그림자 강조만 적용
  */
 function initProjectCard3DEffect() {
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
-            
-            this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = '';
-        });
-    });
+    // 3D 효과 제거 - CSS에서 hover 스타일로 처리
+    // 이 함수는 호환성을 위해 빈 상태로 유지
 }
 
 /**
