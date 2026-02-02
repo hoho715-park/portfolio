@@ -91,7 +91,7 @@ const projectsData = [
     id: 7,
     title: "개인 포트폴리오 사이트 제작",
     description:
-      "프로젝트와 경력을 한눈에 볼 수 있도록 정리한 웹 포트폴리오로, 반응형 레이아웃과 직관적인 UI를 적용했습니다. 개인 도메인을 직접 구매해 연결함으로써 보다 전문적인 온라인 프로필을 구축했습니다.",
+      "프로젝트와 경력을 정리한 반응형 웹 포트폴리오로, 직관적인 UI를 적용하고 직접 구매한 개인 도메인과 연결했습니다.",
     tech: ["HTML", "CSS", "JS", "JSON"],
     image: "images/portfolio.png",
     hasPaper: false,
