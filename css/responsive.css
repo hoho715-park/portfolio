@@ -141,6 +141,9 @@
         gap: 12px;
         padding: 0 16px;
         max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
     .projects-nav {
@@ -163,6 +166,8 @@
     .projects-viewport {
         overflow: hidden;
         flex: 1;
+        min-width: 0;
+        width: 100%;
     }
 
     .projects-track {
@@ -183,18 +188,30 @@
     .mobile-cards-container {
         display: flex;
         transition: transform 0.4s ease;
+        width: 100%;
     }
 
     .mobile-cards-container .project-card {
         min-width: 100%;
         width: 100%;
+        max-width: 100%;
         flex-shrink: 0;
         border-radius: 18px;
         overflow: hidden;
+        box-sizing: border-box;
     }
 
     .mobile-cards-container .project-image-wrapper {
         border-radius: 18px 18px 0 0;
+        overflow: hidden;
+        height: 200px;
+        background: #1a1a2e;
+    }
+
+    .mobile-cards-container .project-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     /* 데스크톱용 인디케이터 숨김, 모바일용 표시 */
@@ -448,11 +465,16 @@
 
     /* Projects Card 내부 요소 최적화 */
     .project-image-wrapper {
-        max-height: 180px;
+        height: 180px;
+        background: #1a1a2e;
+        overflow: hidden;
+        border-radius: 17px 17px 0 0;
     }
 
     .project-image-wrapper img {
-        max-height: 180px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     .project-body {
