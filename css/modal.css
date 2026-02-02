@@ -183,11 +183,44 @@
   align-items: center;
   justify-content: space-between;
   transition: all 0.2s ease;
+  position: relative;
 }
 
 .pdf-item:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(99, 102, 241, 0.4);
+}
+
+/* 1저자 논문 강조 스타일 */
+.pdf-item-highlight {
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.1) 0%, rgba(251, 191, 36, 0.05) 100%);
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  flex-wrap: wrap;
+}
+
+.pdf-item-highlight:hover {
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.15) 0%, rgba(251, 191, 36, 0.08) 100%);
+  border-color: rgba(250, 204, 21, 0.5);
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.15);
+}
+
+.pdf-first-author-badge {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fbbf24;
+  margin-bottom: 8px;
+}
+
+.pdf-first-author-badge i {
+  font-size: 0.7rem;
+}
+
+.pdf-item-highlight .pdf-item-title {
+  color: #fef3c7;
 }
 
 .pdf-item-title {

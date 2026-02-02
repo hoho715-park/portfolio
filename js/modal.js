@@ -165,8 +165,9 @@ function initPDFModal() {
     // PDF 아이템 추가
     papers.forEach((paper) => {
       const pdfItem = document.createElement("div");
-      pdfItem.className = "pdf-item";
+      pdfItem.className = paper.isFirstAuthor ? "pdf-item pdf-item-highlight" : "pdf-item";
       pdfItem.innerHTML = `
+        ${paper.isFirstAuthor ? '<div class="pdf-first-author-badge"><i class="fas fa-star"></i> 1저자</div>' : ''}
         <div class="pdf-item-title">${paper.title}</div>
         <div class="pdf-item-actions">
           <button class="pdf-action-btn pdf-view-btn" data-pdf="${paper.file}" title="조회">
