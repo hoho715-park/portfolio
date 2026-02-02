@@ -33,20 +33,6 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "careEYE",
-    description:
-      "노인의 움직임을 실시간 모니터링해 낙상을 빠르게 감지하고 알림으로 알려주는 웹 애플리케이션",
-    tech: ["HTML", "CSS", "JavaScript", "Python"],
-    image: "images/careeye.png",
-    hasPaper: false,
-    hasAward: false,
-    hasCertificate: false,
-    status: null,
-    detail:
-      "careEYE는 실시간 행동 감지를 통해 낙상 위험을 감지하고 보호자에게 알림을 제공하는 실버 케어 서비스입니다.",
-  },
-  {
-    id: 4,
     title: "무색무광",
     description:
       "신분증과 화이트보드의 빛 반사를 제거해 문자·이미지 인식률을 향상시키는 영상 처리 기반 프로젝트",
@@ -58,6 +44,20 @@ const projectsData = [
     status: null,
     detail:
       "무색무광은 영상 처리 기술을 활용하여 빛 반사를 제거하고 인식률을 향상시키는 프로젝트입니다.",
+  },
+  {
+    id: 4,
+    title: "careEYE",
+    description:
+      "노인의 움직임을 실시간 모니터링해 낙상을 빠르게 감지하고 알림으로 알려주는 웹 애플리케이션",
+    tech: ["HTML", "CSS", "JavaScript", "Python"],
+    image: "images/careeye.png",
+    hasPaper: false,
+    hasAward: false,
+    hasCertificate: false,
+    status: null,
+    detail:
+      "careEYE는 실시간 행동 감지를 통해 낙상 위험을 감지하고 보호자에게 알림을 제공하는 실버 케어 서비스입니다.",
   },
   {
     id: 5,
@@ -529,8 +529,8 @@ function setupButtonHandlers() {
         }
       }
 
-      // 무색무광 프로젝트(id: 4)
-      if (projectId === 4) {
+      // 무색무광 프로젝트(id: 3)
+      if (projectId === 3) {
         if (action === "award") {
           console.log("📸 Opening award images...");
           window.openImageModal([
