@@ -26,7 +26,7 @@ const projectsData = [
     image: "images/node.png",
     hasPaper: false,
     hasAward: true,
-    hasCertificate: false,
+    hasCertificate: true,
     status: null,
     detail:
       "N.O.D.E는 팀 단위 협업을 통해 완성한 포트폴리오 사이트로, 기획부터 배포까지 전 과정을 경험한 프로젝트입니다.",
@@ -497,6 +497,7 @@ function setupButtonHandlers() {
             "images/ieum_listen_1.png",
             "images/ieum_listen_2.png",
             "images/ieum_listen_3.png",
+            "images/ieum_listen_4.png",
           ]);
         } else if (action === "paper") {
           console.log("📄 Opening paper PDFs...");
