@@ -4,10 +4,6 @@
 
 /* Large Tablets & Small Desktops */
 @media (max-width: 1024px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
     .archive-grid {
         grid-template-columns: repeat(2, 1fr);
     }
