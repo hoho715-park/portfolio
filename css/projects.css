@@ -114,12 +114,18 @@
 .project-body p {
   color: var(--gray-light);
   font-size: 0.85rem;
-  flex-grow: 1;
   margin-bottom: 12px;
+  /* 설명 텍스트 3줄로 고정 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.5;
+  height: calc(0.85rem * 1.5 * 3);
 }
 
 .project-tags {
-  margin-top: auto;
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
