@@ -89,6 +89,20 @@ const projectsData = [
   },
   {
     id: 7,
+    title: "개인 포트폴리오 사이트 제작",
+    description:
+      "프로젝트와 경력을 한눈에 볼 수 있도록 정리한 웹 포트폴리오로, 반응형 레이아웃과 직관적인 UI를 적용했습니다. 개인 도메인을 직접 구매해 연결함으로써 보다 전문적인 온라인 프로필을 구축했습니다.",
+    tech: ["HTML", "CSS", "JS", "JSON"],
+    image: "images/portfolio.png",
+    hasPaper: false,
+    hasAward: false,
+    hasCertificate: false,
+    status: null,
+    detail:
+      "개인 포트폴리오 사이트는 프로젝트와 경력을 정리한 반응형 웹 포트폴리오입니다.",
+  },
+  {
+    id: 8,
     title: "MusikOnsemiro",
     description:
       "성악을 사랑하는 사람들이 모여 동호회를 소개하고 활동을 홍보하기 위해 제작한 성악 동호회 홍보 웹사이트 제작",
@@ -101,7 +115,7 @@ const projectsData = [
     detail: "MusikOnsemiro는 성악 동호회를 위한 홍보 웹사이트입니다.",
   },
   {
-    id: 8,
+    id: 9,
     title: "서울대학교 이차전지연구소 플러그인 개발",
     description:
       "서울대학교 이차전지연구소를 위한 맞춤형 워드프레스 플러그인 개발 프로젝트",
@@ -115,7 +129,7 @@ const projectsData = [
       "서울대학교 이차전지연구소를 위한 맞춤형 플러그인 개발 프로젝트입니다.",
   },
   {
-    id: 9,
+    id: 10,
     title: "(주)D-1 플러그인 개발",
     description:
       "d-1 회사의 회원관리 DB를 구축·보완하고, 자료 공유와 관리를 위한 자료실 기능을 함께 구현한 웹 서비스",
