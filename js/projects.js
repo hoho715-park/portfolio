@@ -514,6 +514,21 @@ function setupButtonHandlers() {
         }
       }
 
+      // N.O.D.E 프로젝트(id: 2)
+      if (projectId === 2) {
+        if (action === "award") {
+          console.log("📸 Opening award images...");
+          window.openImageModal([
+            "images/node_award_1.png",
+          ]);
+        } else if (action === "certificate") {
+          console.log("🎓 Opening certificate images...");
+          window.openImageModal([
+            "images/node_listen_1.png",
+          ]);
+        }
+      }
+
       // 무색무광 프로젝트(id: 4)
       if (projectId === 4) {
         if (action === "award") {
