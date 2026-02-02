@@ -97,7 +97,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
-    status: null,
+    status: "진행중",
     detail:
       "개인 포트폴리오 사이트는 프로젝트와 경력을 정리한 반응형 웹 포트폴리오입니다.",
   },
