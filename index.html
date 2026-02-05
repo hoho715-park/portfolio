@@ -543,13 +543,36 @@
       </div>
     </section>
 
-    <!-- PROJECT MODAL -->
-    <div class="project-modal" id="projectModal">
-      <div class="modal-overlay"></div>
-      <div class="modal-box">
-        <button class="modal-close">&times;</button>
-        <h3 id="modalTitle"></h3>
-        <p id="modalDesc"></p>
+    <!-- PROJECT DETAIL MODAL -->
+    <div class="project-detail-modal" id="projectDetailModal">
+      <div class="detail-modal-overlay"></div>
+      <div class="detail-modal-container">
+        <button class="detail-modal-close" aria-label="닫기">&times;</button>
+        <div class="detail-modal-content">
+          <!-- Header with Thumbnail -->
+          <div class="detail-modal-header">
+            <img src="" alt="" class="detail-modal-thumbnail" id="detailThumbnail">
+            <div class="detail-modal-header-overlay"></div>
+          </div>
+
+          <!-- Project Info -->
+          <div class="detail-modal-body">
+            <!-- Title Section -->
+            <div class="detail-title-section">
+              <h2 class="detail-title" id="detailTitle"></h2>
+              <span class="detail-subtitle" id="detailSubtitle"></span>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="detail-tech-stack" id="detailTechStack"></div>
+
+            <!-- Highlight Description -->
+            <div class="detail-highlight" id="detailHighlight"></div>
+
+            <!-- Detailed Sections -->
+            <div class="detail-sections" id="detailSections"></div>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -34,14 +34,70 @@ const projectsData = [
   {
     id: 3,
     title: "무색무광",
+    subtitle: "無色無光",
     description:
       "신분증과 화이트보드의 빛 반사를 제거해 문자·이미지 인식률을 향상시키는 영상 처리 기반 프로젝트",
-    tech: ["React", "NEXT.JS", "Python"],
+    tech: ["Python", "OpenCV", "PaddleOCR", "FastAPI", "React"],
     image: "images/opencv.png",
     hasPaper: false,
     hasAward: true,
     hasCertificate: true,
     status: null,
+    hasDetailModal: true,
+    detailData: {
+      highlight: "OpenCV 멀티프레임 합성을 활용해 문서의 빛 반사(Glare)를 제거하고, PaddleOCR 튜닝을 통해 텍스트 인식률을 극대화한 웹 기반 문서 스캔 솔루션",
+      overview: [
+        "유광 용지, 신분증, 화이트보드 촬영 시 발생하는 조명 반사(Glare)로 인한 OCR 인식 저하 문제를 해결하기 위한 지능형 문서 스캔 웹 솔루션",
+        "단일 프레임 보정의 한계를 극복하기 위해 멀티프레임(Multi-frame) 합성 기반 이미지 처리 파이프라인을 설계"
+      ],
+      role: {
+        title: "Full Stack Developer & AI Engineer",
+        description: "이미지 처리 파이프라인 설계부터 OCR 튜닝, 웹 서비스 연동까지 전반 담당"
+      },
+      techImplementation: [
+        {
+          title: "Computer Vision Pipeline",
+          icon: "fas fa-eye",
+          items: [
+            "OpenCV 기반 멀티프레임 합성 처리",
+            "반사광 영역 자동 마스킹 및 복원(Inpainting)",
+            "문서 영역 검출 후 정투영(Perspective Warp) 처리"
+          ]
+        },
+        {
+          title: "OCR 최적화",
+          icon: "fas fa-font",
+          items: [
+            "PaddleOCR(Server) 도입",
+            "한글/영문 혼용 문서 기준 Detection / Recognition 파라미터 튜닝",
+            "저해상도 이미지 인식률 개선"
+          ]
+        },
+        {
+          title: "Web Service",
+          icon: "fas fa-globe",
+          items: [
+            "FastAPI 기반 비동기 이미지 처리 API",
+            "React Drag & Drop UI",
+            "처리 전 / 후 이미지 비교 UX 제공"
+          ]
+        }
+      ],
+      troubleShooting: [
+        {
+          title: "반사광으로 인한 OCR 실패",
+          problem: "단일 이미지로는 복원이 불가능한 반사 영역 발생",
+          solution: "다중 프레임에서 반사 없는 픽셀을 선택적으로 합성",
+          result: "반사광 제거 성공률 대폭 향상, OCR 실패율 현저히 감소"
+        },
+        {
+          title: "모바일 OCR 모델 정확도 한계",
+          problem: "경량 모델 사용 시 한글·손글씨 인식 품질 저하",
+          solution: "Server OCR 모델로 전환, FastAPI 비동기 처리로 성능 병목 최소화",
+          result: "실제 서비스 가능한 인식 정확도 확보"
+        }
+      ]
+    },
     detail:
       "무색무광은 영상 처리 기술을 활용하여 빛 반사를 제거하고 인식률을 향상시키는 프로젝트입니다.",
   },

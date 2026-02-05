@@ -4,22 +4,229 @@
 function initModal() {
   console.log("✅ Modal 초기화 완료");
   // 이미지 모달과 PDF 모달은 자동으로 초기화됨
+  initProjectDetailModal();
 }
 
 // 전역으로 내보내기
 window.initModal = initModal;
 
 /* ===================================
-   Project Detail Modal
+   Project Detail Modal (New)
+   =================================== */
+function initProjectDetailModal() {
+  const detailModal = document.getElementById("projectDetailModal");
+  if (!detailModal) return;
+
+  const overlay = detailModal.querySelector(".detail-modal-overlay");
+  const closeBtn = detailModal.querySelector(".detail-modal-close");
+  const thumbnail = document.getElementById("detailThumbnail");
+  const titleEl = document.getElementById("detailTitle");
+  const subtitleEl = document.getElementById("detailSubtitle");
+  const techStackEl = document.getElementById("detailTechStack");
+  const highlightEl = document.getElementById("detailHighlight");
+  const sectionsEl = document.getElementById("detailSections");
+
+  // 모달 열기 함수
+  window.openProjectDetailModal = function(project) {
+    if (!project.hasDetailModal || !project.detailData) {
+      console.log("❌ No detail modal data for this project");
+      return false;
+    }
+
+    const data = project.detailData;
+
+    // Thumbnail
+    thumbnail.src = project.image;
+    thumbnail.alt = project.title;
+
+    // Title & Subtitle
+    titleEl.textContent = project.title;
+    subtitleEl.textContent = project.subtitle || "";
+
+    // Tech Stack
+    techStackEl.innerHTML = project.tech.map(tech => {
+      const iconClass = getTechIcon(tech);
+      return `<span class="detail-tech-chip"><i class="${iconClass}"></i>${tech}</span>`;
+    }).join("");
+
+    // Highlight
+    highlightEl.innerHTML = `<p>${data.highlight}</p>`;
+
+    // Build sections
+    let sectionsHTML = "";
+
+    // Overview Section
+    if (data.overview) {
+      sectionsHTML += `
+        <div class="detail-section">
+          <div class="detail-section-header">
+            <div class="detail-section-icon"><i class="fas fa-info-circle"></i></div>
+            <h3 class="detail-section-title">프로젝트 개요</h3>
+          </div>
+          <div class="detail-section-content">
+            ${data.overview.map(text => `<p>${text}</p>`).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    // Role Section
+    if (data.role) {
+      sectionsHTML += `
+        <div class="detail-section">
+          <div class="detail-section-header">
+            <div class="detail-section-icon"><i class="fas fa-user-tie"></i></div>
+            <h3 class="detail-section-title">담당 역할</h3>
+          </div>
+          <div class="detail-section-content">
+            <div class="detail-role-badge"><i class="fas fa-star"></i>${data.role.title}</div>
+            <p>${data.role.description}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    // Tech Implementation Section
+    if (data.techImplementation) {
+      sectionsHTML += `
+        <div class="detail-section">
+          <div class="detail-section-header">
+            <div class="detail-section-icon"><i class="fas fa-cogs"></i></div>
+            <h3 class="detail-section-title">핵심 기술 구현</h3>
+          </div>
+          <div class="detail-section-content">
+            ${data.techImplementation.map(sub => `
+              <div class="detail-subsection">
+                <h4 class="detail-subsection-title"><i class="${sub.icon}"></i>${sub.title}</h4>
+                <ul>
+                  ${sub.items.map(item => `<li>${item}</li>`).join("")}
+                </ul>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    // Trouble Shooting Section
+    if (data.troubleShooting) {
+      sectionsHTML += `
+        <div class="detail-section">
+          <div class="detail-section-header">
+            <div class="detail-section-icon"><i class="fas fa-bug"></i></div>
+            <h3 class="detail-section-title">문제 해결 경험</h3>
+          </div>
+          <div class="detail-section-content">
+            ${data.troubleShooting.map(trouble => `
+              <div class="detail-trouble">
+                <h4 class="detail-trouble-title"><i class="fas fa-exclamation-triangle"></i>${trouble.title}</h4>
+                <div class="detail-trouble-item">
+                  <div class="detail-trouble-label problem">문제</div>
+                  <p class="detail-trouble-text">${trouble.problem}</p>
+                </div>
+                <div class="detail-trouble-item">
+                  <div class="detail-trouble-label solution">해결</div>
+                  <p class="detail-trouble-text">${trouble.solution}</p>
+                </div>
+                <div class="detail-trouble-item">
+                  <div class="detail-trouble-label result">결과</div>
+                  <p class="detail-trouble-text">${trouble.result}</p>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    sectionsEl.innerHTML = sectionsHTML;
+
+    // Show modal
+    detailModal.classList.add("show");
+    document.body.style.overflow = "hidden";
+    console.log("✅ Project detail modal opened");
+    return true;
+  };
+
+  // 모달 닫기 함수
+  window.closeProjectDetailModal = function() {
+    detailModal.classList.remove("show");
+    document.body.style.overflow = "";
+    console.log("✅ Project detail modal closed");
+  };
+
+  // 닫기 버튼
+  closeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    window.closeProjectDetailModal();
+  });
+
+  // 배경 클릭
+  overlay.addEventListener("click", () => {
+    window.closeProjectDetailModal();
+  });
+
+  // ESC 키
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && detailModal.classList.contains("show")) {
+      window.closeProjectDetailModal();
+    }
+  });
+
+  console.log("✅ Project detail modal initialized");
+}
+
+// Tech icon mapping helper
+function getTechIcon(tech) {
+  const iconMap = {
+    "Python": "fab fa-python",
+    "OpenCV": "fas fa-eye",
+    "PaddleOCR": "fas fa-font",
+    "FastAPI": "fas fa-bolt",
+    "React": "fab fa-react",
+    "Computer Vision": "fas fa-camera",
+    "Spring": "fas fa-leaf",
+    "Spring Boot": "fas fa-leaf",
+    "AWS": "fab fa-aws",
+    "HTML": "fab fa-html5",
+    "CSS": "fab fa-css3-alt",
+    "JavaScript": "fab fa-js",
+    "JS": "fab fa-js",
+    "PHP": "fab fa-php",
+    "WordPress": "fab fa-wordpress",
+    "Java": "fab fa-java",
+    "R": "fas fa-chart-line",
+    "NEXT.JS": "fas fa-n",
+    "JSON": "fas fa-code"
+  };
+  return iconMap[tech] || "fas fa-code";
+}
+
+// DOM 로드 후 초기화
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initProjectDetailModal);
+} else {
+  initProjectDetailModal();
+}
+
+/* ===================================
+   Legacy Project Modal (Simple)
    =================================== */
 const modal = document.getElementById("project-modal");
-const titleEl = document.getElementById("modal-title");
-const descEl = document.getElementById("modal-description");
+const legacyTitleEl = document.getElementById("modal-title");
+const legacyDescEl = document.getElementById("modal-description");
 
 function openProjectModal(project) {
-  if (!modal || !titleEl || !descEl) return;
-  titleEl.textContent = project.title;
-  descEl.textContent = project.detail;
+  // 먼저 상세 모달이 있는지 확인
+  if (project.hasDetailModal && window.openProjectDetailModal) {
+    const opened = window.openProjectDetailModal(project);
+    if (opened) return;
+  }
+
+  // 상세 모달이 없으면 기존 간단한 모달 사용
+  if (!modal || !legacyTitleEl || !legacyDescEl) return;
+  legacyTitleEl.textContent = project.title;
+  legacyDescEl.textContent = project.detail;
   modal.classList.add("show");
 }
 
