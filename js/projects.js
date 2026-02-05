@@ -20,6 +20,7 @@ const projectsData = [
   {
     id: 2,
     title: "N.O.D.E",
+    subtitle: "Network Of Developer Evolution",
     description:
       "4명의 동기들이 함께 기획·디자인·개발 전 과정을 직접 수행한 팀 포트폴리오 웹사이트 프로젝트",
     tech: ["HTML", "CSS", "JavaScript", "PHP", "WordPress"],
@@ -28,6 +29,64 @@ const projectsData = [
     hasAward: true,
     hasCertificate: true,
     status: null,
+    hasDetailModal: true,
+    detailData: {
+      highlight: "대학교 자기주도학습 개발 동아리에서 실제 웹 개발, 협업, 배포를 경험하며 만든 팀 포트폴리오 웹사이트 프로젝트",
+      techCategories: [
+        {
+          category: "Frontend",
+          icon: "fab fa-react",
+          items: ["HTML5", "CSS3", "JavaScript", "React", "React Router"]
+        },
+        {
+          category: "Backend",
+          icon: "fab fa-node-js",
+          items: ["Node.js", "Express.js", "RESTful API", "JWT 기반 인증"]
+        },
+        {
+          category: "Database",
+          icon: "fas fa-database",
+          items: ["MySQL", "MongoDB", "ORM: Prisma / Mongoose"]
+        },
+        {
+          category: "Deployment & Tools",
+          icon: "fas fa-tools",
+          items: ["Git & GitHub", "Netlify", "Vercel", "Firebase", "GitHub Pages", "Figma", "Google Lighthouse", "Postman", "Notion"]
+        }
+      ],
+      overview: [
+        "N.O.D.E는 대학교 자기주도학습 동아리에서 실전 웹 개발 경험을 쌓기 위해 진행한 팀 기반 웹 포트폴리오 프로젝트입니다.",
+        "단순한 정적 페이지를 넘어, 실제 개발 워크플로우를 반영한 완전한 구조의 배포 가능한 웹 서비스를 구축하는 것이 목표였습니다."
+      ],
+      details: [
+        {
+          title: "개발 범위",
+          icon: "fas fa-project-diagram",
+          content: "기획, UI/UX 디자인, 프론트엔드 및 백엔드 구현, 데이터베이스 연동, 배포, 최적화까지 웹 개발의 전체 라이프사이클을 다루었습니다."
+        },
+        {
+          title: "Frontend 구현",
+          icon: "fab fa-react",
+          content: "React를 활용한 컴포넌트 기반 아키텍처로 개발하여, 네비게이션 바, 프로젝트 카드, 반응형 레이아웃 등 재사용 가능한 UI 컴포넌트를 구현했습니다. SPA(Single Page Application) 방식의 라우팅으로 페이지 전체 리로드 없이 부드러운 페이지 전환을 구현했습니다."
+        },
+        {
+          title: "반응형 디자인",
+          icon: "fas fa-mobile-alt",
+          content: "데스크톱, 태블릿, 모바일 기기에서 원활하게 작동하도록 반응형 웹 디자인에 특별히 신경을 썼습니다."
+        },
+        {
+          title: "Backend 구현",
+          icon: "fab fa-node-js",
+          content: "Node.js와 Express를 사용해 RESTful API를 구축하고, JWT를 활용한 인증을 구현했습니다. MySQL 또는 MongoDB로 데이터를 저장·관리하며, Prisma나 Mongoose 같은 ORM 도구를 사용해 유지보수성과 확장성을 높였습니다."
+        },
+        {
+          title: "배포 및 최적화",
+          icon: "fas fa-rocket",
+          content: "Netlify, Vercel, Firebase 등의 플랫폼을 활용해 배포하고, Google Lighthouse를 통해 성능 최적화를 진행했습니다. 여러 차례의 사용자 테스트와 피드백을 통해 UI 디테일, 접근성, 성능을 지속적으로 개선했습니다."
+        }
+      ],
+      outcome: "이 프로젝트를 통해 실제 배포 환경 경험, GitHub을 활용한 팀 협업, 프로덕션 환경에서의 실전 문제 해결 능력을 쌓을 수 있었습니다."
+    },
     detail:
       "N.O.D.E는 팀 단위 협업을 통해 완성한 포트폴리오 사이트로, 기획부터 배포까지 전 과정을 경험한 프로젝트입니다.",
   },

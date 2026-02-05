@@ -55,6 +55,30 @@ function initProjectDetailModal() {
     // Build sections
     let sectionsHTML = "";
 
+    // Tech Categories Section (for N.O.D.E style)
+    if (data.techCategories) {
+      sectionsHTML += `
+        <div class="detail-section">
+          <div class="detail-section-header">
+            <div class="detail-section-icon"><i class="fas fa-tools"></i></div>
+            <h3 class="detail-section-title">사용 기술</h3>
+          </div>
+          <div class="detail-section-content">
+            <div class="detail-tech-categories">
+              ${data.techCategories.map(cat => `
+                <div class="detail-tech-category">
+                  <h4 class="detail-tech-category-title"><i class="${cat.icon}"></i>${cat.category}</h4>
+                  <div class="detail-tech-category-items">
+                    ${cat.items.map(item => `<span class="detail-tech-category-chip">${item}</span>`).join("")}
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     // Overview Section
     if (data.overview) {
       sectionsHTML += `
@@ -81,6 +105,26 @@ function initProjectDetailModal() {
           <div class="detail-section-content">
             <div class="detail-role-badge"><i class="fas fa-star"></i>${data.role.title}</div>
             <p>${data.role.description}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    // Details Section (for N.O.D.E style - multiple detail items)
+    if (data.details) {
+      sectionsHTML += `
+        <div class="detail-section">
+          <div class="detail-section-header">
+            <div class="detail-section-icon"><i class="fas fa-file-alt"></i></div>
+            <h3 class="detail-section-title">상세 내용</h3>
+          </div>
+          <div class="detail-section-content">
+            ${data.details.map(detail => `
+              <div class="detail-subsection">
+                <h4 class="detail-subsection-title"><i class="${detail.icon}"></i>${detail.title}</h4>
+                <p>${detail.content}</p>
+              </div>
+            `).join("")}
           </div>
         </div>
       `;
@@ -134,6 +178,21 @@ function initProjectDetailModal() {
                 </div>
               </div>
             `).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    // Outcome Section
+    if (data.outcome) {
+      sectionsHTML += `
+        <div class="detail-section detail-outcome-section">
+          <div class="detail-section-header">
+            <div class="detail-section-icon"><i class="fas fa-trophy"></i></div>
+            <h3 class="detail-section-title">프로젝트 성과</h3>
+          </div>
+          <div class="detail-section-content">
+            <p class="detail-outcome-text">${data.outcome}</p>
           </div>
         </div>
       `;

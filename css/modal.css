@@ -387,6 +387,69 @@
   margin: 0;
 }
 
+/* Tech Categories (N.O.D.E style) */
+.detail-tech-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.detail-tech-category {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.detail-tech-category-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #a5b4fc;
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-tech-category-title i {
+  color: #6366f1;
+  font-size: 1rem;
+}
+
+.detail-tech-category-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.detail-tech-category-chip {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+/* Outcome Section */
+.detail-outcome-section {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.detail-outcome-section .detail-section-icon {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.detail-outcome-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+  margin: 0;
+}
+
 /* Modal Close Button (Legacy) */
 .modal-close {
   position: absolute;
@@ -443,6 +506,24 @@
 
   .detail-highlight {
     padding: 16px 20px;
+  }
+
+  .detail-tech-categories {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .detail-tech-category {
+    padding: 14px;
+  }
+
+  .detail-tech-category-title {
+    font-size: 0.85rem;
+  }
+
+  .detail-tech-category-chip {
+    font-size: 0.75rem;
+    padding: 3px 8px;
   }
 
   .detail-highlight p {
