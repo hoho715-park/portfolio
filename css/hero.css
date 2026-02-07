@@ -260,8 +260,6 @@
     background: var(--white);
     border-color: var(--white);
     color: var(--dark);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
 .btn-resume-download i {
