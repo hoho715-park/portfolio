@@ -36,22 +36,17 @@ const projectsData = [
         {
           category: "Frontend",
           icon: "fab fa-react",
-          items: ["HTML5", "CSS3", "JavaScript", "React", "React Router"]
+          items: ["React", "HTML", "CSS", "JavaScript"]
         },
         {
           category: "Backend",
-          icon: "fab fa-node-js",
-          items: ["Node.js", "Express.js", "RESTful API", "JWT 기반 인증"]
+          icon: "fab fa-php",
+          items: ["PHP"]
         },
         {
-          category: "Database",
-          icon: "fas fa-database",
-          items: ["MySQL", "MongoDB", "ORM: Prisma / Mongoose"]
-        },
-        {
-          category: "Deployment & Tools",
-          icon: "fas fa-tools",
-          items: ["Git & GitHub", "Netlify", "Vercel", "Firebase", "GitHub Pages", "Figma", "Google Lighthouse", "Postman", "Notion"]
+          category: "Deployment",
+          icon: "fab fa-aws",
+          items: ["AWS"]
         }
       ],
       overview: [
