@@ -23,7 +23,7 @@ const projectsData = [
     subtitle: "Network Of Developer Evolution",
     description:
       "4명의 동기들이 함께 기획·디자인·개발 전 과정을 직접 수행한 팀 포트폴리오 웹사이트 프로젝트",
-    tech: ["HTML", "CSS", "JavaScript", "PHP", "WordPress"],
+    tech: ["HTML", "CSS", "JS", "PHP", "AWS"],
     image: "images/node.png",
     hasPaper: false,
     hasAward: true,
