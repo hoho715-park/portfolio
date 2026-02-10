@@ -283,9 +283,10 @@
   position: absolute;
   left: 0;
   top: 24px;
-  width: 8px;
-  height: 8px;
-  background: var(--gray);
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   z-index: 1;
 }
@@ -293,11 +294,11 @@
 .education-item::after {
   content: '';
   position: absolute;
-  left: 3px;
-  top: 32px;
+  left: 4px;
+  top: 36px;
   width: 2px;
-  height: calc(100% - 8px);
-  border-left: 2px dashed rgba(255, 255, 255, 0.15);
+  height: calc(100% - 12px);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .education-item:last-child::after {
