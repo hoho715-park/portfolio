@@ -195,6 +195,7 @@ const projectsData = [
     hasAward: false,
     hasCertificate: false,
     status: "진행중",
+    siteUrl: "https://hoho715-park.github.io/refactory_f/",
     detail:
       "Code Visualization은 코드 구조를 시각화하고 품질을 분석하는 개발 도구입니다.",
   },
