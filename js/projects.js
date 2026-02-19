@@ -29,6 +29,7 @@ const projectsData = [
     hasAward: true,
     hasCertificate: true,
     status: null,
+    siteUrl: "http://nodefolio.co.kr/",
     hasDetailModal: true,
     detailData: {
       highlight: "대학교 자기주도학습 개발 동아리에서 실제 웹 개발, 협업, 배포를 경험하며 만든 팀 포트폴리오 웹사이트 프로젝트",
