@@ -208,6 +208,7 @@ const projectsData = [
     hasAward: false,
     hasCertificate: false,
     status: "진행중",
+    siteUrl: "https://parksungho.com/",
     detail:
       "개인 포트폴리오 사이트는 프로젝트와 경력을 정리한 반응형 웹 포트폴리오입니다.",
   },
@@ -222,6 +223,7 @@ const projectsData = [
     hasAward: false,
     hasCertificate: false,
     status: ["외주", "진행중"],
+    siteUrl: "https://musikonsemiro.com/",
     detail: "MusikOnsemiro는 성악 동호회를 위한 홍보 웹사이트입니다.",
   },
   {
@@ -349,6 +351,20 @@ function renderProjects() {
                 `
                     : ""
                 }
+                ${
+                  project.siteUrl
+                    ? `
+                  <a class="btn-action btn-site" href="${project.siteUrl}" target="_blank" rel="noopener noreferrer" data-project-id="${project.id}" data-action="site">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <line x1="2" y1="12" x2="22" y2="12"/>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                    <span>사이트보기</span>
+                  </a>
+                `
+                    : ""
+                }
               </div>
             </div>
           </div>
@@ -464,6 +480,20 @@ function renderMobileProjects() {
                 </svg>
                 <span>수료증보기</span>
               </button>
+            `
+                : ""
+            }
+            ${
+              project.siteUrl
+                ? `
+              <a class="btn-action btn-site" href="${project.siteUrl}" target="_blank" rel="noopener noreferrer" data-project-id="${project.id}" data-action="site">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <span>사이트보기</span>
+              </a>
             `
                 : ""
             }
@@ -597,13 +627,19 @@ function setupButtonHandlers() {
 
     // 버튼 클릭인 경우
     if (button) {
-      e.preventDefault();
-      e.stopPropagation();
-
       const projectId = parseInt(button.dataset.projectId);
       const action = button.dataset.action;
 
       console.log("🎯 Button clicked - Project ID:", projectId, "Action:", action);
+
+      // 사이트 링크는 기본 동작 허용 (새 탭에서 열림)
+      if (action === "site") {
+        e.stopPropagation();
+        return;
+      }
+
+      e.preventDefault();
+      e.stopPropagation();
 
       // IEUM 프로젝트(id: 1)
       if (projectId === 1) {

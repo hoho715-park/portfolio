@@ -209,6 +209,20 @@
   box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
 }
 
+/* Site Button - Green */
+.btn-site {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border-color: rgba(34, 197, 94, 0.3);
+  text-decoration: none;
+}
+
+.btn-site:hover {
+  background: rgba(34, 197, 94, 0.25);
+  border-color: #22c55e;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+}
+
 /* ===================================
    Navigation Arrows
    =================================== */
