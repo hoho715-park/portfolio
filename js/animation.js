@@ -193,7 +193,7 @@ function initPageLoadEffect() {
  * 모든 애니메이션 초기화
  */
 function initAllAnimations() {
-    initScrollAnimations()
+    initScrollAnimations();
     initParallax();
     initSkillItemEffects();
     initArchiveCardEffects();
