@@ -71,16 +71,10 @@ function updateParallax() {
 
 /**
  * 스킬 아이템 호버 효과
+ * - CSS에서 테두리 변화만 적용하도록 변경
  */
 function initSkillItemEffects() {
-    document.querySelectorAll('.skill-item').forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateX(8px) scale(1.02)';
-        });
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = '';
-        });
-    });
+    // 호버 효과는 CSS에서 처리 (테두리 색상 변경만)
 }
 
 /**

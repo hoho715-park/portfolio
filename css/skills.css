@@ -331,7 +331,6 @@
 .skill-item:hover {
   background: rgba(255, 255, 255, 0.06);
   border-color: var(--primary);
-  transform: translateY(-5px);
 }
 
 .skill-item .skill-icon {
@@ -350,9 +349,6 @@
   transition: var(--transition);
 }
 
-.skill-item:hover .skill-icon img {
-  transform: scale(1.1);
-}
 
 .skill-item .skill-name {
   font-size: 0.8rem;
@@ -371,7 +367,6 @@
 }
 
 .skill-item.active:hover {
-  transform: translateY(-5px);
 }
 
 .skill-item.inactive {
