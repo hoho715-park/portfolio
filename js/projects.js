@@ -676,18 +676,18 @@ function setupButtonHandlers() {
         if (action === "award") {
           console.log("📸 Opening award images...");
           window.openImageModal([
-            "images/ieum_award_1.png",
-            "images/ieum_award_2.png",
-            "images/ieum_award_3.png",
-            "images/ieum_award_4.png",
+            "images/project/award/ieum_award_1.png",
+            "images/project/award/ieum_award_2.png",
+            "images/project/award/ieum_award_3.png",
+            "images/project/award/ieum_award_4.png",
           ]);
         } else if (action === "certificate") {
           console.log("🎓 Opening certificate images...");
           window.openImageModal([
-            "images/ieum_listen_1.png",
-            "images/ieum_listen_2.png",
-            "images/ieum_listen_3.png",
-            "images/ieum_listen_4.png",
+            "images/project/listen/ieum_listen_1.png",
+            "images/project/listen/ieum_listen_2.png",
+            "images/project/listen/ieum_listen_3.png",
+            "images/project/listen/ieum_listen_4.png",
           ]);
         } else if (action === "paper") {
           console.log("📄 Opening paper PDFs...");
@@ -711,12 +711,12 @@ function setupButtonHandlers() {
         if (action === "award") {
           console.log("📸 Opening award images...");
           window.openImageModal([
-            "images/node_award_1.png",
+            "images/project/award/node_award_1.png",
           ]);
         } else if (action === "certificate") {
           console.log("🎓 Opening certificate images...");
           window.openImageModal([
-            "images/node_listen_1.png",
+            "images/project/listen/node_listen_1.png",
           ]);
         }
       }
@@ -726,12 +726,12 @@ function setupButtonHandlers() {
         if (action === "award") {
           console.log("📸 Opening award images...");
           window.openImageModal([
-            "images/opencv_award_1.png",
+            "images/project/award/opencv_award_1.png",
           ]);
         } else if (action === "certificate") {
           console.log("🎓 Opening certificate images...");
           window.openImageModal([
-            "images/opencv_listen_1.png",
+            "images/project/listen/opencv_listen_1.png",
           ]);
         }
       }
