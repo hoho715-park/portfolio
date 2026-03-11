@@ -9,7 +9,7 @@ const projectsData = [
     description:
       "손바닥 6지점에서 흐르는 전류를 측정해 장기 상태를 분석하고, 결과를 바탕으로 개인의 사상체질을 알려주며 개인 맞춤형 추천을 제공하는 웹 애플리케이션",
     tech: ["Spring", "React", "AWS"],
-    image: "images/ieum.png",
+    image: "images/project/main/ieum.png",
     hasPaper: true,
     hasAward: true,
     hasCertificate: true,
@@ -24,7 +24,7 @@ const projectsData = [
     description:
       "4명의 동기들이 함께 기획·디자인·개발 전 과정을 직접 수행한 팀 포트폴리오 웹사이트 프로젝트",
     tech: ["HTML", "CSS", "JS", "PHP", "AWS"],
-    image: "images/node.png",
+    image: "images/project/main/node.png",
     hasPaper: false,
     hasAward: true,
     hasCertificate: true,
@@ -93,7 +93,7 @@ const projectsData = [
     description:
       "신분증과 화이트보드의 빛 반사를 제거해 문자·이미지 인식률을 향상시키는 영상 처리 기반 프로젝트",
     tech: ["Python", "OpenCV", "PaddleOCR", "FastAPI", "React"],
-    image: "images/opencv.png",
+    image: "images/project/main/opencv.png",
     hasPaper: false,
     hasAward: true,
     hasCertificate: true,
@@ -162,7 +162,7 @@ const projectsData = [
     description:
       "노인의 움직임을 실시간 모니터링해 낙상을 빠르게 감지하고 알림으로 알려주는 웹 애플리케이션",
     tech: ["HTML", "CSS", "JavaScript", "Python"],
-    image: "images/careeye.png",
+    image: "images/project/main/careeye.png",
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
@@ -176,7 +176,7 @@ const projectsData = [
     description:
       "데이터사이언스 수업에서 홍천 기상 데이터를 기반으로 한 달 뒤 홍천 지역의 가뭄 가능성을 예측해 제공하는 웹 서비스",
     tech: ["R"],
-    image: "images/datascience.png",
+    image: "images/project/main/datascience.png",
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
@@ -190,7 +190,7 @@ const projectsData = [
     description:
       "코드를 다양한 다이어그램으로 시각화해 구조를 분석하고, 이를 바탕으로 코드 품질을 정량적으로 계산해주는 웹 애플리케이션",
     tech: ["React", "JS"],
-    image: "images/codevisual.png",
+    image: "images/project/main/codevisual.png",
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
@@ -205,7 +205,7 @@ const projectsData = [
     description:
       "프로젝트와 경력을 정리한 반응형 웹 포트폴리오로, 직관적인 UI를 적용하고 직접 구매한 개인 도메인과 연결했습니다.",
     tech: ["HTML", "CSS", "JS", "JSON"],
-    image: "images/portfolio.png",
+    image: "images/project/main/portfolio.png",
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
@@ -220,7 +220,7 @@ const projectsData = [
     description:
       "성악을 사랑하는 사람들이 모여 동호회를 소개하고 활동을 홍보하기 위해 제작한 성악 동호회 홍보 웹사이트 제작",
     tech: ["HTML", "CSS", "JS", "PHP", "WordPress"],
-    image: "images/musikonsemiro.png",
+    image: "images/project/main/musikonsemiro.png",
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
@@ -262,7 +262,7 @@ const projectsData = [
     description:
       "서울대학교 이차전지연구소를 위한 맞춤형 워드프레스 플러그인 개발 프로젝트",
     tech: ["JS", "PHP", "WordPress"],
-    image: "images/seoul.png",
+    image: "images/project/main/seoul.png",
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
@@ -276,7 +276,7 @@ const projectsData = [
     description:
       "d-1 회사의 회원관리 DB를 구축·보완하고, 자료 공유와 관리를 위한 자료실 기능을 함께 구현한 웹 서비스",
     tech: ["JS", "PHP", "WordPress"],
-    image: "images/d1.png",
+    image: "images/project/main/d1.png",
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
