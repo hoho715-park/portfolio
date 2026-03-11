@@ -229,6 +229,34 @@ const projectsData = [
     detail: "MusikOnsemiro는 성악 동호회를 위한 홍보 웹사이트입니다.",
   },
   {
+    id: 11,
+    title: "홍익대학교 소프트웨어융합학과 공식 홈페이지 개발·유지보수",
+    description:
+      "학과 소개, 교육과정, 공지사항 등을 통합 관리할 수 있는 공식 홈페이지를 구축하고, 콘텐츠 업데이트·기능 개선·서버 운영까지 전 주기를 담당한 학과 웹사이트 운영 프로젝트",
+    tech: ["HTML", "CSS", "JS", "PHP"],
+    image: "images/project/main/hongik_sw.png",
+    hasPaper: false,
+    hasAward: false,
+    hasCertificate: false,
+    status: ["외주", "진행중"],
+    siteUrl: "https://software.hongik.ac.kr/home/",
+    detail: "홍익대학교 소프트웨어융합학과 공식 홈페이지 개발 및 유지보수 프로젝트입니다.",
+  },
+  {
+    id: 12,
+    title: "메타버스 아카데미 교육 플랫폼 홈페이지 개발·운영",
+    description:
+      "교육 과정 소개, 수강 신청, 공지사항 기능을 중심으로 한 메타버스 아카데미 홈페이지를 제작하고, 디자인 개편·기능 추가·유지보수를 통해 안정적인 서비스 제공을 수행한 웹 운영 프로젝트",
+    tech: ["HTML", "CSS", "JS", "PHP"],
+    image: "images/project/main/metaverse.png",
+    hasPaper: false,
+    hasAward: false,
+    hasCertificate: false,
+    status: ["외주", "진행중"],
+    siteUrl: "https://metaverse.hongik.ac.kr/",
+    detail: "메타버스 아카데미 교육 플랫폼 홈페이지 개발 및 운영 프로젝트입니다.",
+  },
+  {
     id: 9,
     title: "서울대학교 이차전지연구소 플러그인 개발",
     description:
