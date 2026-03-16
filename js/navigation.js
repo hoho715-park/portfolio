@@ -25,6 +25,9 @@ function initNavbar() {
 
       if (!href || !href.startsWith("#")) return;
 
+      // 일시적 오류: Contact 링크 비활성화
+      if (href === "#contact") return;
+
       const target = document.querySelector(href);
       if (!target) return;
 
