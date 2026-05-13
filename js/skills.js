@@ -163,6 +163,12 @@ const skillsData = {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
       desc: "Postman을 활용해 API 요청 테스트 및 서버 통신 검증을 할 수 있습니다.",
       level: 50
+    },
+    {
+      name: "Canva",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg",
+      desc: "Canva를 활용해 이미지 편집과 발표 자료 제작 등 시각 콘텐츠 작업을 빠르게 수행할 수 있습니다.",
+      level: 90
     }
   ]
 };
