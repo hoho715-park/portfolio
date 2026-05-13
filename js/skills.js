@@ -115,7 +115,7 @@ const skillsData = {
     {
       name: "Node.js",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg",
-      desc: "Node.js를 활용해 비동기 이벤트 기반의 서버 환경을 구성하고 JavaScript 런타임 위에서 백엔드 애플리케이션을 개발할 수 있습니다.",
+      desc: "Node.js를 활용해 비동기 이벤트 기반의 서버 환경에서 백엔드 애플리케이션을 개발할 수 있습니다.",
       level: 60
     }
   ],
