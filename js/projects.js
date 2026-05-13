@@ -199,21 +199,6 @@ const projectsData = [
       "홍천 가뭄 예측 프로젝트는 기상 데이터 분석을 통해 가뭄 가능성을 예측하는 서비스입니다.",
   },
   {
-    id: 6,
-    title: "Code Visualization",
-    description:
-      "코드를 다양한 다이어그램으로 시각화해 구조를 분석하고, 이를 바탕으로 코드 품질을 정량적으로 계산해주는 웹 애플리케이션",
-    tech: ["React", "JS"],
-    image: "images/project/main/codevisual.png",
-    hasPaper: false,
-    hasAward: false,
-    hasCertificate: false,
-    status: "진행중",
-    siteUrl: "https://hoho715-park.github.io/refactory_f/",
-    detail:
-      "Code Visualization은 코드 구조를 시각화하고 품질을 분석하는 개발 도구입니다.",
-  },
-  {
     id: 7,
     title: "개인 포트폴리오 사이트 제작",
     description:
