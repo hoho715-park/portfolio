@@ -127,6 +127,20 @@ const skillsData = {
       level: 50
     }
   ],
+  infra: [
+    {
+      name: "Docker",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+      desc: "Docker를 활용해 개발·배포 환경을 컨테이너로 일관되게 구성하고 손쉽게 운영할 수 있습니다.",
+      level: 60
+    },
+    {
+      name: "AWS",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+      desc: "AWS를 활용해 클라우드 환경에 웹 서비스를 배포하고 안정적으로 운영할 수 있습니다.",
+      level: 70
+    }
+  ],
   etc: [
     {
       name: "Notion",
@@ -177,6 +191,7 @@ const categoryNames = {
   frontend: "Frontend",
   backend: "Backend",
   cms: "CMS",
+  infra: "Infra",
   etc: "ETC"
 };
 
