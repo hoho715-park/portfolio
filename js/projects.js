@@ -18,6 +18,20 @@ const projectsData = [
       "IEUM은 바이오 신호 기반 분석을 통해 개인의 체질과 건강 상태를 해석하고 맞춤형 솔루션을 제공하는 헬스케어 웹 서비스입니다.",
   },
   {
+    id: 13,
+    title: "Guider",
+    description:
+      "페이지 DOM과 자연어 질문을 Claude API에 매칭해 클릭할 요소를 글로우로 강조하는 AI 웹 내비게이터",
+    tech: ["TypeScript", "React", "Vite", "Tailwind CSS", "Chrome MV3", "Claude API"],
+    image: "images/project/main/guider.png",
+    hasPaper: false,
+    hasAward: true,
+    hasCertificate: true,
+    status: null,
+    detail:
+      "Guider는 사용자가 입력한 자연어 질문을 페이지 DOM과 매칭해, 다음에 클릭할 요소를 글로우 효과로 강조해주는 AI 웹 내비게이터입니다.",
+  },
+  {
     id: 2,
     title: "N.O.D.E",
     subtitle: "Network Of Developer Evolution",
@@ -702,6 +716,21 @@ function setupButtonHandlers() {
               file: "pdfs/ieum_paper_2.pdf",
               isFirstAuthor: true
             }
+          ]);
+        }
+      }
+
+      // Guider 프로젝트(id: 13)
+      if (projectId === 13) {
+        if (action === "award") {
+          console.log("📸 Opening award images...");
+          window.openImageModal([
+            "images/project/award/guider_award_1.png",
+          ]);
+        } else if (action === "certificate") {
+          console.log("🎓 Opening certificate images...");
+          window.openImageModal([
+            "images/project/listen/guider_listen_1.png",
           ]);
         }
       }
