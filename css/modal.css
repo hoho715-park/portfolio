@@ -618,24 +618,35 @@
 .image-modal-images {
   display: flex;
   gap: 20px;
-  align-items: center;
   justify-content: center;
   max-height: 80vh;
   overflow: auto;
+}
+
+.image-modal-figure {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 16px;
 }
 
 /* Multiple Images Layout */
 .image-modal-images.multiple-images {
   flex-direction: row;
   flex-wrap: nowrap;
+  align-items: flex-start;
 }
 
-.image-modal-images.multiple-images img {
+.image-modal-images.multiple-images .image-modal-figure {
   flex: 1;
   min-width: 0;
   max-width: calc(33.333% - 14px);
+}
+
+.image-modal-images.multiple-images .image-modal-figure img {
+  width: 100%;
   height: auto;
-  max-height: 75vh;
+  max-height: 60vh;
   object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -644,15 +655,58 @@
 /* Single Image Layout */
 .image-modal-images.single-image {
   flex-direction: column;
+  align-items: center;
 }
 
-.image-modal-images.single-image img {
+.image-modal-images.single-image .image-modal-figure {
   max-width: 100%;
-  max-height: 75vh;
+}
+
+.image-modal-images.single-image .image-modal-figure img {
+  width: auto;
+  max-width: 100%;
+  max-height: 65vh;
   height: auto;
   object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Caption (상장 설명) */
+.image-modal-caption {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 8px 0;
+}
+
+.image-modal-caption-title {
+  color: #fff;
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.image-modal-caption-highlight {
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 55%, #ef4444 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: 0 0 24px rgba(251, 191, 36, 0.25);
+}
+
+.image-modal-images.multiple-images .image-modal-caption-title {
+  font-size: 1rem;
+}
+
+.image-modal-images.multiple-images .image-modal-caption-highlight {
+  font-size: 1.15rem;
 }
 
 /* Responsive Design */
@@ -666,9 +720,21 @@
     flex-direction: column;
   }
 
-  .image-modal-images.multiple-images img {
+  .image-modal-images.multiple-images .image-modal-figure {
+    max-width: 100%;
+  }
+
+  .image-modal-images.multiple-images .image-modal-figure img {
     max-width: 100%;
     max-height: 50vh;
+  }
+
+  .image-modal-caption-title {
+    font-size: 1.05rem;
+  }
+
+  .image-modal-caption-highlight {
+    font-size: 1.25rem;
   }
 }
 

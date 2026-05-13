@@ -333,28 +333,54 @@ function initImageModal() {
   const imageCloseBtn = imageModal.querySelector(".modal-close");
 
   // 모달 열기 함수
-  window.openImageModal = function (images) {
-    console.log("✅ openImageModal 호출됨:", images);
+  // items: string[] | { src, title?, highlight? }[]
+  window.openImageModal = function (items) {
+    console.log("✅ openImageModal 호출됨:", items);
+
+    // 입력 정규화: 문자열도 { src } 형태로 변환
+    const normalized = items.map((item) =>
+      typeof item === "string" ? { src: item } : item,
+    );
 
     // 초기화
     imageContainer.innerHTML = "";
     imageContainer.className = "image-modal-images";
 
     // 클래스 추가
-    if (images.length > 1) {
+    if (normalized.length > 1) {
       imageContainer.classList.add("multiple-images");
     } else {
       imageContainer.classList.add("single-image");
     }
 
-    // 이미지 추가
-    images.forEach((src, index) => {
+    // figure(이미지 + 캡션) 추가
+    normalized.forEach((item, index) => {
+      const figure = document.createElement("div");
+      figure.className = "image-modal-figure";
+
       const img = document.createElement("img");
-      img.src = src;
-      img.alt = `이미지 ${index + 1}`;
-      img.onload = () => console.log(`✅ 이미지 로드 완료: ${src}`);
-      img.onerror = () => console.error(`❌ 이미지 로드 실패: ${src}`);
-      imageContainer.appendChild(img);
+      img.src = item.src;
+      img.alt = item.title || `이미지 ${index + 1}`;
+      img.onload = () => console.log(`✅ 이미지 로드 완료: ${item.src}`);
+      img.onerror = () => console.error(`❌ 이미지 로드 실패: ${item.src}`);
+      figure.appendChild(img);
+
+      if (item.title || item.highlight) {
+        const caption = document.createElement("div");
+        caption.className = "image-modal-caption";
+        let html = "";
+        if (item.title) {
+          const titleHTML = String(item.title).replace(/\n/g, "<br>");
+          html += `<div class="image-modal-caption-title">${titleHTML}</div>`;
+        }
+        if (item.highlight) {
+          html += `<div class="image-modal-caption-highlight">${item.highlight}</div>`;
+        }
+        caption.innerHTML = html;
+        figure.appendChild(caption);
+      }
+
+      imageContainer.appendChild(figure);
     });
 
     // 모달 표시

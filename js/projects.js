@@ -725,7 +725,11 @@ function setupButtonHandlers() {
         if (action === "award") {
           console.log("📸 Opening award images...");
           window.openImageModal([
-            "images/project/award/guider_award_1.png",
+            {
+              src: "images/project/award/guider_award_1.png",
+              title: "2026 DevOps 전문가 양성과정\n교육 프로젝트",
+              highlight: "최우수상 (1등)",
+            },
           ]);
         } else if (action === "certificate") {
           console.log("🎓 Opening certificate images...");
