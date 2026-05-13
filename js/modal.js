@@ -458,8 +458,15 @@ function initPDFModal() {
     papers.forEach((paper) => {
       const pdfItem = document.createElement("div");
       pdfItem.className = paper.isFirstAuthor ? "pdf-item pdf-item-highlight" : "pdf-item";
+      const badgeHTML = (paper.isFirstAuthor || paper.venue)
+        ? `<div class="pdf-first-author-badge">
+            ${paper.isFirstAuthor ? '<span class="pdf-author-label"><i class="fas fa-star"></i> 1저자</span>' : ''}
+            ${paper.venue ? `<span class="pdf-paper-venue">(${paper.venue})</span>` : ''}
+          </div>`
+        : '';
+
       pdfItem.innerHTML = `
-        ${paper.isFirstAuthor ? '<div class="pdf-first-author-badge"><i class="fas fa-star"></i> 1저자</div>' : ''}
+        ${badgeHTML}
         <div class="pdf-item-title">${paper.title}</div>
         <div class="pdf-item-actions">
           <button class="pdf-action-btn pdf-view-btn" data-pdf="${paper.file}" title="조회">

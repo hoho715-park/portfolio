@@ -754,9 +754,10 @@ function setupButtonHandlers() {
           console.log("📄 Opening paper PDFs...");
           window.openPDFModal([
             {
-              title: "RE:FACTORY 논문",
+              title: "대형 언어 모델들(LLM)과 인간 코드의 품질 비교 분석",
               file: "pdfs/refactory_paper_1.pdf",
-              isFirstAuthor: false,
+              isFirstAuthor: true,
+              venue: "ASK-한국정보처리학회",
             },
           ]);
         }

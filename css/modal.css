@@ -828,6 +828,20 @@
   font-size: 0.7rem;
 }
 
+.pdf-author-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pdf-paper-venue {
+  margin-left: auto;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #cbd5f5;
+  letter-spacing: 0.01em;
+}
+
 .pdf-item-highlight .pdf-item-title {
   color: #fef3c7;
 }
