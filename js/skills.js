@@ -73,6 +73,12 @@ const skillsData = {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
       desc: "Vite를 활용해 빠른 개발 환경을 구성하고 프론트엔드 프로젝트를 효율적으로 빌드할 수 있습니다.",
       level: 90
+    },
+    {
+      name: "TypeScript",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+      desc: "TypeScript를 활용해 정적 타입 기반으로 안정성과 유지보수성이 높은 프론트엔드 코드를 작성할 수 있습니다.",
+      level: 60
     }
   ],
   backend: [
@@ -105,6 +111,12 @@ const skillsData = {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
       desc: "NestJS를 활용해 모듈 기반의 구조화된 Node.js 백엔드 서비스를 설계하고 REST API를 안정적으로 구축할 수 있습니다.",
       level: 80
+    },
+    {
+      name: "Node.js",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg",
+      desc: "Node.js를 활용해 비동기 이벤트 기반의 서버 환경을 구성하고 JavaScript 런타임 위에서 백엔드 애플리케이션을 개발할 수 있습니다.",
+      level: 60
     }
   ],
   cms: [
