@@ -32,6 +32,20 @@ const projectsData = [
       "Guider는 사용자가 입력한 자연어 질문을 페이지 DOM과 매칭해, 다음에 클릭할 요소를 글로우 효과로 강조해주는 AI 웹 내비게이터입니다.",
   },
   {
+    id: 14,
+    title: "RE:FACTORY",
+    description:
+      "소스코드의 AST를 추출해 인터랙티브 그래프로 시각화하고 LLM 기반 의미 분석으로 코드 품질 평가와 리팩토링 인사이트를 제공하는 코드 분석 플랫폼",
+    tech: ["React", "TS", "NestJS", "MySQL", "Docker", "AWS"],
+    image: "images/project/main/refactory.png",
+    hasPaper: true,
+    hasAward: true,
+    hasCertificate: true,
+    status: "진행중",
+    detail:
+      "RE:FACTORY는 AST 기반 코드 구조 시각화와 LLM 의미 분석을 결합해 코드 품질을 평가하고 리팩토링 방향을 제안하는 코드 분석 플랫폼입니다.",
+  },
+  {
     id: 2,
     title: "N.O.D.E",
     subtitle: "Network Of Developer Evolution",
@@ -720,6 +734,30 @@ function setupButtonHandlers() {
           console.log("🎓 Opening certificate images...");
           window.openImageModal([
             "images/project/listen/guider_listen_1.png",
+          ]);
+        }
+      }
+
+      // RE:FACTORY 프로젝트(id: 14)
+      if (projectId === 14) {
+        if (action === "award") {
+          console.log("📸 Opening award images...");
+          window.openImageModal([
+            "images/project/award/refactory_award_1.png",
+          ]);
+        } else if (action === "certificate") {
+          console.log("🎓 Opening certificate images...");
+          window.openImageModal([
+            "images/project/listen/refactory_listen_1.png",
+          ]);
+        } else if (action === "paper") {
+          console.log("📄 Opening paper PDFs...");
+          window.openPDFModal([
+            {
+              title: "RE:FACTORY 논문",
+              file: "pdfs/refactory_paper_1.pdf",
+              isFirstAuthor: false,
+            },
           ]);
         }
       }
