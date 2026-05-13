@@ -99,6 +99,12 @@ const skillsData = {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
       desc: "Python의 기본 문법을 이해하고 있으며, 간단한 스크립트 작성 및 코드 해석이 가능합니다.",
       level: 30
+    },
+    {
+      name: "NestJS",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
+      desc: "NestJS를 활용해 모듈 기반의 구조화된 Node.js 백엔드 서비스를 설계하고 REST API를 안정적으로 구축할 수 있습니다.",
+      level: 80
     }
   ],
   cms: [
