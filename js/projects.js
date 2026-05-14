@@ -189,7 +189,7 @@ const projectsData = [
     title: "careEYE",
     description:
       "노인의 움직임을 실시간 모니터링해 낙상을 빠르게 감지하고 알림으로 알려주는 웹 애플리케이션",
-    tech: ["HTML", "CSS", "JavaScript", "Python"],
+    tech: ["Spring Boot", "React", "Python"],
     image: "images/project/main/careeye.png",
     hasPaper: false,
     hasAward: false,
