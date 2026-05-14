@@ -22,7 +22,7 @@ const projectsData = [
     title: "Guider",
     description:
       "페이지 DOM과 자연어 질문을 Claude API에 매칭해 클릭할 요소를 글로우로 강조하는 AI 웹 내비게이터",
-    tech: ["TypeScript", "React", "Vite", "Tailwind CSS", "Chrome MV3", "Claude API"],
+    tech: ["TypeScript", "React", "Chrome MV3", "Claude API"],
     image: "images/project/main/guider.png",
     hasPaper: false,
     hasAward: true,
