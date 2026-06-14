@@ -834,6 +834,24 @@
   gap: 6px;
 }
 
+.pdf-paper-language {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+}
+
+.pdf-paper-language i {
+  font-size: 0.7rem;
+}
+
 .pdf-paper-venue {
   margin-left: auto;
   font-size: 0.7rem;

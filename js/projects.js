@@ -24,7 +24,7 @@ const projectsData = [
       "페이지 DOM과 자연어 질문을 Claude API에 매칭해 클릭할 요소를 글로우로 강조하는 AI 웹 내비게이터",
     tech: ["TypeScript", "React", "Chrome MV3", "Claude API"],
     image: "images/project/main/guider.png",
-    hasPaper: false,
+    hasPaper: true,
     hasAward: true,
     hasCertificate: true,
     status: null,
@@ -734,6 +734,17 @@ function setupButtonHandlers() {
           console.log("🎓 Opening certificate images...");
           window.openImageModal([
             "images/project/listen/guider_listen_1.png",
+          ]);
+        } else if (action === "paper") {
+          console.log("📄 Opening paper PDFs...");
+          window.openPDFModal([
+            {
+              title: "An LLM-based Web Navigator (Guider) for Effective Information Search on Complex Websites",
+              file: "pdfs/guider_paper_1.pdf",
+              isFirstAuthor: true,
+              isEnglish: true,
+              venue: "KSII - 한국인터넷정보학회 - 국제 논문지",
+            },
           ]);
         }
       }
