@@ -33,7 +33,7 @@ const projectsData = [
   },
   {
     id: 14,
-    title: "RE:FACTORY",
+    title: "RE:Factory",
     description:
       "소스코드의 AST를 추출해 인터랙티브 그래프로 시각화하고 LLM 기반 의미 분석으로 코드 품질 평가와 리팩토링 인사이트를 제공하는 코드 분석 플랫폼",
     tech: ["React", "TS", "NestJS", "MySQL", "Docker", "AWS"],
