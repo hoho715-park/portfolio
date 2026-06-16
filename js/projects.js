@@ -726,20 +726,12 @@ function setupButtonHandlers() {
         if (action === "award") {
           console.log("📸 Opening award images...");
           window.openImageModal([
-            {
-              src: "images/project/award/guider_award_1.png",
-              title: "2026 DevOps 전문가 양성과정\n교육 프로젝트",
-              highlight: "최우수상 (1등)",
-            },
+            "images/project/award/guider_award_1.png",
           ]);
         } else if (action === "certificate") {
           console.log("🎓 Opening certificate images...");
           window.openImageModal([
-            {
-              src: "images/project/listen/guider_listen_1.png",
-              title: "2026 DevOps 전문가 양성 교육",
-              label: "수료증",
-            },
+            "images/project/listen/guider_listen_1.png",
           ]);
         } else if (action === "paper") {
           console.log("📄 Opening paper PDFs...");
