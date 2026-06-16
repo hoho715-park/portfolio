@@ -733,7 +733,11 @@ function setupButtonHandlers() {
         } else if (action === "certificate") {
           console.log("🎓 Opening certificate images...");
           window.openImageModal([
-            "images/project/listen/guider_listen_1.png",
+            {
+              src: "images/project/listen/guider_listen_1.png",
+              title: "2026 DevOps 전문가 양성 교육",
+              label: "수료증",
+            },
           ]);
         } else if (action === "paper") {
           console.log("📄 Opening paper PDFs...");

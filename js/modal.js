@@ -368,10 +368,16 @@ function initImageModal() {
       if (item.title || item.highlight) {
         const caption = document.createElement("div");
         caption.className = "image-modal-caption";
+        if (item.variant) {
+          caption.classList.add(`image-modal-caption--${item.variant}`);
+        }
         let html = "";
         if (item.title) {
           const titleHTML = String(item.title).replace(/\n/g, "<br>");
-          html += `<div class="image-modal-caption-title">${titleHTML}</div>`;
+          const labelHTML = item.label
+            ? ` <span class="image-modal-caption-label">${item.label}</span>`
+            : "";
+          html += `<div class="image-modal-caption-title">${titleHTML}${labelHTML}</div>`;
         }
         if (item.highlight) {
           html += `<div class="image-modal-caption-highlight">${item.highlight}</div>`;

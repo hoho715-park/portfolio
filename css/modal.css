@@ -701,6 +701,11 @@
   text-shadow: 0 0 24px rgba(251, 191, 36, 0.25);
 }
 
+/* Inline label (e.g. "수료증") inside caption title */
+.image-modal-caption-label {
+  color: #3b82f6;
+}
+
 .image-modal-images.multiple-images .image-modal-caption-title {
   font-size: 1rem;
 }
