@@ -798,6 +798,40 @@
   justify-content: space-between;
   transition: all 0.2s ease;
   position: relative;
+  overflow: visible;
+}
+
+/* 스티커가 있을 때 상단 여유 공간 확보 */
+.pdf-item-has-award {
+  padding-top: 28px;
+}
+
+/* 우수논문상 스티커 */
+.pdf-award-sticker {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  background: rgba(30, 41, 59, 0.95);
+  color: #cbd5e1;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.pdf-award-sticker i {
+  font-size: 0.7rem;
+  color: #94a3b8;
 }
 
 .pdf-item:hover {

@@ -464,6 +464,9 @@ function initPDFModal() {
     papers.forEach((paper) => {
       const pdfItem = document.createElement("div");
       pdfItem.className = paper.isFirstAuthor ? "pdf-item pdf-item-highlight" : "pdf-item";
+      if (paper.award) {
+        pdfItem.classList.add("pdf-item-has-award");
+      }
       const badgeHTML = (paper.isFirstAuthor || paper.isEnglish || paper.venue)
         ? `<div class="pdf-first-author-badge">
             ${paper.isFirstAuthor ? '<span class="pdf-author-label"><i class="fas fa-star"></i> 1저자</span>' : ''}
@@ -472,7 +475,12 @@ function initPDFModal() {
           </div>`
         : '';
 
+      const awardStickerHTML = paper.award
+        ? `<div class="pdf-award-sticker"><i class="fas fa-medal"></i><span>${paper.award}</span></div>`
+        : '';
+
       pdfItem.innerHTML = `
+        ${awardStickerHTML}
         ${badgeHTML}
         <div class="pdf-item-title">${paper.title}</div>
         <div class="pdf-item-actions">
