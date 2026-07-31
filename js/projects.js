@@ -758,6 +758,7 @@ function setupButtonHandlers() {
           console.log("🎓 Opening certificate images...");
           window.openImageModal([
             "images/project/listen/refactory_listen_1.png",
+            "images/project/listen/refactory_listen_2.png",
           ]);
         } else if (action === "paper") {
           console.log("📄 Opening paper PDFs...");
