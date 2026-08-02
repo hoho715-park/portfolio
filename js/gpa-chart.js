@@ -181,6 +181,10 @@
               else if (idx === 5) {
                 lines.push('자주장학금 (전액 80%)');
               }
+              // 4학년 1학기 (index 6)
+              else if (idx === 6) {
+                lines.push('창조장학금 (전액 60%)');
+              }
 
               return lines;
             }
