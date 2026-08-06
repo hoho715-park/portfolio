@@ -727,6 +727,7 @@ function setupButtonHandlers() {
           console.log("📸 Opening award images...");
           window.openImageModal([
             "images/project/award/guider_award_1.png",
+            "images/project/award/guider_award_2.png",
           ]);
         } else if (action === "certificate") {
           console.log("🎓 Opening certificate images...");
