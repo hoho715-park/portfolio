@@ -256,7 +256,12 @@ function getTechIcon(tech) {
     "Java": "fab fa-java",
     "R": "fas fa-chart-line",
     "NEXT.JS": "fas fa-n",
-    "JSON": "fas fa-code"
+    "JSON": "fas fa-code",
+    "Vite": "fas fa-bolt",
+    "Node.js": "fab fa-node-js",
+    "Express": "fas fa-server",
+    "Claude API": "fas fa-robot",
+    "Chrome Extension (Manifest V3)": "fab fa-chrome"
   };
   return iconMap[tech] || "fas fa-code";
 }

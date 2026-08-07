@@ -20,16 +20,70 @@ const projectsData = [
   {
     id: 13,
     title: "Guider",
+    subtitle: "설명하지 않고, 보여주는 웹 네비게이터",
     description:
-      "페이지 DOM과 자연어 질문을 Claude API에 매칭해 클릭할 요소를 글로우로 강조하는 AI 웹 내비게이터",
-    tech: ["TypeScript", "React", "Chrome MV3", "Claude API"],
+      "DOM 구조를 분석해 사용자의 자연어 질문을 실제 클릭 위치로 안내하는 Zero-Config AI 크롬 확장 프로그램",
+    tech: ["React", "Vite", "JavaScript", "Node.js", "Express", "Claude API", "Chrome Extension (Manifest V3)"],
     image: "images/project/main/guider.png",
     hasPaper: true,
     hasAward: true,
     hasCertificate: true,
     status: null,
+    hasDetailModal: true,
+    detailData: {
+      highlight: "온라인 서비스의 메뉴와 기능은 점점 복잡해지고 있지만, 사용자가 막히는 지점은 기능을 몰라서가 아니라 지금 화면에서 어디를 눌러야 하는지 모른다는 데 있다. Guider는 웹사이트를 수정하지 않고도 현재 페이지의 DOM 구조를 분석해, 사용자의 질문을 실제 클릭 위치와 연결하는 범용 AI 가이드다.",
+      techCategories: [
+        {
+          category: "Frontend",
+          icon: "fab fa-react",
+          items: ["React", "Vite", "JavaScript", "Chrome Extension Manifest V3"]
+        },
+        {
+          category: "Backend",
+          icon: "fab fa-node-js",
+          items: ["Node.js", "Express", "Claude API"]
+        },
+        {
+          category: "Deployment",
+          icon: "fab fa-chrome",
+          items: ["Chrome Web Store (예정)", "GitHub"]
+        }
+      ],
+      overview: [
+        "Guider는 공공·대학·병원·금융 사이트처럼 기관 중심 메뉴 구조와 낯선 UI 때문에 사용자가 원하는 기능을 찾지 못하고 이탈하는 문제를 해결하기 위해 기획되었다. 기존 챗봇은 답변을 텍스트로 설명만 할 뿐 사용자가 다시 화면에서 메뉴를 찾아야 하고, WalkMe 같은 가이드 솔루션은 운영자가 시나리오를 미리 설정해야 하며, AI Agent는 결제·개인정보 등 민감한 작업을 대신 수행하다 오작동·정보 노출 위험이 있다.",
+        "Guider는 AI가 대신 행동하지 않고, 사용자가 직접 보고 판단해 클릭할 수 있도록 화면 위에 화살표로 안내함으로써 이 세 가지 방식의 한계를 보완한다."
+      ],
+      details: [
+        {
+          title: "개발 범위",
+          icon: "fas fa-project-diagram",
+          content: "문제 정의 및 사용자 리서치(디지털 취약계층 웹 이용 실태 분석)부터 DOM 구조 기반 클릭 요소 추출·요약 로직 설계, LLM 연동을 통한 의도 분석 및 요소 매칭, 화면 화살표 인디케이터 렌더링까지 크롬 확장 프로그램의 전체 개발 라이프사이클을 다루었습니다. 정부·대학·클래스넷 등 4개 사이트에서 실제 시연을 진행하고, 50명을 대상으로 한 탐색 효율성 실험과 사용성 설문을 반영해 고도화했습니다."
+        },
+        {
+          title: "DOM 구조 분석 엔진",
+          icon: "fas fa-sitemap",
+          content: "웹페이지의 DOM 구조를 실시간으로 파싱해 버튼·링크·입력창 등 클릭 가능한 요소를 추출하고, 불필요한 정보를 제거해 핵심 구조만 요약하는 경량화 로직을 구현했습니다. 별도의 SDK 삽입이나 사이트 개편 없이 현재 페이지만으로 클릭 후보를 추출하는 Zero-Config 방식으로 설계했습니다."
+        },
+        {
+          title: "AI 의도 매칭 (Claude API 연동)",
+          icon: "fas fa-brain",
+          content: "사용자의 자연어 질문과 추출된 DOM 요약 정보를 Claude API에 전달해, 질문 의도에 가장 적합한 클릭 요소를 판별하는 프롬프트를 설계하고 응답을 파싱하는 로직을 구현했습니다."
+        },
+        {
+          title: "Frontend / 화살표 인디케이터 렌더링",
+          icon: "fab fa-react",
+          content: "React + Vite 기반 사이드패널 UI와 매칭된 요소의 화면 좌표를 계산해 실제 화면 위에 시각적 화살표를 오버레이하는 Manifest V3 크롬 확장 프로그램을 구현했습니다. 사용자가 AI Agent처럼 대신 작업을 수행받는 것이 아니라, 클릭 위치만 안내받아 직접 판단하고 실행하도록 설계해 오작동·정보 노출 리스크를 최소화했습니다."
+        },
+        {
+          title: "Backend",
+          icon: "fab fa-node-js",
+          content: "Node.js/Express 서버(server/index.js)를 통해 Claude API 요청을 중계하고, 확장 프로그램과 AI 응답 간의 통신을 처리했습니다."
+        }
+      ],
+      outcome: "50명을 대상으로 한 실사용 테스트에서 과제 성공률 100%, 평균 완료시간 79% 감소, 평균 오클릭 0.4회를 기록했습니다. 사용 후 설문에서 만족도 4.6/5.0, 재사용 의사 100%를 달성했으며, 이 결과를 토대로 B2C/B2B/B2G/Data B2B 4가지 확장 비즈니스 모델을 제안했습니다."
+    },
     detail:
-      "Guider는 사용자가 입력한 자연어 질문을 페이지 DOM과 매칭해, 다음에 클릭할 요소를 글로우 효과로 강조해주는 AI 웹 내비게이터입니다.",
+      "Guider는 사용자가 입력한 자연어 질문을 페이지 DOM과 매칭해, 다음에 클릭할 요소를 화살표로 안내해주는 Zero-Config AI 웹 내비게이터입니다.",
   },
   {
     id: 14,
