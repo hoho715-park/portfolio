@@ -261,7 +261,11 @@ function getTechIcon(tech) {
     "Node.js": "fab fa-node-js",
     "Express": "fas fa-server",
     "Claude API": "fas fa-robot",
-    "Chrome Extension (Manifest V3)": "fab fa-chrome"
+    "Chrome Extension (Manifest V3)": "fab fa-chrome",
+    "MySQL": "fas fa-database",
+    "Flask": "fas fa-flask",
+    "scikit-learn": "fas fa-diagram-project",
+    "KNN": "fas fa-circle-nodes"
   };
   return iconMap[tech] || "fas fa-code";
 }
