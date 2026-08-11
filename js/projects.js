@@ -889,6 +889,7 @@ function setupButtonHandlers() {
           window.openImageModal([
             "images/project/award/refactory_award_1.png",
             "images/project/award/refactory_award_2.png",
+            "images/project/award/refactory_award_3.png",
           ]);
         } else if (action === "certificate") {
           console.log("🎓 Opening certificate images...");
