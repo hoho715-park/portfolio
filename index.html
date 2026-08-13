@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="css/contact.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/visitor-counter.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
@@ -56,6 +57,20 @@
         </ul>
       </div>
     </nav>
+
+    <!-- VISITOR COUNTER -->
+    <div class="visitor-counter" id="visitorCounter">
+      <div class="visitor-counter-icon"><i class="fas fa-users"></i></div>
+      <div class="visitor-counter-stat">
+        <span class="visitor-counter-label">오늘</span>
+        <span class="visitor-counter-value today" id="visitorToday">-</span>
+      </div>
+      <div class="visitor-counter-divider"></div>
+      <div class="visitor-counter-stat">
+        <span class="visitor-counter-label">전체</span>
+        <span class="visitor-counter-value" id="visitorTotal">-</span>
+      </div>
+    </div>
 
     <!-- HERO SECTION -->
     <section id="main" class="hero-section">
@@ -820,6 +835,7 @@
     <script src="js/projects.js"></script>
     <script src="js/contact.js"></script>
     <script src="js/gpa-chart.js"></script>
+    <script src="js/visitor-counter.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

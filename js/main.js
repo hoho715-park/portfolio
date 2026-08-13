@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initNavbar();
     initMobileMenu();
 
+    // 방문자 수 카운터 초기화
+    initVisitorCounter();
+
     // 애니메이션 초기화
     initAllAnimations();
 
