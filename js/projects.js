@@ -175,7 +175,7 @@ const projectsData = [
     hasPaper: true,
     hasAward: true,
     hasCertificate: true,
-    status: "진행중",
+    status: null,
     detail:
       "RE:FACTORY는 AST 기반 코드 구조 시각화와 LLM 의미 분석을 결합해 코드 품질을 평가하고 리팩토링 방향을 제안하는 코드 분석 플랫폼입니다.",
   },
