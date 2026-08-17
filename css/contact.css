@@ -119,6 +119,18 @@
     color: var(--primary-light);
 }
 
+.contact-value-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+.contact-separator {
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
 /* ===================================
    Right - Contact Form
    =================================== */
