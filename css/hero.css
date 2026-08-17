@@ -203,6 +203,48 @@
     }
 }
 
+/* Hero Highlights */
+.hero-highlights {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+    animation: fadeInUp 0.8s ease backwards;
+    animation-delay: 0.9s;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.highlight-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.highlight-item .fa-trophy {
+    color: var(--accent);
+}
+
+.highlight-item .fa-file-alt {
+    color: var(--primary-light);
+}
+
+.highlight-item .fa-lightbulb {
+    color: var(--secondary);
+}
+
 /* Hero Stack */
 .hero-stack {
     display: flex;
