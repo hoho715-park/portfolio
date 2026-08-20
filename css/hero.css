@@ -245,39 +245,6 @@
     color: var(--secondary);
 }
 
-/* Hero Stack */
-.hero-stack {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    animation: fadeInUp 0.8s ease backwards;
-    animation-delay: 1s;
-}
-
-.stack-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50px;
-    font-size: 0.9rem;
-    color: var(--gray-light);
-    transition: var(--transition);
-}
-
-.stack-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--white);
-    transform: translateY(-2px);
-}
-
-.stack-item .fa-leaf {
-    color: #6db33f;
-}
-
 /* Resume Download Button */
 .btn-resume-download {
     display: inline-flex;

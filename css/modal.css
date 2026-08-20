@@ -435,6 +435,21 @@
   color: #cbd5e1;
 }
 
+/* Demo Video Section */
+.detail-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.detail-video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #000;
+}
+
 /* Outcome Section */
 .detail-outcome-section {
   background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%);
@@ -512,6 +527,11 @@
   }
 
   .detail-tech-categories {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .detail-video-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }

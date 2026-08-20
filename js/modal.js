@@ -183,6 +183,25 @@ function initProjectDetailModal() {
       `;
     }
 
+    // Demo Video Section
+    if (data.demoVideos) {
+      sectionsHTML += `
+        <div class="detail-section">
+          <div class="detail-section-header">
+            <div class="detail-section-icon"><i class="fas fa-circle-play"></i></div>
+            <h3 class="detail-section-title">시연 영상</h3>
+          </div>
+          <div class="detail-section-content">
+            <div class="detail-video-grid">
+              ${data.demoVideos.map(src => `
+                <video class="detail-video" src="${src}" autoplay muted loop playsinline controls></video>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     // Outcome Section
     if (data.outcome) {
       sectionsHTML += `

@@ -352,15 +352,6 @@
         font-size: 0.75rem;
     }
 
-    .hero-stack {
-        gap: 8px;
-    }
-
-    .stack-item {
-        padding: 8px 14px;
-        font-size: 0.8rem;
-    }
-    
     .scroll-indicator {
         bottom: 10px;
     }

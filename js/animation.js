@@ -147,29 +147,6 @@ function initButtonRippleEffect() {
 }
 
 /**
- * 스택 아이템 호버 효과
- */
-function initStackItemEffects() {
-    document.querySelectorAll('.stack-item').forEach((item, index) => {
-        item.addEventListener('mouseenter', function() {
-            document.querySelectorAll('.stack-item').forEach((other, otherIndex) => {
-                if (otherIndex !== index) {
-                    other.style.opacity = '0.5';
-                    other.style.transform = 'scale(0.95)';
-                }
-            });
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            document.querySelectorAll('.stack-item').forEach(other => {
-                other.style.opacity = '';
-                other.style.transform = '';
-            });
-        });
-    });
-}
-
-/**
  * 페이지 로드 효과
  */
 function initPageLoadEffect() {
@@ -193,7 +170,6 @@ function initAllAnimations() {
     initArchiveCardEffects();
     initProjectCard3DEffect();
     initButtonRippleEffect();
-    initStackItemEffects(); 
     initPageLoadEffect();
 }
 

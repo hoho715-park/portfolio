@@ -160,6 +160,10 @@ const projectsData = [
           content: "Node.js/Express 서버(server/index.js)를 통해 Claude API 요청을 중계하고, 확장 프로그램과 AI 응답 간의 통신을 처리했습니다."
         }
       ],
+      demoVideos: [
+        "videos/guider_demo_1.mp4",
+        "videos/guider_demo_2.mp4"
+      ],
       outcome: "50명을 대상으로 한 실사용 테스트에서 과제 성공률 100%, 평균 완료시간 79% 감소, 평균 오클릭 0.4회를 기록했습니다. 사용 후 설문에서 만족도 4.6/5.0, 재사용 의사 100%를 달성했으며, 이 결과를 토대로 B2C/B2B/B2G/Data B2B 4가지 확장 비즈니스 모델을 제안했습니다."
     },
     detail:
