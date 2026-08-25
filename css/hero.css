@@ -209,7 +209,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     animation: fadeInUp 0.8s ease backwards;
     animation-delay: 0.9s;
 }
@@ -250,7 +250,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    margin-top: 28px;
+    margin-top: 12px;
     padding: 14px 32px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.3);
