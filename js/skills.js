@@ -295,14 +295,150 @@ function closeSkillsLevelModal() {
   });
 }
 
+/* ===================================
+   Skill Item Popover - 아이콘 클릭 시 레벨 팝업
+   =================================== */
+
+function findSkillData(category, name) {
+  const list = skillsData[category];
+  if (!list) return null;
+  return list.find((skill) => skill.name === name) || null;
+}
+
+function initSkillItemPopover() {
+  const skillItems = document.querySelectorAll(".skill-item");
+  if (!skillItems.length) return;
+
+  // 팝오버 DOM 생성 (하나를 재사용)
+  const popover = document.createElement("div");
+  popover.className = "skill-popover";
+  popover.innerHTML = `
+    <div class="skill-popover-top">
+      <div class="skill-popover-icon"><img src="" alt=""></div>
+      <div class="skill-popover-name"></div>
+    </div>
+    <p class="skill-popover-desc"></p>
+    <div class="skill-popover-progress">
+      <div class="skill-popover-bar"><div class="skill-popover-fill"></div></div>
+      <span class="skill-popover-percent"></span>
+    </div>
+  `;
+  document.body.appendChild(popover);
+
+  const iconImg = popover.querySelector(".skill-popover-icon img");
+  const nameEl = popover.querySelector(".skill-popover-name");
+  const descEl = popover.querySelector(".skill-popover-desc");
+  const fillEl = popover.querySelector(".skill-popover-fill");
+  const percentEl = popover.querySelector(".skill-popover-percent");
+
+  let activeItem = null;
+
+  function positionPopover(targetEl) {
+    const rect = targetEl.getBoundingClientRect();
+    const popRect = popover.getBoundingClientRect();
+    const margin = 12;
+
+    let top = rect.bottom + margin;
+    let left = rect.left + rect.width / 2 - popRect.width / 2;
+
+    left = Math.max(margin, Math.min(left, window.innerWidth - popRect.width - margin));
+
+    if (top + popRect.height > window.innerHeight - margin) {
+      top = rect.top - popRect.height - margin;
+    }
+    if (top < margin) top = margin;
+
+    popover.style.top = `${top}px`;
+    popover.style.left = `${left}px`;
+  }
+
+  function closePopover() {
+    popover.classList.remove("show");
+    fillEl.style.width = "0";
+    if (activeItem) {
+      activeItem.classList.remove("active-popover");
+      activeItem = null;
+    }
+  }
+
+  function openPopover(item) {
+    const category = item.dataset.category;
+    const nameEl2 = item.querySelector(".skill-name");
+    const name = nameEl2 ? nameEl2.textContent.trim() : "";
+    const skill = findSkillData(category, name);
+    if (!skill) return;
+
+    if (activeItem) {
+      activeItem.classList.remove("active-popover");
+    }
+    activeItem = item;
+    item.classList.add("active-popover");
+
+    iconImg.src = skill.icon;
+    iconImg.alt = skill.name;
+    nameEl.textContent = skill.name;
+    descEl.textContent = skill.desc;
+    percentEl.textContent = `${skill.level}%`;
+    fillEl.style.width = "0";
+
+    positionPopover(item);
+    popover.classList.add("show");
+
+    // 위치 확정 후 게이지바 애니메이션
+    requestAnimationFrame(() => {
+      positionPopover(item);
+      requestAnimationFrame(() => {
+        fillEl.style.width = `${skill.level}%`;
+      });
+    });
+  }
+
+  skillItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (activeItem === item && popover.classList.contains("show")) {
+        closePopover();
+      } else {
+        openPopover(item);
+      }
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (popover.classList.contains("show") && !popover.contains(e.target)) {
+      closePopover();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && popover.classList.contains("show")) {
+      closePopover();
+    }
+  });
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (popover.classList.contains("show")) closePopover();
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("resize", () => {
+    if (popover.classList.contains("show")) closePopover();
+  });
+}
+
 // 전역 초기화
 window.initSkillsFilter = initSkillsFilter;
 window.initSkillsLevelModal = initSkillsLevelModal;
 window.openSkillsLevelModal = openSkillsLevelModal;
 window.closeSkillsLevelModal = closeSkillsLevelModal;
+window.initSkillItemPopover = initSkillItemPopover;
 
 // DOM 로드 후 실행
 document.addEventListener("DOMContentLoaded", () => {
   initSkillsFilter();
   initSkillsLevelModal();
+  initSkillItemPopover();
 });
