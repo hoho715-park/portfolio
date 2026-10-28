@@ -905,6 +905,7 @@ function setupButtonHandlers() {
           window.openImageModal([
             "images/project/listen/refactory_listen_1.png",
             "images/project/listen/refactory_listen_2.png",
+            "images/project/listen/refactory_listen_3.png",
           ]);
         } else if (action === "paper") {
           console.log("📄 Opening paper PDFs...");
