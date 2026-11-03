@@ -577,3 +577,86 @@ function initPDFModal() {
 
   console.log("✅ PDF 모달 시스템 초기화 완료");
 }
+
+/* ===================================
+   Patent Modal - DOM 로드 후 초기화
+   =================================== */
+
+// DOM이 준비된 후 특허 모달 생성
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initPatentModal);
+} else {
+  initPatentModal();
+}
+
+function initPatentModal() {
+  console.log("🚀 특허 모달 초기화 시작...");
+
+  // 모달 DOM 생성
+  const patentModal = document.createElement("div");
+  patentModal.id = "patent-modal";
+  patentModal.className = "pdf-modal";
+  patentModal.innerHTML = `
+    <div class="pdf-modal-content">
+      <button class="modal-close" aria-label="닫기">&times;</button>
+      <h2 class="pdf-modal-title">특허 정보</h2>
+      <div class="patent-list"></div>
+    </div>
+  `;
+  document.body.appendChild(patentModal);
+
+  const patentList = patentModal.querySelector(".patent-list");
+  const patentCloseBtn = patentModal.querySelector(".modal-close");
+
+  // 모달 열기 함수
+  window.openPatentModal = function (patents) {
+    console.log("✅ openPatentModal 호출됨:", patents);
+
+    patentList.innerHTML = "";
+
+    patents.forEach((patent) => {
+      const patentItem = document.createElement("div");
+      patentItem.className = "patent-item";
+      patentItem.innerHTML = `
+        ${patent.status ? `<div class="patent-status-badge"><i class="fas fa-lightbulb"></i><span>${patent.status}</span></div>` : ""}
+        <div class="patent-item-title">${patent.title}</div>
+        <div class="patent-item-number">
+          <span class="patent-number-label">출원번호</span>
+          <span class="patent-number-value">${patent.applicationNumber}</span>
+        </div>
+      `;
+      patentList.appendChild(patentItem);
+    });
+
+    patentModal.classList.add("show");
+    console.log("✅ 특허 모달 표시됨");
+  };
+
+  // 모달 닫기 함수
+  window.closePatentModal = function () {
+    patentModal.classList.remove("show");
+    console.log("✅ 특허 모달 닫힘");
+  };
+
+  // 닫기 버튼
+  patentCloseBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    window.closePatentModal();
+  });
+
+  // 배경 클릭
+  patentModal.addEventListener("click", (e) => {
+    if (e.target === patentModal) {
+      window.closePatentModal();
+    }
+  });
+
+  // ESC 키
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && patentModal.classList.contains("show")) {
+      window.closePatentModal();
+    }
+  });
+
+  console.log("✅ 특허 모달 시스템 초기화 완료");
+}

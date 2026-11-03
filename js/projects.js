@@ -14,6 +14,7 @@ const projectsData = [
     hasPaper: true,
     hasAward: true,
     hasCertificate: true,
+    hasPatent: false,
     status: null,
     hasDetailModal: true,
     detailData: {
@@ -111,6 +112,7 @@ const projectsData = [
     hasPaper: true,
     hasAward: true,
     hasCertificate: true,
+    hasPatent: true,
     status: null,
     hasDetailModal: true,
     detailData: {
@@ -182,6 +184,7 @@ const projectsData = [
     hasPaper: true,
     hasAward: true,
     hasCertificate: true,
+    hasPatent: false,
     status: null,
     detail:
       "RE:FACTORY는 AST 기반 코드 구조 시각화와 LLM 의미 분석을 결합해 코드 품질을 평가하고 리팩토링 방향을 제안하는 코드 분석 플랫폼입니다.",
@@ -197,6 +200,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: true,
     hasCertificate: true,
+    hasPatent: false,
     status: null,
     siteUrl: "http://nodefolio.co.kr/",
     hasDetailModal: true,
@@ -266,6 +270,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: true,
     hasCertificate: true,
+    hasPatent: false,
     status: null,
     hasDetailModal: true,
     detailData: {
@@ -335,6 +340,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
+    hasPatent: false,
     status: null,
     detail:
       "careEYE는 실시간 행동 감지를 통해 낙상 위험을 감지하고 보호자에게 알림을 제공하는 실버 케어 서비스입니다.",
@@ -349,6 +355,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
+    hasPatent: false,
     status: null,
     detail:
       "홍천 가뭄 예측 프로젝트는 기상 데이터 분석을 통해 가뭄 가능성을 예측하는 서비스입니다.",
@@ -363,6 +370,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
+    hasPatent: false,
     status: "진행중",
     siteUrl: "https://parksungho.com/",
     detail:
@@ -378,6 +386,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
+    hasPatent: false,
     status: ["외주", "진행중"],
     siteUrl: "https://musikonsemiro.com/",
     detail: "MusikOnsemiro는 성악 동호회를 위한 홍보 웹사이트입니다.",
@@ -392,6 +401,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
+    hasPatent: false,
     status: ["외주", "진행중"],
     siteUrl: "https://software.hongik.ac.kr/home/",
     detail: "홍익대학교 소프트웨어융합학과 공식 홈페이지 개발 및 유지보수 프로젝트입니다.",
@@ -406,6 +416,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
+    hasPatent: false,
     status: ["외주", "진행중"],
     siteUrl: "https://metaverse.hongik.ac.kr/",
     detail: "메타버스 아카데미 교육 플랫폼 홈페이지 개발 및 운영 프로젝트입니다.",
@@ -420,6 +431,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
+    hasPatent: false,
     status: ["외주", "진행중"],
     detail:
       "서울대학교 이차전지연구소를 위한 맞춤형 플러그인 개발 프로젝트입니다.",
@@ -434,6 +446,7 @@ const projectsData = [
     hasPaper: false,
     hasAward: false,
     hasCertificate: false,
+    hasPatent: false,
     status: ["외주", "진행중"],
     detail: "(주)D-1을 위한 회원관리 및 자료실 플러그인 개발 프로젝트입니다.",
   },
@@ -531,6 +544,18 @@ function renderProjects() {
                       <path d="M6 12v5c3 3 9 3 12 0v-5"/>
                     </svg>
                     <span>수료증보기</span>
+                  </button>
+                `
+                    : ""
+                }
+                ${
+                  project.hasPatent
+                    ? `
+                  <button class="btn-action btn-patent" data-project-id="${project.id}" data-action="patent">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <span>특허보기</span>
                   </button>
                 `
                     : ""
@@ -663,6 +688,18 @@ function renderMobileProjects() {
                   <path d="M6 12v5c3 3 9 3 12 0v-5"/>
                 </svg>
                 <span>수료증보기</span>
+              </button>
+            `
+                : ""
+            }
+            ${
+              project.hasPatent
+                ? `
+              <button class="btn-action btn-patent" data-project-id="${project.id}" data-action="patent">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span>특허보기</span>
               </button>
             `
                 : ""
@@ -886,6 +923,15 @@ function setupButtonHandlers() {
               isFirstAuthor: true,
               isEnglish: true,
               venue: "KSII - 한국인터넷정보학회 - 국제 논문지",
+            },
+          ]);
+        } else if (action === "patent") {
+          console.log("💡 Opening patent info...");
+          window.openPatentModal([
+            {
+              title: "인공지능 언어모델 기반 시각적 웹 내비게이션 안내 방법, 시스템 및 이를 실행시키기 위한 컴퓨터 프로그램이 저장된 컴퓨터 판독 가능한 기록매체",
+              applicationNumber: "10-2026-0214627",
+              status: "출원",
             },
           ]);
         }

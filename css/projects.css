@@ -210,6 +210,19 @@
   box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
 }
 
+/* Patent Button - Indigo */
+.btn-patent {
+  background: rgba(129, 140, 248, 0.15);
+  color: #818cf8;
+  border-color: rgba(129, 140, 248, 0.3);
+}
+
+.btn-patent:hover {
+  background: rgba(129, 140, 248, 0.25);
+  border-color: #818cf8;
+  box-shadow: 0 0 15px rgba(129, 140, 248, 0.3);
+}
+
 /* Site Button - Green */
 .btn-site {
   background: rgba(34, 197, 94, 0.15);

@@ -963,6 +963,73 @@
   font-size: 1rem;
 }
 
+/* Patent Modal */
+.patent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.patent-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.2s ease;
+}
+
+.patent-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(129, 140, 248, 0.4);
+}
+
+.patent-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+  background: rgba(129, 140, 248, 0.15);
+  border: 1px solid rgba(129, 140, 248, 0.35);
+  border-radius: 999px;
+  color: #a5b4fc;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.patent-status-badge i {
+  font-size: 0.7rem;
+}
+
+.patent-item-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.patent-item-number {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.patent-number-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.patent-number-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #818cf8;
+  font-family: monospace;
+}
+
 @media (max-width: 768px) {
   .pdf-modal-content {
     padding: 24px;
@@ -988,5 +1055,13 @@
 
   .pdf-action-btn i {
     font-size: 0.9rem;
+  }
+
+  .patent-item {
+    padding: 16px;
+  }
+
+  .patent-item-title {
+    font-size: 0.85rem;
   }
 }
