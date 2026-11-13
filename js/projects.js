@@ -924,6 +924,10 @@ function setupButtonHandlers() {
               isEnglish: true,
               venue: "KSII - 한국인터넷정보학회 - 국제 논문지",
             },
+            {
+              title: "DOM 정보를 활용한 LLM 기반 테스트 케이스 품질 향상 프레임워크: DOM Filter",
+              file: "pdfs/guider_paper_2.pdf",
+            },
           ]);
         } else if (action === "patent") {
           console.log("💡 Opening patent info...");
