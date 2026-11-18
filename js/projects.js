@@ -908,6 +908,7 @@ function setupButtonHandlers() {
             "images/project/award/guider_award_2.png",
             "images/project/award/guider_award_3.png",
             "images/project/award/guider_award_4.png",
+            "images/project/award/guider_award_5.png",
           ]);
         } else if (action === "certificate") {
           console.log("🎓 Opening certificate images...");
