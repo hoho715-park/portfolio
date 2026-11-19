@@ -35,10 +35,41 @@
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/modal.css" />
     <link rel="stylesheet" href="css/visitor-counter.css" />
-    <link rel="stylesheet" href="css/hero-logos.css" />
+    <link rel="stylesheet" href="css/hero-intro.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- 히어로 등장 연출: 첫 페인트 전에 상태 클래스 지정 (깜빡임 방지) -->
+    <script>
+      (function () {
+        var root = document.documentElement;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        root.classList.add("hero-anim");
+        try {
+          if (!sessionStorage.getItem("heroIntroSeen")) root.classList.add("show-intro");
+        } catch (e) {}
+        // 안전장치: JS 오류 시에도 4초 뒤엔 콘텐츠 표시
+        setTimeout(function () {
+          var hero = document.getElementById("main");
+          if (hero) hero.classList.add("is-revealed");
+          root.classList.remove("show-intro");
+        }, 4000);
+      })();
+    </script>
   </head>
   <body>
+    <!-- INTRO OVERLAY (세션당 1회, js/hero-intro.js) -->
+    <div class="hero-intro" aria-hidden="true">
+      <div class="hero-intro-half hero-intro-top"></div>
+      <div class="hero-intro-half hero-intro-bottom"></div>
+      <div class="hero-intro-content">
+        <p class="hero-intro-line">
+          <span class="prompt">$</span><span class="hero-intro-cmd" data-text="./parksungho --init"></span>
+        </p>
+        <div class="hero-intro-percent">000</div>
+        <div class="hero-intro-bar"><span></span></div>
+      </div>
+    </div>
+
     <!-- NAVIGATION -->
     <nav class="navbar">
       <div class="nav-container">
@@ -80,6 +111,7 @@
         <div class="floating-shape shape-2"></div>
         <div class="floating-shape shape-3"></div>
         <div class="code-rain"></div>
+        <div class="hero-spotlight"></div>
       </div>
       <div class="hero-inner">
         <div class="hero-content">
@@ -88,9 +120,11 @@
             <span>Full Stack Developer</span>
           </div>
           <h1 class="hero-title">
-            <span class="line">안녕하세요,</span>
-            <span class="line highlight">박성호</span>
-            <span class="line">입니다.</span>
+            <span class="line"><span class="line-inner">안녕하세요,</span></span>
+            <span class="line highlight"
+              ><span class="line-inner" data-scramble="박성호">박성호</span></span
+            >
+            <span class="line"><span class="line-inner">입니다.</span></span>
           </h1>
           <div class="hero-subtitle-wrapper">
             <p class="hero-subtitle">
@@ -102,13 +136,13 @@
           </div>
           <div class="hero-highlights">
             <span class="highlight-item"
-              ><i class="fas fa-trophy"></i> 수상 15회</span
+              ><i class="fas fa-trophy"></i><span>수상 <span data-count="15">15</span>회</span></span
             >
             <span class="highlight-item"
-              ><i class="fas fa-file-alt"></i> 논문 5편</span
+              ><i class="fas fa-file-alt"></i><span>논문 <span data-count="5">5</span>편</span></span
             >
             <span class="highlight-item"
-              ><i class="fas fa-lightbulb"></i> 특허 1개</span
+              ><i class="fas fa-lightbulb"></i><span>특허 <span data-count="1">1</span>개</span></span
             >
           </div>
           <a href="pdfs/박성호_이력서.pdf" download class="btn-resume-download">
@@ -121,13 +155,6 @@
             <div class="wheel"></div>
           </div>
           <span>Scroll Down</span>
-        </div>
-      </div>
-      <!-- 관리 사이트 · 프로젝트 로고 마키 (js/hero-logos.js 에서 렌더링) -->
-      <div class="hero-logos">
-        <p class="hero-logos-caption">Sites &amp; Projects</p>
-        <div class="hero-logos-viewport">
-          <div class="hero-logos-track"></div>
         </div>
       </div>
     </section>
@@ -862,7 +889,7 @@
     <script src="js/contact.js"></script>
     <script src="js/gpa-chart.js"></script>
     <script src="js/visitor-counter.js"></script>
-    <script src="js/hero-logos.js"></script>
+    <script src="js/hero-intro.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

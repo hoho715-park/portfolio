@@ -152,11 +152,7 @@ function initButtonRippleEffect() {
 function initPageLoadEffect() {
     window.addEventListener('load', function() {
         document.body.classList.add('loaded');
-        
-        const heroElements = document.querySelectorAll('.hero-content > *');
-        heroElements.forEach((el, index) => {
-            el.style.animationDelay = `${index * 0.2}s`;
-        });
+        // 히어로 등장 순서는 css/hero-intro.css 에서 제어
     });
 }
 
