@@ -31,6 +31,9 @@ const codeSnippets = [
     'Content-Type', 'Authorization'
 ];
 
+const RAIN_COLUMN_WIDTH = 22;   // 컬럼 간격(px) — 작을수록 촘촘
+const RAIN_DROPS_PER_COLUMN = 2; // 컬럼당 동시에 떨어지는 드롭 수
+
 /**
  * 코드 비 효과 초기화
  */
@@ -42,11 +45,13 @@ function initCodeRain() {
     addCodeRainStyles();
     
     // 컬럼 수 계산
-    const columns = Math.floor(window.innerWidth / 35);
+    const columns = Math.floor(window.innerWidth / RAIN_COLUMN_WIDTH);
     
-    // 각 컬럼에 코드 드롭 생성
+    // 각 컬럼에 코드 드롭 여러 개 생성
     for (let i = 0; i < columns; i++) {
-        createCodeDrop(codeRain, i);
+        for (let j = 0; j < RAIN_DROPS_PER_COLUMN; j++) {
+            createCodeDrop(codeRain, i);
+        }
     }
 }
 
@@ -73,10 +78,11 @@ function addCodeRainStyles() {
  */
 function createCodeDrop(container, index) {
     const drop = document.createElement('div');
+    const duration = 7 + Math.random() * 10;
     
     drop.style.cssText = `
         position: absolute;
-        left: ${index * 35 + Math.random() * 15}px;
+        left: ${index * RAIN_COLUMN_WIDTH + Math.random() * 10}px;
         top: ${Math.random() * -100}%;
         font-family: 'Fira Code', 'Source Code Pro', 'Consolas', 'Monaco', monospace;
         font-size: 11px;
@@ -84,8 +90,8 @@ function createCodeDrop(container, index) {
         writing-mode: vertical-rl;
         text-orientation: mixed;
         white-space: nowrap;
-        animation: codeRainFall ${10 + Math.random() * 15}s linear infinite;
-        animation-delay: ${Math.random() * 8}s;
+        animation: codeRainFall ${duration}s linear infinite;
+        animation-delay: ${-Math.random() * duration}s;
         pointer-events: none;
         text-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
         letter-spacing: 2px;
