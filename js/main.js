@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 히어로 섹션 효과
     initTypingEffect();
     initCodeRain();
+    initHeroLogos();
 
     // 스킬 필터 초기화
     initSkillsFilter();
