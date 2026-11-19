@@ -149,6 +149,16 @@
   margin-top: auto;
 }
 
+/* 버튼이 4개 이상이면 3+1 줄바꿈 대신 2열 격자로 균등 배치 */
+.project-actions:has(> .btn-action:nth-child(4)) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.project-actions:has(> .btn-action:nth-child(4)) .btn-action {
+  justify-content: center;
+}
+
 .btn-action {
   all: unset;
   display: inline-flex;
