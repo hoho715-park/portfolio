@@ -84,15 +84,15 @@
 }
 
 .github-bg {
-  background: linear-gradient(135deg, #2d333b, #1c2128);
+  background: #22272e;
 }
 
 .portfolio-bg {
-  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  background: var(--primary);
 }
 
 .team-bg {
-  background: linear-gradient(135deg, #f59e0b, #f97316);
+  background: var(--accent);
 }
 
 /* Content */

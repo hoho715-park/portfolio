@@ -70,7 +70,7 @@
 }
 
 .filter-btn.active {
-  background: var(--gradient);
+  background: var(--primary);
   color: var(--white);
   border-color: transparent;
   box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
@@ -78,7 +78,7 @@
 
 /* Skills Level Button */
 .skills-level-btn {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  background: var(--secondary) !important;
   color: var(--white) !important;
   border-color: transparent !important;
   gap: 6px;
@@ -268,7 +268,7 @@
 .skill-level-fill {
   height: 100%;
   border-radius: 4px;
-  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+  background: var(--primary);
   transition: width 0.8s ease;
   width: 0;
 }
@@ -355,7 +355,7 @@
 .skill-popover-fill {
   height: 100%;
   border-radius: 4px;
-  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+  background: var(--primary);
   transition: width 0.6s ease;
   width: 0;
 }

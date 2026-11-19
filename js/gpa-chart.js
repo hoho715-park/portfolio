@@ -76,19 +76,9 @@
 
   const config = getResponsiveConfig();
 
-  // 그라데이션 생성
-  const context = ctx.getContext('2d');
-  const lineGradient = context.createLinearGradient(0, 0, ctx.offsetWidth || 400, 0);
-  lineGradient.addColorStop(0, '#6366f1');
-  lineGradient.addColorStop(0.5, '#8b5cf6');
-  lineGradient.addColorStop(0.75, '#06b6d4');
-  lineGradient.addColorStop(1, '#10b981');
-
-  // 영역 채우기 그라데이션
-  const areaGradient = context.createLinearGradient(0, 0, 0, 200);
-  areaGradient.addColorStop(0, 'rgba(99, 102, 241, 0.25)');
-  areaGradient.addColorStop(0.5, 'rgba(6, 182, 212, 0.15)');
-  areaGradient.addColorStop(1, 'rgba(16, 185, 129, 0)');
+  // 선/영역 색상 (단색)
+  const lineColor = '#6366f1';
+  const areaColor = 'rgba(99, 102, 241, 0.12)';
 
   // 포인트 색상 배열
   const pointColors = gpaData.values.map((val, idx) => {
@@ -112,9 +102,9 @@
       datasets: [{
         label: '학점',
         data: gpaData.values,
-        borderColor: lineGradient,
+        borderColor: lineColor,
         borderWidth: config.borderWidth,
-        backgroundColor: areaGradient,
+        backgroundColor: areaColor,
         fill: true,
         tension: 0.4,
         pointBackgroundColor: pointColors,

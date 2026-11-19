@@ -89,12 +89,12 @@
 }
 
 .status-progress {
-  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+  background: #8b5cf6;
   border: 1px solid rgba(255,255,255,0.2);
 }
 
 .status-outsource {
-  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+  background: #f97316;
   border: 1px solid rgba(255,255,255,0.2);
 }
 

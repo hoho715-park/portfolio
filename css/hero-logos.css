@@ -75,7 +75,7 @@ a.hero-logo-item:hover {
   font-size: 0.7rem;
   font-weight: 800;
   color: #fff;
-  background: linear-gradient(135deg, var(--logo-color), color-mix(in srgb, var(--logo-color) 55%, var(--dark)));
+  background: var(--logo-color);
   flex-shrink: 0;
 }
 

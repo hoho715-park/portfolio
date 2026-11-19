@@ -175,7 +175,7 @@
 
 /* Highlight Box */
 .detail-highlight {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+  background: rgba(99, 102, 241, 0.1);
   border: 1px solid rgba(99, 102, 241, 0.3);
   border-radius: 12px;
   padding: 20px 24px;
@@ -191,7 +191,7 @@
   top: 0;
   bottom: 0;
   width: 4px;
-  background: linear-gradient(to bottom, #6366f1, #10b981);
+  background: var(--primary);
 }
 
 .detail-highlight p {
@@ -260,7 +260,7 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: linear-gradient(135deg, rgba(250, 204, 21, 0.15) 0%, rgba(251, 191, 36, 0.1) 100%);
+  background: rgba(250, 204, 21, 0.12);
   border: 1px solid rgba(250, 204, 21, 0.3);
   border-radius: 8px;
   color: #fbbf24;
@@ -452,7 +452,7 @@
 
 /* Outcome Section */
 .detail-outcome-section {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%);
+  background: rgba(16, 185, 129, 0.08);
   border-color: rgba(16, 185, 129, 0.2);
 }
 
@@ -713,11 +713,7 @@
   font-size: 1.75rem;
   font-weight: 900;
   line-height: 1.2;
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 55%, #ef4444 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: #fbbf24;
   text-shadow: 0 0 24px rgba(251, 191, 36, 0.25);
 }
 
@@ -861,13 +857,13 @@
 
 /* 1저자 논문 강조 스타일 */
 .pdf-item-highlight {
-  background: linear-gradient(135deg, rgba(250, 204, 21, 0.1) 0%, rgba(251, 191, 36, 0.05) 100%);
+  background: rgba(250, 204, 21, 0.08);
   border: 1px solid rgba(250, 204, 21, 0.3);
   flex-wrap: wrap;
 }
 
 .pdf-item-highlight:hover {
-  background: linear-gradient(135deg, rgba(250, 204, 21, 0.15) 0%, rgba(251, 191, 36, 0.08) 100%);
+  background: rgba(250, 204, 21, 0.12);
   border-color: rgba(250, 204, 21, 0.5);
   box-shadow: 0 0 20px rgba(250, 204, 21, 0.15);
 }

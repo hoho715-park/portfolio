@@ -70,7 +70,7 @@
 .intro-icon {
   width: 34px;
   height: 34px;
-  background: var(--gradient);
+  background: var(--primary);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -121,7 +121,7 @@
   right: 16px;
   height: 4px;
   border-radius: 0 0 4px 4px;
-  background: var(--gradient);
+  background: var(--primary);
 }
 
 /* Header */
@@ -137,7 +137,7 @@
 .profile-avatar {
   width: 50px;
   height: 50px;
-  background: var(--gradient);
+  background: var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -368,7 +368,7 @@
 .gpa-header i {
   width: 36px;
   height: 36px;
-  background: var(--gradient);
+  background: var(--primary);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -425,10 +425,7 @@
 .gpa-number {
   font-size: 2.5rem;
   font-weight: 800;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-light);
 }
 
 .gpa-max {
@@ -441,7 +438,7 @@
   position: absolute;
   top: -10px;
   right: -10px;
-  background: var(--gradient);
+  background: var(--primary);
   color: white;
   font-size: 0.65rem;
   font-weight: 700;
