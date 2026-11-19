@@ -13,13 +13,6 @@
     values: [1.76, 3.18, 3.00, 2.15, 4.18, 4.33, 4.29]
   };
 
-  // 상승 구간 체크 함수
-  function isRisingSegment(index) {
-    if (index === 0) return false;
-    const diff = gpaData.values[index] - gpaData.values[index - 1];
-    return diff > 1.0;
-  }
-
   // 최고점 인덱스
   const maxIndex = gpaData.values.indexOf(Math.max(...gpaData.values));
 
@@ -44,94 +37,83 @@
   function getResponsiveConfig() {
     if (isMobile()) {
       return {
-        pointRadius: 4,
-        pointHoverRadius: 6,
-        borderWidth: 2,
+        barThickness: 18,
+        valueFontSize: 9,
         fontSize: 9,
         yFontSize: 9,
         padding: 8,
-        layoutPadding: { left: 5, right: 15, top: 10, bottom: 5 }
+        layoutPadding: { left: 5, right: 10, top: 20, bottom: 5 }
       };
     } else if (isTablet()) {
       return {
-        pointRadius: 5,
-        pointHoverRadius: 7,
-        borderWidth: 2.5,
+        barThickness: 28,
+        valueFontSize: 10,
         fontSize: 10,
         yFontSize: 10,
         padding: 10,
-        layoutPadding: { left: 5, right: 20, top: 10, bottom: 5 }
+        layoutPadding: { left: 5, right: 15, top: 22, bottom: 5 }
       };
     }
     return {
-      pointRadius: 6,
-      pointHoverRadius: 8,
-      borderWidth: 3,
+      barThickness: 44,
+      valueFontSize: 12,
       fontSize: 11,
       yFontSize: 11,
       padding: 12,
-      layoutPadding: { left: 10, right: 25, top: 15, bottom: 10 }
+      layoutPadding: { left: 10, right: 20, top: 24, bottom: 10 }
     };
   }
 
   const config = getResponsiveConfig();
 
-  // 선/영역 색상 (단색)
-  const lineColor = '#6366f1';
-  const areaColor = 'rgba(99, 102, 241, 0.12)';
-
-  // 포인트 색상 배열
-  const pointColors = gpaData.values.map((val, idx) => {
+  // 막대 색상: 최고 학기 = 초록, 장학금 학기(3-1 ~ 4-1) = 진한 인디고, 그 외 = 옅은 인디고
+  const scholarshipIndexes = [4, 5, 6];
+  const barColors = gpaData.values.map((val, idx) => {
     if (idx === maxIndex) return '#10b981';
-    if (isRisingSegment(idx)) return '#06b6d4';
-    return '#6366f1';
+    if (scholarshipIndexes.includes(idx)) return '#6366f1';
+    return 'rgba(99, 102, 241, 0.45)';
+  });
+  const barHoverColors = gpaData.values.map((val, idx) => {
+    if (idx === maxIndex) return '#34d399';
+    return '#818cf8';
   });
 
-  // 포인트 크기 배열
-  const pointRadii = gpaData.values.map((val, idx) => {
-    if (idx === maxIndex) return config.pointRadius + 2;
-    if (isRisingSegment(idx)) return config.pointRadius + 1;
-    return config.pointRadius;
-  });
+  // 막대 위 학점 숫자 표시 플러그인 (이 차트에만 적용)
+  const valueLabelPlugin = {
+    id: 'gpaValueLabel',
+    afterDatasetsDraw: function(chart) {
+      const chartCtx = chart.ctx;
+      const meta = chart.getDatasetMeta(0);
+      const fontSize = getResponsiveConfig().valueFontSize;
+
+      chartCtx.save();
+      chartCtx.textAlign = 'center';
+      chartCtx.textBaseline = 'bottom';
+      chartCtx.font = '700 ' + fontSize + 'px Inter, sans-serif';
+
+      meta.data.forEach(function(bar, idx) {
+        chartCtx.fillStyle = idx === maxIndex ? '#34d399' : 'rgba(255, 255, 255, 0.85)';
+        chartCtx.fillText(gpaData.values[idx].toFixed(2), bar.x, bar.y - 6);
+      });
+      chartCtx.restore();
+    }
+  };
 
   // 차트 인스턴스
   let chartInstance = new Chart(ctx, {
-    type: 'line',
+    type: 'bar',
+    plugins: [valueLabelPlugin],
     data: {
       labels: getLabels(),
       datasets: [{
         label: '학점',
         data: gpaData.values,
-        borderColor: lineColor,
-        borderWidth: config.borderWidth,
-        backgroundColor: areaColor,
-        fill: true,
-        tension: 0.4,
-        pointBackgroundColor: pointColors,
-        pointBorderColor: '#fff',
-        pointBorderWidth: 2,
-        pointRadius: pointRadii,
-        pointHoverRadius: config.pointHoverRadius,
-        pointHoverBackgroundColor: pointColors,
-        pointHoverBorderColor: '#fff',
-        pointHoverBorderWidth: 3,
-        clip: false,
-        segment: {
-          borderColor: function(ctx) {
-            const idx = ctx.p1DataIndex;
-            if (isRisingSegment(idx)) {
-              return '#10b981';
-            }
-            return undefined;
-          },
-          borderWidth: function(ctx) {
-            const idx = ctx.p1DataIndex;
-            if (isRisingSegment(idx)) {
-              return config.borderWidth + 1;
-            }
-            return undefined;
-          }
-        }
+        backgroundColor: barColors,
+        hoverBackgroundColor: barHoverColors,
+        borderRadius: 6,
+        borderSkipped: 'bottom',
+        barThickness: config.barThickness,
+        maxBarThickness: 56
       }]
     },
     options: {
@@ -184,7 +166,7 @@
       scales: {
         x: {
           grid: {
-            color: 'rgba(255, 255, 255, 0.05)',
+            display: false,
             drawBorder: false
           },
           ticks: {
@@ -241,32 +223,6 @@
     }
   });
 
-  // 최고점 glow 효과 플러그인
-  const glowPlugin = {
-    id: 'glowEffect',
-    afterDraw: function(chart) {
-      const chartCtx = chart.ctx;
-      const meta = chart.getDatasetMeta(0);
-      const maxPoint = meta.data[maxIndex];
-
-      if (maxPoint) {
-        chartCtx.save();
-        chartCtx.beginPath();
-        chartCtx.arc(maxPoint.x, maxPoint.y, 12, 0, Math.PI * 2);
-        chartCtx.fillStyle = 'rgba(16, 185, 129, 0.2)';
-        chartCtx.fill();
-
-        chartCtx.beginPath();
-        chartCtx.arc(maxPoint.x, maxPoint.y, 18, 0, Math.PI * 2);
-        chartCtx.fillStyle = 'rgba(16, 185, 129, 0.1)';
-        chartCtx.fill();
-        chartCtx.restore();
-      }
-    }
-  };
-
-  Chart.register(glowPlugin);
-
   // 리사이즈 핸들러
   let resizeTimeout;
   window.addEventListener('resize', function() {
@@ -287,13 +243,7 @@
       chartInstance.options.plugins.tooltip.padding = newConfig.padding;
 
       // 데이터셋 업데이트
-      chartInstance.data.datasets[0].borderWidth = newConfig.borderWidth;
-      chartInstance.data.datasets[0].pointRadius = gpaData.values.map((val, idx) => {
-        if (idx === maxIndex) return newConfig.pointRadius + 2;
-        if (isRisingSegment(idx)) return newConfig.pointRadius + 1;
-        return newConfig.pointRadius;
-      });
-      chartInstance.data.datasets[0].pointHoverRadius = newConfig.pointHoverRadius;
+      chartInstance.data.datasets[0].barThickness = newConfig.barThickness;
 
       chartInstance.update('none');
     }, 150);

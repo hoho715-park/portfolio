@@ -386,7 +386,7 @@
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 24px;
-  align-items: center;
+  align-items: stretch; /* 차트 높이를 좌측 GPA 카드 열 높이에 맞춤 */
 }
 
 /* GPA Summary Card */
@@ -452,7 +452,6 @@
   position: relative;
   width: 100%;
   min-height: 180px;
-  max-height: 220px;
   height: 100%;
   overflow: hidden;
 }
@@ -460,4 +459,12 @@
 .gpa-chart-wrapper canvas {
   width: 100% !important;
   height: 100% !important;
+}
+
+/* 데스크톱: 캔버스가 행 높이에 관여하지 않게 → 좌측 GPA 카드 열 높이에 정확히 맞춤 */
+@media (min-width: 1025px) {
+  .gpa-chart-wrapper canvas {
+    position: absolute;
+    inset: 0;
+  }
 }
