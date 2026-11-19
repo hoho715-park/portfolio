@@ -98,6 +98,45 @@
   border: 1px solid rgba(255,255,255,0.2);
 }
 
+/* 성과 배지 (수상/논문/특허 개수) — 이미지 좌측 하단 오버레이 */
+.project-achievements {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  z-index: 2;
+}
+
+.achievement-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  white-space: nowrap;
+}
+
+.achievement-award i {
+  color: #fbbf24;
+}
+
+.achievement-paper i {
+  color: #38bdf8;
+}
+
+.achievement-patent i {
+  color: #4ade80;
+}
+
 .project-body {
   padding: 18px;
   display: flex;

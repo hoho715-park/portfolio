@@ -15,6 +15,7 @@ const projectsData = [
     hasAward: true,
     hasCertificate: true,
     hasPatent: false,
+    achievements: { award: 4, paper: 2 },
     status: null,
     hasDetailModal: true,
     detailData: {
@@ -113,6 +114,7 @@ const projectsData = [
     hasAward: true,
     hasCertificate: true,
     hasPatent: true,
+    achievements: { award: 6, paper: 2, patent: 1 },
     status: null,
     hasDetailModal: true,
     detailData: {
@@ -185,6 +187,7 @@ const projectsData = [
     hasAward: true,
     hasCertificate: true,
     hasPatent: false,
+    achievements: { award: 3, paper: 1 },
     status: null,
     detail:
       "RE:FACTORY는 AST 기반 코드 구조 시각화와 LLM 의미 분석을 결합해 코드 품질을 평가하고 리팩토링 방향을 제안하는 코드 분석 플랫폼입니다.",
@@ -201,6 +204,7 @@ const projectsData = [
     hasAward: true,
     hasCertificate: true,
     hasPatent: false,
+    achievements: { award: 1 },
     status: null,
     siteUrl: "http://nodefolio.co.kr/",
     hasDetailModal: true,
@@ -271,6 +275,7 @@ const projectsData = [
     hasAward: true,
     hasCertificate: true,
     hasPatent: false,
+    achievements: { award: 1 },
     status: null,
     hasDetailModal: true,
     detailData: {
@@ -468,6 +473,26 @@ let mobileContainer = null;
 let mobileIndicator = null;
 const MOBILE_BREAKPOINT = 768;
 
+/** 프로젝트 성과(수상/논문/특허) 개수 배지 HTML 생성 — 개수가 0이거나 없으면 생략 */
+function renderAchievementBadges(project) {
+  const a = project.achievements;
+  if (!a) return "";
+
+  const items = [
+    { key: "award", icon: "fas fa-trophy", label: "수상", unit: "회" },
+    { key: "paper", icon: "fas fa-file-alt", label: "논문", unit: "편" },
+    { key: "patent", icon: "fas fa-lightbulb", label: "특허", unit: "건" },
+  ]
+    .filter((item) => a[item.key] > 0)
+    .map(
+      (item) =>
+        `<span class="achievement-badge achievement-${item.key}"><i class="${item.icon}"></i>${item.label} ${a[item.key]}${item.unit}</span>`,
+    )
+    .join("");
+
+  return items ? `<div class="project-achievements">${items}</div>` : "";
+}
+
 /* 카드 렌더링 */
 function renderProjects() {
   track.innerHTML = "";
@@ -498,6 +523,7 @@ function renderProjects() {
             <div class="project-image-wrapper">
               <img src="${project.image}" alt="${project.title}">
               ${statusBadges}
+              ${renderAchievementBadges(project)}
             </div>
             <div class="project-body">
               <h3>${project.title}</h3>
@@ -642,6 +668,7 @@ function renderMobileProjects() {
         <div class="project-image-wrapper">
           <img src="${project.image}" alt="${project.title}">
           ${statusBadges}
+          ${renderAchievementBadges(project)}
         </div>
         <div class="project-body">
           <h3>${project.title}</h3>
