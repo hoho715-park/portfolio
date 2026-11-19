@@ -136,7 +136,7 @@ const skillsData = {
     },
     {
       name: "AWS",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
       desc: "AWS를 활용해 클라우드 환경에 웹 서비스를 배포하고 안정적으로 운영할 수 있습니다.",
       level: 70
     }
