@@ -114,7 +114,7 @@ const projectsData = [
     hasAward: true,
     hasCertificate: true,
     hasPatent: true,
-    achievements: { award: 6, paper: 2, patent: 1 },
+    achievements: { award: 8, paper: 2, patent: 1 },
     status: null,
     hasDetailModal: true,
     detailData: {
