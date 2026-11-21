@@ -6,9 +6,10 @@
  * 타이핑할 텍스트 목록
  */
 const typingTexts = [
-    '서비스 전체를 설계하는 개발자',
-    'UI부터 인프라까지 구현하는 개발자',
-    '문제를 해결하는 풀스택 개발자'
+    '피드백을 설계로 바꾸는 개발자',
+    'AI로 실제 쓰이는 서비스를 만드는 개발자',
+    '기술을 쉽게 설명하고 설득하는 개발자',
+    '사용자의 목소리를 코드로 번역하는 개발자'
 ];
 
 /**
@@ -42,7 +43,7 @@ function initTypingEffect() {
                 setTimeout(type, 500);
                 return;
             }
-            setTimeout(type, 50);
+            setTimeout(type, 40);
         } else {
             // 글자 추가
             charIndex++;
@@ -53,7 +54,7 @@ function initTypingEffect() {
                 setTimeout(type, 2000);
                 return;
             }
-            setTimeout(type, 100);
+            setTimeout(type, 80);
         }
     }
     
