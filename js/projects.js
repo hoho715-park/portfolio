@@ -937,6 +937,7 @@ function setupButtonHandlers() {
             "images/project/award/guider_award_4.png",
             "images/project/award/guider_award_5.png",
             "images/project/award/guider_award_6.png",
+            "images/project/award/guider_award_7.png",
           ]);
         } else if (action === "certificate") {
           console.log("🎓 Opening certificate images...");
@@ -956,6 +957,7 @@ function setupButtonHandlers() {
             {
               title: "DOM 정보를 활용한 LLM 기반 테스트 케이스 품질 향상 프레임워크: DOM Filter",
               file: "pdfs/guider_paper_2.pdf",
+              award: "우수논문상",
             },
           ]);
         } else if (action === "patent") {
