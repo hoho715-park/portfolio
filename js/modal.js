@@ -377,6 +377,10 @@ function initImageModal() {
     // 클래스 추가
     if (normalized.length > 1) {
       imageContainer.classList.add("multiple-images");
+      // 7장 이상이면 한 줄 4장씩 2줄 그리드로 배치
+      if (normalized.length >= 7) {
+        imageContainer.classList.add("many-images");
+      }
     } else {
       imageContainer.classList.add("single-image");
     }

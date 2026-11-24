@@ -672,6 +672,25 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Many Images Layout (7장 이상) — 한 줄 4장, 남은 장은 다음 줄 가운데 정렬 */
+@media (min-width: 769px) {
+  .image-modal-images.multiple-images.many-images {
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+
+  .image-modal-images.multiple-images.many-images .image-modal-figure {
+    flex: 0 0 calc(25% - 15px);
+    max-width: calc(25% - 15px);
+  }
+
+  .image-modal-images.multiple-images.many-images .image-modal-figure img {
+    width: auto;
+    max-width: 100%;
+    max-height: 36vh;
+  }
+}
+
 /* Single Image Layout */
 .image-modal-images.single-image {
   flex-direction: column;
